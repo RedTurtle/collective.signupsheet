@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.signupsheet">
+
+  <browser:page
+    for="..interfaces.ISignupSheet"
+    name="susbase_view"
+    class=".signupsheet_baseview.SignupSheetBaseView"
+    template="signupsheet_baseview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:menuItem
+      for="..interfaces.ISignupSheet"
+      menu="plone_displayviews"
+      title="Signupsheet View"
+      action="@@susbase_view" />
+
+</configure>

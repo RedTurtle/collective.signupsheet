@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.signupsheet">
+    <body>
+        <!-- BBB trovare il modo di disabilitare i bordi se anonimo-->
+        <metal:content-core metal:fill-slot="content-core">
+            <metal:body_macro metal:define-macro="content-core"
+                              tal:define="plone_view nocall:context/@@plone">
+                <div id="body-text" tal:content="structure context/getBodyText"/>
+
+                <div tal:condition="context/getEarlyBirdDate">
+                    <span class="label" i18n:translate="Early bird until">Early bird until</span>:
+                    <span tal:content="python: plone_view.toLocalizedTime(context.getEarlyBirdDate())" />
+                </div>
+                <div tal:condition="context/getRegistrationDeadline">
+                    <span class="label" i18n:translate="Registration deadline">Registration deadline</span>:
+                    <span tal:content="python: plone_view.toLocalizedTime(context.getRegistrationDeadline())" />
+                </div>
+                <!-- Gestire il link per andare al form di iscrizione-->
+                <form action="createObject" method="post"
+                      tal:define="wf_state python: context.portal_workflow.getInfoFor(context, 'review_state')"
+                                 tal:condition="python: not view.getSignupStatus() =='full'">
+                    <div>
+                        <div id="registration-closed"
+                            tal:condition="python: wf_state == 'closed'">
+                        <span i18n:translate="The registration is closed">The registration is closed</span>
+                    </div>
+                    <!-- BBB remove private -->
+                    <div id="registration-open"
+                         tal:condition="python: wf_state in ('earlybird', 'open', 'published')" >
+
+                        <p tal:condition="context/getDisplay_size_left"
+                           i18n:translate="seats_left_message">
+                           <span tal:replace="view/getSeatsLeft"
+                                 i18n:name="seats">21</span> seats left.</p>
+                        <a class="context"
+                           tal:attributes="href string:${context/absolute_url}/signup"
+                           tal:content="view/getSignupMessage">Sign up!</a>
+                    </div>
+                  </div>
+                </form>
+                <div id="ss-registration-full" 
+                     i18n:translate="text_registration_full"
+                     tal:condition="python:view.getSignupStatus() == 'full' ">
+                        Registration is full
+                </div>
+            </metal:body_macro>
+        </metal:content-core>
+    </body>
+</html>

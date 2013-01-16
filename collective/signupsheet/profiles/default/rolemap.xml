@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="collective.signupsheet: Add Signup Sheet Form"
+                acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+  </permissions>
+</rolemap>
