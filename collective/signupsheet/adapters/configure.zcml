@@ -4,4 +4,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.signupsheet">
 
+    <adapter
+         factory=".initialize_signup_sheet_form.InitializeSignupSheetForm" />
+
 </configure>

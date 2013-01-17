@@ -6,16 +6,26 @@
 
   <browser:page
     for="..interfaces.ISignupSheet"
-    name="susbase_view"
+    name="susbase_utiltities_view"
     class=".signupsheet_baseview.SignupSheetBaseView"
-    template="signupsheet_baseview.pt"
+    permission="zope2.View"
+    allowed_attributes="getSignupStatus getSeatsLeft getSignupMessage"
+    />
+
+  <browser:page
+    for="..interfaces.ISignupSheet"
+    name="view_registrants"
+    class=".registrants_data.ViewRegistrants"
+    template="view_registrants.pt"
     permission="zope2.View"
     />
 
-  <browser:menuItem
-      for="..interfaces.ISignupSheet"
-      menu="plone_displayviews"
-      title="Signupsheet View"
-      action="@@susbase_view" />
+  <browser:page
+    for="..interfaces.ISignupSheet"
+    name="registrants_data_export"
+    class=".registrants_data.RegistrantDataExport"
+    permission="zope2.View"
+    />
+
 
 </configure>

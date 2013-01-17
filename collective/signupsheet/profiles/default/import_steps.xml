@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="collective.signupsheet-importvarious" version="2013-01.1"
+               handler="collective.signupsheet.setuphandlers.setupVarious"
+               title="Additional Signup Sheet installer">
+  </import-step>
+</import-steps>

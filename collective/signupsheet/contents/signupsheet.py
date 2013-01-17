@@ -14,9 +14,8 @@ from zope.interface import implements
 
 from collective.signupsheet import signupsheetMessageFactory as _
 from collective.signupsheet.config import PROJECTNAME
-from collective.signupsheet.interfaces import ISignupSheet
-
-import zope.i18n
+from collective.signupsheet.interfaces import (ISignupSheet,
+                                               ISignupSheetInitializer)
 
 
 # BBB Permessi per la lettura dei dati??
@@ -120,81 +119,6 @@ class SignupSheet(FormFolder):
             are interest on: name, surname, status, email
         """
         ATFolder.initializeArchetype(self, **kwargs)
-        self.setSubmitLabel(zope.i18n.translate(_(u'signupsheet_formfolder_signup',
-                                                  u'Sign up'),
-                                                context=self.REQUEST))
-        self.setResetLabel(zope.i18n.translate(_(u'signupsheet_formfolder_reset',
-                                                 u'Reset'),
-                                              context=self.REQUEST))
-
-        oids = self.objectIds()
-        if not oids:
-            # create a name field
-            self.invokeFactory('FormStringField', 'name')
-            obj = self['name']
-            obj.fgField.__name__ = 'name'
-
-            obj.setTitle(zope.i18n.translate(
-                         _(u'signupsheet_namefield_title', u'Your Name'),
-                         context=self.REQUEST))
-            self._pfFixup(obj)
-
-            # create a surname field
-            self.invokeFactory('FormStringField', 'surname')
-            obj = self['surname']
-            obj.fgField.__name__ = 'surname'
-            obj.setTitle(zope.i18n.translate(
-                        _(u'signupsheet_surnamefield_title', u'Your surname'),
-                        context=self.REQUEST))
-            self._pfFixup(obj)
-
-            # create a status field
-            self.invokeFactory('FormSelectionField', 'status')
-            obj = self['status']
-            obj.fgField.__name__ = 'status'
-            obj.setTitle(zope.i18n.translate(
-                        _(u'signupsheet_statusfield_title', u'Status'),
-                        context=self.REQUEST))
-            obj.setFgVocabulary(('registered|%s' %
-                                 zope.i18n.translate(
-                                    _(u'signupsheet_statusfield_registered_opt',
-                                      u'Registered'),
-                                   context=self.REQUEST),
-                                 'waitinglist|%s' %
-                                 zope.i18n.translate(
-                                    _(u'signupsheet_statusfield_waitinglist_opt',
-                                      u'Waiting list'),
-                                    context=self.REQUEST)
-                                 )
-                                )
-            obj.setFgFormat('radio')
-            self._pfFixup(obj)
-
-            # create a mail field
-            self.invokeFactory('FormStringField', 'email')
-            obj = self['email']
-            obj.fgField.__name__ = 'email'
-            obj.setTitle(zope.i18n.translate(
-                         _(u'signupsheet_emailfield_title',
-                           u'Your E-Mail Address'),
-                          context=self.REQUEST))
-            obj.fgField.required = True
-            obj.setFgStringValidator('isEmail')
-            self._pfFixup(obj)
-
-            # create a thanks page
-            # BBB Decide what we want write here
-            self.invokeFactory('FormThanksPage', 'thank-you')
-            obj = self['thank-you']
-
-            obj.setTitle(zope.i18n.translate(
-                         _(u'pfg_thankyou_title', u'Thank You'),
-                         context=self.REQUEST))
-            obj.setDescription(zope.i18n.translate(
-              _(u'pfg_thankyou_description', u'Thanks for your input.'),
-              context=self.REQUEST))
-            self._pfFixup(obj)
-            self.thanksPage = 'thank-you'
-
+        ISignupSheetInitializer(self).form_initializer()
 
 registerATCT(SignupSheet, PROJECTNAME)

@@ -1,3 +1,4 @@
+<!-- #BBB cancella-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -38,7 +39,7 @@
                            <span tal:replace="view/getSeatsLeft"
                                  i18n:name="seats">21</span> seats left.</p>
                         <a class="context"
-                           tal:attributes="href string:${context/absolute_url}/signup"
+                           tal:attributes="href string:${context/absolute_url}/fg_base_view_p3"
                            tal:content="view/getSignupMessage">Sign up!</a>
                     </div>
                   </div>

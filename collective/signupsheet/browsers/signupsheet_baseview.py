@@ -1,3 +1,4 @@
+# BBB cancella
 # -*- coding: utf-8 -*-
 from Products.Five.browser import BrowserView
 from Products.CMFPlone.i18nl10n import utranslate
