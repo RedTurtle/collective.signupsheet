@@ -30,8 +30,6 @@ errors = state.getErrors()
 errors = context.fgvalidate(REQUEST=request, errors=errors, data=1, metadata=0)
 
 if errors:
-    nextAction = "redirect_to:string:signup"
-    state.setNextAction( nextAction )
     if P3StyleErrors:
         if FORM_ERROR_MARKER in errors:
             message = errors.pop(FORM_ERROR_MARKER)

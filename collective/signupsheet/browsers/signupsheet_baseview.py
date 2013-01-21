@@ -1,7 +1,10 @@
-# BBB cancella
 # -*- coding: utf-8 -*-
 from Products.Five.browser import BrowserView
-from Products.CMFPlone.i18nl10n import utranslate
+
+from zope.component import getUtility
+
+from collective.signupsheet.interfaces import IGetRegistrants
+from collective.signupsheet import signupsheetMessageFactory as _
 
 
 class SignupSheetBaseView(BrowserView):
@@ -35,17 +38,14 @@ class SignupSheetBaseView(BrowserView):
     def getSignupMessage(self):
         """ returns signup message for signupsheet_view """
         if self.getSignupStatus(nextstatus=1) == 'open':
-            msg = utranslate(msgid='sign_up',
-                             default='Sign up!',
-                             context=self,
-                             domain="signupsheet")
+            msg = _(u'sign_up', default='Sign up!')
         else:
-            msg = utranslate(msgid='sign_up_for_waitinglist',
-                             default='Signup for waiting list',
-                             context=self,
-                             domain="signupsheet")
+            msg = _(u'sign_up_for_waitinglist', default='Signup for waiting list')
         return msg
 
     def getSeatsLeft(self):
-        return self.context.getEventsize() + self.context.getWaitlist_size()
-        #BBB togliere gli oggetti già creati - len(self.objectIds())
+        registrants = getUtility(IGetRegistrants).get_registrants_brains
+        registrants_number = len((registrants(self.context)))
+        return self.context.getEventsize() +\
+               self.context.getWaitlist_size() -\
+               registrants_number

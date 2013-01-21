@@ -16,6 +16,7 @@
 # Assume the product name is the current folder name
 CURRENT_PATH=`pwd`
 CATALOGNAME="collective.signupsheet"
+#CATALOGNAME="plone"
 
 # List of languages
 LANGUAGES="it"

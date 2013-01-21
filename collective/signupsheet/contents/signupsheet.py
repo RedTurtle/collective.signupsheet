@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from DateTime import DateTime
 from Products.Archetypes.atapi import (IntegerField, StringWidget,
                                        BooleanField, BooleanWidget,
                                        DateTimeField, CalendarWidget,
@@ -7,8 +8,10 @@ from Products.Archetypes.atapi import (IntegerField, StringWidget,
                                        Schema)
 from Products.ATContentTypes.content.base import registerATCT
 from Products.ATContentTypes.content.folder import ATFolder
+from Products.CMFCore.permissions import ModifyPortalContent
 from Products.PloneFormGen.content.form import (FormFolder,
                                                 FormFolderSchema)
+from Products.ATContentTypes import ATCTMessageFactory as _E
 
 from zope.interface import implements
 
@@ -57,6 +60,30 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
                           default=u"Choose to show in the subscription page the number of seats left",)
             )
         ),
+    DateTimeField('startDate',
+        required=True,
+        searchable=False,
+        accessor='start',
+        write_permission = ModifyPortalContent,
+        default_method=DateTime,
+        languageIndependent=True,
+        widget = CalendarWidget(
+            description= '',
+            label=_E(u'label_event_start', default=u'Event Starts')
+            )
+        ),
+    DateTimeField('endDate',
+        required=True,
+        searchable=False,
+        accessor='end',
+        write_permission = ModifyPortalContent,
+        default_method=DateTime,
+        languageIndependent=True,
+        widget = CalendarWidget(
+            description = '',
+            label = _E(u'label_event_end', default=u'Event Ends')
+            )
+        ),
     DateTimeField('earlyBirdDate',
         required=0,
         default=None,
@@ -101,10 +128,12 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
 
 SignupSheetSchema.moveField('eventsize', after='description')
 SignupSheetSchema.moveField('waitlist_size', after='eventsize')
-SignupSheetSchema.moveField('display_size_left', after='waitlist_size')
-SignupSheetSchema.moveField('earlyBirdDate', after='display_size_left')
+SignupSheetSchema.moveField('startDate', after='waitlist_size')
+SignupSheetSchema.moveField('endDate', after='startDate')
+SignupSheetSchema.moveField('earlyBirdDate', after='endDate')
 SignupSheetSchema.moveField('registrationDeadline', after='earlyBirdDate')
-SignupSheetSchema.moveField('text', after='registrationDeadline')
+SignupSheetSchema.moveField('display_size_left', after='registrationDeadline')
+SignupSheetSchema.moveField('text', after='display_size_left')
 
 
 class SignupSheet(FormFolder):

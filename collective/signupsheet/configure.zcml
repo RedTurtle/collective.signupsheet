@@ -22,4 +22,8 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <utility
+     provides=".interfaces.IGetRegistrants"
+     factory=".utilities.GetRegistrant" />
+
 </configure>

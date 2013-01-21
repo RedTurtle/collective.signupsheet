@@ -8,4 +8,3 @@ validators..cancel =
 
 [actions]
 action.success..cancel = traverse_to:string:go_back
-action.failure.. = redirect_to:string:signup

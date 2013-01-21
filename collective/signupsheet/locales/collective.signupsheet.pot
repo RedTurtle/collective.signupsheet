@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-17 11:10+0000\n"
+"POT-Creation-Date: 2013-01-18 14:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,12 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ./browsers/registrants_data_export.pt:61
+#: ./browsers/registrants_data_export.pt:55
 msgid "Download"
 msgstr ""
 
-#: ./browsers/signupsheet_baseview.pt:16
+#: ./browsers/signupsheet_baseview.pt:17
+#: ./skins/collective_signupsheet/susbase_view.cpt:39
 msgid "Early bird until"
 msgstr ""
 
@@ -30,22 +31,26 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ./browsers/signupsheet_baseview.pt:20
+#: ./profiles/default/types/SignupSheet.xml
+msgid "Export Registrants"
+msgstr ""
+
+#: ./skins/collective_signupsheet/sus_fgvalidate_base.vpy:39
+msgid "Please correct the indicated errors."
+msgstr ""
+
+#: ./browsers/signupsheet_baseview.pt:21
+#: ./skins/collective_signupsheet/susbase_view.cpt:43
 msgid "Registration deadline"
 msgstr ""
 
-#: ./browsers/signupsheet_baseview.pt:30
+#: ./browsers/signupsheet_baseview.pt:31
+#: ./skins/collective_signupsheet/susbase_view.cpt:52
 msgid "The registration is closed"
 msgstr ""
 
-#. Default: "D2C adapter add to signup sheet folder"
-#: ./setuphandlers.py:29
-msgid "add_d2c_adapter_to_signupsheet"
-msgstr ""
-
-#. Default: "Error adding D2C adapter to signup sheet folder"
-#: ./setuphandlers.py:35
-msgid "add_d2c_adapter_to_signupsheet_error"
+#: ./profiles/default/types/SignupSheet.xml
+msgid "View Registrants"
 msgstr ""
 
 #. Default: "Colon"
@@ -60,16 +65,6 @@ msgstr ""
 
 #: ./browsers/view_registrants.pt:26
 msgid "confirmed"
-msgstr ""
-
-#. Default: "Add registrant to D2C adapter"
-#: ./setuphandlers.py:71
-msgid "create_new_d2c_type"
-msgstr ""
-
-#. Default: "Registrant it's already present in portal_types"
-#: ./setuphandlers.py:50
-msgid "error_message_install_registrant"
 msgstr ""
 
 #. Default: "Display seats left"
@@ -159,28 +154,38 @@ msgstr ""
 msgid "label_delimiter"
 msgstr ""
 
+#. Default: "string:Your registration for ${object/aq_inner/aq_parent/Title} has been received"
+#: ./adapters/initialize_signup_sheet_form.py:128
+msgid "mailer_registration_subject_overrides"
+msgstr ""
+
 #. Default: "No registrants"
 #: ./browsers/view_registrants.pt:20
 msgid "no registrants"
 msgstr ""
 
-#. Default: "D2C adapter used to store registrants under the form"
-#: ./adapters/initialize_signup_sheet_form.py:97
-msgid "pfg_registrant_description"
+#. Default: "E-Mails Form Input"
+#: ./adapters/initialize_signup_sheet_form.py:122
+msgid "pfg_mailer_description"
+msgstr ""
+
+#. Default: "Mailer"
+#: ./adapters/initialize_signup_sheet_form.py:118
+msgid "pfg_mailer_title"
 msgstr ""
 
 #. Default: "Registrants"
-#: ./adapters/initialize_signup_sheet_form.py:94
+#: ./adapters/initialize_signup_sheet_form.py:107
 msgid "pfg_registrants_title"
 msgstr ""
 
 #. Default: "Thanks for your input."
-#: ./adapters/initialize_signup_sheet_form.py:114
+#: ./adapters/initialize_signup_sheet_form.py:145
 msgid "pfg_thankyou_description"
 msgstr ""
 
 #. Default: "Thank You"
-#: ./adapters/initialize_signup_sheet_form.py:111
+#: ./adapters/initialize_signup_sheet_form.py:142
 msgid "pfg_thankyou_title"
 msgstr ""
 
@@ -189,7 +194,8 @@ msgid "registrants"
 msgstr ""
 
 #. Default: "${seats} seats left."
-#: ./browsers/signupsheet_baseview.pt:38
+#: ./browsers/signupsheet_baseview.pt:39
+#: ./skins/collective_signupsheet/susbase_view.cpt:60
 msgid "seats_left_message"
 msgstr ""
 
@@ -198,48 +204,58 @@ msgstr ""
 msgid "semicolon"
 msgstr ""
 
+#. Default: "Sign up!"
+#: ./browsers/signupsheet_baseview.py:41
+msgid "sign_up"
+msgstr ""
+
+#. Default: "Signup for waiting list"
+#: ./browsers/signupsheet_baseview.py:43
+msgid "sign_up_for_waitinglist"
+msgstr ""
+
 #. Default: "A folderish type used as signup sheet"
 #: ./profiles/default/types/SignupSheet.xml
 msgid "signupsheet_description"
 msgstr ""
 
 #. Default: "Your E-Mail Address"
-#: ./adapters/initialize_signup_sheet_form.py:82
+#: ./adapters/initialize_signup_sheet_form.py:95
 msgid "signupsheet_emailfield_title"
 msgstr ""
 
 #. Default: "Reset"
-#: ./adapters/initialize_signup_sheet_form.py:30
+#: ./adapters/initialize_signup_sheet_form.py:43
 msgid "signupsheet_formfolder_reset"
 msgstr ""
 
 #. Default: "Sign up"
-#: ./adapters/initialize_signup_sheet_form.py:26
+#: ./adapters/initialize_signup_sheet_form.py:39
 msgid "signupsheet_formfolder_signup"
 msgstr ""
 
 #. Default: "Your Name"
-#: ./adapters/initialize_signup_sheet_form.py:42
+#: ./adapters/initialize_signup_sheet_form.py:55
 msgid "signupsheet_namefield_title"
 msgstr ""
 
 #. Default: "Registered"
-#: ./adapters/initialize_signup_sheet_form.py:64
+#: ./adapters/initialize_signup_sheet_form.py:77
 msgid "signupsheet_statusfield_registered_opt"
 msgstr ""
 
 #. Default: "Status"
-#: ./adapters/initialize_signup_sheet_form.py:60
+#: ./adapters/initialize_signup_sheet_form.py:73
 msgid "signupsheet_statusfield_title"
 msgstr ""
 
 #. Default: "Waiting list"
-#: ./adapters/initialize_signup_sheet_form.py:69
+#: ./adapters/initialize_signup_sheet_form.py:82
 msgid "signupsheet_statusfield_waitinglist_opt"
 msgstr ""
 
 #. Default: "Your surname"
-#: ./adapters/initialize_signup_sheet_form.py:51
+#: ./adapters/initialize_signup_sheet_form.py:64
 msgid "signupsheet_surnamefield_title"
 msgstr ""
 
@@ -253,14 +269,24 @@ msgstr ""
 msgid "space"
 msgstr ""
 
+#: ./adapters/initialize_signup_sheet_form.py:132
+msgid "subscribtion_mail"
+msgstr ""
+
 #. Default: "Tabulator"
 #: ./browsers/registrants_data_export.pt:47
 msgid "tabulator"
 msgstr ""
 
 #. Default: "Registration is full"
-#: ./browsers/signupsheet_baseview.pt:46
+#: ./browsers/signupsheet_baseview.pt:47
+#: ./skins/collective_signupsheet/susbase_view.cpt:69
 msgid "text_registration_full"
+msgstr ""
+
+#. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
+#: ./adapters/initialize_signup_sheet_form.py:147
+msgid "thanks_prologue"
 msgstr ""
 
 #: ./browsers/view_registrants.pt:28

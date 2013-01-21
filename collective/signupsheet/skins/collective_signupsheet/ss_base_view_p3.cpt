@@ -26,14 +26,59 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="collective.signupsheet">
+      i18n:domain="plone">
+
+  <metal:head fill-slot="top_slot">
+    <tal:block define="macro edit_macros/topslot | nothing"
+                    condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+  </metal:head>
+
+  <metal:javascript_head fill-slot="javascript_head_slot">
+    <tal:block define="macro here/archetypes_custom_js/macros/javascript_head | nothing"
+               condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+    <tal:js condition="js"
+            repeat="item js">
+      <script type="text/javascript"
+              charset="iso-8859-1"
+              tal:condition="python:exists('portal/%s' % item)"
+              tal:attributes="src string:$portal_url/$item">
+      </script>
+    </tal:js>
+
+    <tal:block define="macro edit_macros/javascript_head | nothing"
+                    condition="macro">
+      <metal:block use-macro="macro" />
+    </tal:block>
+
+    <tal:expr replace="structure here/getHeaderInjection | nothing" />
+
+  </metal:javascript_head>
+
+  <metal:css fill-slot="style_slot">
+    <tal:css condition="css"
+             repeat="item css">
+      <style type="text/css"
+             media="all"
+             tal:condition="python:exists('portal/%s' % item)"
+             tal:content="structure string:&lt;!-- @import url($portal_url/$item); --&gt;">
+      </style>
+    </tal:css>
+  </metal:css>
+
 
   <body>
+
     <metal:fill fill-slot="main">
-      <metal:main define-macro="main"
-                tal:define="plone_view nocall:context/@@plone;
-                           view context/@@susbase_utiltities_view">
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
+      <metal:main define-macro="main">
+
+      <tal:base_view tal:define="plone_view nocall:context/@@plone;
+                                 view context/@@susbase_utiltities_view"
+                     tal:condition="python: not 'formsubscribe' in request and not 'form_submit' in request">
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
                 <div id="body-text" tal:content="structure context/getBodyText"/>
                 <div tal:condition="context/getEarlyBirdDate">
                     <span class="label" i18n:translate="Early bird until">Early bird until</span>:
@@ -60,9 +105,15 @@
                          <span tal:replace="view/getSeatsLeft"
                                i18n:name="seats">21</span> seats left.
                       </p>
-                      <a class="standalone"
+                      <!--a class="standalone"
                          tal:attributes="href string:${context/absolute_url}/signup"
-                         tal:content="view/getSignupMessage"/>
+                         tal:content="view/getSignupMessage"/-->
+                         <form method="post" action="#"
+                               tal:attributes="action context/absolute_url">
+                              <input type="submit" value="" 
+                                     tal:attributes="value view/getSignupMessage"
+                                     name="formsubscribe"/>
+                         </form>
                   </div>
                 </div>
               </div>
@@ -72,8 +123,42 @@
                       Registration is full
               </div>
         <div tal:replace="structure provider:plone.abovecontentbody" />
+      </tal:base_view>
+      <tal:subscription-form tal:condition="python: 'formsubscribe' in request or 'form_submit' in request">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:content="context/Title" class="documentFirstHeading">
+          Title or id
+        </h1>
+
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+            
+            <tal:if tal:condition="here/getFormPrologue | nothing">
+              <metal:field use-macro="python:context.widget('formPrologue', mode='view')">
+                  Body text
+              </metal:field>
+            </tal:if>
+
+            <metal:use_body use-macro="body_macro" />
+            
+            <tal:if tal:condition="here/getFormEpilogue | nothing">
+              <metal:field use-macro="python:context.widget('formEpilogue', mode='view')">
+                  Body text
+              </metal:field>
+            </tal:if>
+        </tal:subscription-form>
+
       </metal:main>
     </metal:fill>
+
   </body>
+
 </html>
+
 </tal:block>

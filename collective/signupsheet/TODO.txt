@@ -1,0 +1,5 @@
+1) Fissare l'errore con unauthorized in creazione del form
+2) Fissare il problema del mailer che finché non viene salvato almeno una volta, non funziona
+3) Testare il giro completo con tutti gli elementi
+4) Aggiungere un mailer condizionato che controlla 6 ed eventualmente manda mail
+5) Fissare azione sulla tabella degli iscritti

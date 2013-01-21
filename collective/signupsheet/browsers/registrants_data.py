@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-from cStringIO import StringIO
-import csv
-
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+from zope.component import getUtility
+
+from collective.signupsheet.interfaces import IGetRegistrants
+
+from cStringIO import StringIO
+import csv
 
 
 class Common(object):
@@ -18,6 +22,17 @@ class Common(object):
         for field in fields:
             field_names.append(field.getName())
         return field_names
+
+    def get_registrants(self):
+        form = self.context
+        utility = getUtility(IGetRegistrants)
+        return utility.get_registrants(form)
+
+    def get_registrants_folder(self):
+        form = self.context
+        utility = getUtility(IGetRegistrants)
+        folder = utility.get_registrants_folder(form)
+        return folder.absolute_url()
 
 
 class RegistrantDataExport(BrowserView, Common):
@@ -39,11 +54,6 @@ class RegistrantDataExport(BrowserView, Common):
         """
         Exports a list of objs as a CSV file.  Wraps generateCSV.
         """
-
-        #updates schema if not done before export
-        # BBB
-        #self.atse_updateManagedSchema(portal_type=export_type,
-        #                              schema_template='signupsheet_schema_editor')
 
         result = self.generateCSV(fields=fields, delimiter=delimiter)
 
@@ -75,9 +85,7 @@ class RegistrantDataExport(BrowserView, Common):
         #container = self.unrestrictedTraverse(
         #   self.REQUEST.get('current_path'))
         if objs is None:
-            objs = self.listFolderContents(
-                contentFilter={'portal_type': export_type}
-            )
+            objs = self.get_registrants()
 
         delim_map = {
             'tabulator': '\t',
@@ -136,29 +144,3 @@ class ViewRegistrants(BrowserView, Common):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-
-    def getRegistrants(self):
-        """
-        get all the registrants under this form
-        """
-        form = self.context
-        adapters = form.actionAdapter
-        registrants_folder = None
-        for ad in adapters:
-            #I will take only the first object I will find in form
-            if form[ad].portal_type == 'FormSaveData2ContentAdapter':
-                registrants_folder = form[ad]
-                break
-
-        if not registrants_folder:
-            return []
-
-        catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog(path={'query': '/'.join(registrants_folder.getPhysicalPath()),
-                             'depth': 1})
-
-        registrants = []
-        for brain in brains:
-            registrants.append(brain.getObject())
-
-        return registrants

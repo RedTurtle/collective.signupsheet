@@ -9,6 +9,27 @@ from collective.signupsheet.interfaces import (ISignupSheet,
 
 import zope.i18n
 
+INITIAL_MAIL_MESSAGE = u"""<html xmlns='http://www.w3.org/1999/xhtml'>\r\n\r\n
+<head><title></title></head>\r\n\r\n<body>\r\n<p tal:content='here/getBody_pre |nothing' />
+\r\Thank you for registering to <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>
+\r\n<dl>\r\n<tal:block repeat='field options/wrappedFields | nothing'>\r\n
+<dt tal:content='field/fgField/widget/label' />\r\n
+<dd tal:content='structure python:field.htmlValue(request)' />\r\n
+</tal:block>\r\n</dl>\r\n<p tal:content='here/getBody_post | nothing' />\r\n
+<pre tal:content='here/getBody_footer | nothing' />\r\n</body>\r\n</html>
+"""
+
+SUBSCRIPTION_MAIL_MESSAGE = u"""
+
+#. Default: "<tal:block tal:define=\"registrant nocall:options/registrant\">New registrant registered for <tal:s tal:content=\"context/Title\" />\nPlease check current registrans: <tal:s tal:content=\"string:${context/absolute_url}/view_registrants\" />\n</tal:block>\n"
+#: ../content/signupsheet.py:540
+msgid "notify_email_response_message"
+msgstr ""
+"<tal:block tal:define=\"registrant nocall:options/registrant\">Nuova iscrizione per <tal:s tal:content=\"context/Title\" />\n"
+"Prego, verificare gli iscritti: <tal:s tal:content=\"string:${context/absolute_url}/view_registrants\" />\n"
+"</tal:block>\n"
+"""
+
 
 class InitializeSignupSheetForm(object):
     adapts(ISignupSheet)
@@ -33,6 +54,7 @@ class InitializeSignupSheetForm(object):
 
         oids = self.form.objectIds()
         if not oids:
+
             # create a name field
             self.form.invokeFactory('FormStringField', 'name')
             obj = self.form['name']
@@ -93,27 +115,72 @@ class InitializeSignupSheetForm(object):
             obj.setTitle(zope.i18n.translate(
                          _(u'pfg_registrants_title', u'Registrants'),
                          context=self.form.REQUEST))
-            obj.setDescription(zope.i18n.translate(
-                _(u'pfg_registrant_description',
-                  u'D2C adapter used to store registrants under the form'),
-              context=self.form.REQUEST))
             obj.setEntryType('registrant')
             obj.setTitleField('email')
             obj.setNiceIds(True)
+            obj.setDynamicTitle("string:${here/surname} ${here/name}")
             self.form._pfFixup(obj)
 
+            #Create first mailer; notification after registration
+            self.form.invokeFactory('FormMailerAdapter', 'mailer')
+            mailer = self.form['mailer']
+            mailer.setIncludeEmpties(False)
+            mailer.setTitle(zope.i18n.translate(
+                _(u'pfg_mailer_title', u'Mailer'),
+                context=self.form.REQUEST))
+            mailer.setDescription(
+                zope.i18n.translate(
+                  _(u'pfg_mailer_description',
+                    u'E-Mails Form Input'),
+                  context=self.form.REQUEST))
+            mailer.setTo_field('email')
+            mailer.setReplyto_field('email')
+            mailer.setSubjectOverride(zope.i18n.translate(
+                                       _(u'mailer_registration_subject_overrides',
+                                         default=u'string:Your registration for ${object/aq_inner/aq_parent/Title} has been received'),
+                                       context=self.form.REQUEST),)
+            mailer.setBody_pt(zope.i18n.translate(
+                               _(u'subscribtion_mail',
+                                default=INITIAL_MAIL_MESSAGE,),
+                                context=self.form.REQUEST),)
+            self.form._pfFixup(mailer)
+
+            #Create second mailer; subscription notification
+            self.form.invokeFactory('FormMailerAdapter',
+                                    'mailer_subscription_notification')
+            mailer = self.form['mailer_subscription_notification']
+            mailer.setIncludeEmpties(False)
+            mailer.setTitle(zope.i18n.translate(
+                _(u'pfg_mailer_subscription_title',
+                  u'Mailer subscription notification'),
+                context=self.form.REQUEST))
+            mailer.setDescription(
+                zope.i18n.translate(
+                  _(u'pfg_mailer_description',
+                    u'E-Mails Form Input: this mailer send notifications to signupsheet managers'),
+                  context=self.form.REQUEST))
+            mailer.setSubjectOverride(zope.i18n.translate(
+                                       _(u'mailer_registration_subject_overrides',
+                                         default=u'string:Your registration for ${object/aq_inner/aq_parent/Title} has been received'),
+                                       context=self.form.REQUEST),)
+            mailer.setBody_pt(zope.i18n.translate(
+                               _(u'subscribtion_mail',
+                                default=SUBSCRIPTION_MAIL_MESSAGE,),
+                                context=self.form.REQUEST),)
+            self.form._pfFixup(mailer)
+
             # create a thanks page
-            # BBB Decide what we want write here
             self.form.invokeFactory('FormThanksPage', 'thank-you')
             obj = self.form['thank-you']
-
+            obj.setIncludeEmpties(False)
             obj.setTitle(zope.i18n.translate(
                          _(u'pfg_thankyou_title', u'Thank You'),
                          context=self.form.REQUEST))
-            obj.setDescription(zope.i18n.translate(
-              _(u'pfg_thankyou_description', u'Thanks for your input.'),
-              context=self.form.REQUEST))
+            obj.setDescription('')
+            obj.setThanksPrologue(zope.i18n.translate(_(u"thanks_prologue",
+                                                        default=u"Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"),
+                                                        context=self.form.REQUEST))
             self.form._pfFixup(obj)
 
-            self.form.actionAdapter = ('registrants', )
+            self.form.actionAdapter = ('registrants', 'mailer')
             self.form.thanksPage = 'thank-you'
