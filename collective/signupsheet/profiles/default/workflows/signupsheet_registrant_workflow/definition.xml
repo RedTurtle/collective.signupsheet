@@ -83,7 +83,7 @@
  </transition>
  <transition transition_id="post" title="Post issue on save"
              new_state="unconfirmed" trigger="USER"
-             before_script="sendInitialEmail"
+             before_script=""
              after_script="">
   <action url="" category="workflow">Submit registrant</action>
   <guard>
@@ -147,8 +147,4 @@
   <guard>
   </guard>
  </variable>
- <!--script script_id="sendInitialEmail" type="External Method"
-         filename=""
-         module="SignupSheet.signupsheet_registrant_workflow_scripts"
-         function="sendInitialEmail"/-->
 </dc-workflow>
