@@ -1,5 +1,4 @@
+HIGH PRIORITY)
 1) Fissare l'errore con unauthorized in creazione del form
-2) Fissare il problema del mailer che finché non viene salvato almeno una volta, non funziona
+2) non so ancora come riprodurre, ma dopo un paio di avanti/indietro, non riesco più ad aggiungere registrant dal form (Disallowed subobject type)
 3) Testare il giro completo con tutti gli elementi
-4) Aggiungere un mailer condizionato che controlla 6 ed eventualmente manda mail
-5) Fissare azione sulla tabella degli iscritti
