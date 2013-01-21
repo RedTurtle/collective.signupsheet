@@ -1,3 +1,5 @@
 HIGH PRIORITY)
 1) non so ancora come riprodurre, ma dopo un paio di avanti/indietro, non riesco più ad aggiungere registrant dal form (Disallowed subobject type)
+2) Aggiungere il ruolo di Site Administrator ai workflow
 3) Testare il giro completo con tutti gli elementi
+
