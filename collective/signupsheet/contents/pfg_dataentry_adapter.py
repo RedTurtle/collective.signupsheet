@@ -1,3 +1,6 @@
+# NOT USED!!!! WILL'PULL REQUEST A MODIFICATION TO THE ORIGINAL CODE
+# REMOVE THIS FILE
+
 """
 The original adapter provided by uwosh.pfg.d2c it's useless with FormFolder
 based types 'cause perform some check basing on portal_type 'FormFolder'. So we

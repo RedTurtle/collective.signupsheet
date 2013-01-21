@@ -128,12 +128,12 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
 
 SignupSheetSchema.moveField('eventsize', after='description')
 SignupSheetSchema.moveField('waitlist_size', after='eventsize')
-SignupSheetSchema.moveField('startDate', after='waitlist_size')
+SignupSheetSchema.moveField('display_size_left', after='waitlist_size')
+SignupSheetSchema.moveField('startDate', after='display_size_left')
 SignupSheetSchema.moveField('endDate', after='startDate')
 SignupSheetSchema.moveField('earlyBirdDate', after='endDate')
 SignupSheetSchema.moveField('registrationDeadline', after='earlyBirdDate')
-SignupSheetSchema.moveField('display_size_left', after='registrationDeadline')
-SignupSheetSchema.moveField('text', after='display_size_left')
+SignupSheetSchema.moveField('text', after='registrationDeadline')
 
 
 class SignupSheet(FormFolder):
