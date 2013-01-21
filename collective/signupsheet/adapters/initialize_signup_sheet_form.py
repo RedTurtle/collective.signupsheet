@@ -58,12 +58,7 @@ class InitializeSignupSheetForm(object):
         if not oids:
             member = self.form.portal_membership.getAuthenticatedMember()
             # create a name field
-            try:
-                self.form.invokeFactory('FormStringField', 'name')
-            except:
-                print self.form
-                print self.form.absolute_url()
-                print member.__str__
+            self.form.invokeFactory('FormStringField', 'name')
 
             obj = self.form['name']
             obj.fgField.__name__ = 'name'

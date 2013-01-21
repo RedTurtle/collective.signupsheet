@@ -9,6 +9,7 @@ from Products.Archetypes.atapi import (IntegerField, StringWidget,
 from Products.ATContentTypes.content.base import registerATCT
 from Products.ATContentTypes.content.folder import ATFolder
 from Products.CMFCore.permissions import ModifyPortalContent
+from Products.CMFCore.utils import getToolByName
 from Products.PloneFormGen.content.form import (FormFolder,
                                                 FormFolderSchema)
 from Products.ATContentTypes import ATCTMessageFactory as _E
@@ -16,7 +17,7 @@ from Products.ATContentTypes import ATCTMessageFactory as _E
 from zope.interface import implements
 
 from collective.signupsheet import signupsheetMessageFactory as _
-from collective.signupsheet.config import PROJECTNAME
+from collective.signupsheet.config import PROJECTNAME, logger
 from collective.signupsheet.interfaces import (ISignupSheet,
                                                ISignupSheetInitializer)
 
@@ -148,6 +149,10 @@ class SignupSheet(FormFolder):
             are interest on: name, surname, status, email
         """
         ATFolder.initializeArchetype(self, **kwargs)
-        ISignupSheetInitializer(self).form_initializer()
+        pm = getToolByName(self, 'portal_membership')
+        if not pm.isAnonymousUser():
+            ISignupSheetInitializer(self).form_initializer()
+        else:
+            logger.warning("Anonymous user: not allowd to create fields")
 
 registerATCT(SignupSheet, PROJECTNAME)

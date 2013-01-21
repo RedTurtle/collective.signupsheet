@@ -5,8 +5,7 @@ from Products.CMFCore.utils import getToolByName
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from zope.component import getUtility
 
-import logging
-logger = logging.getLogger('Signupsheet.configuration')
+from collective.signupsheet.config import logger
 
 SIGNUPSHEET_TYPE = 'SignupSheet'
 SIGNUPSHEET_STATES = ['open', 'closed', ]

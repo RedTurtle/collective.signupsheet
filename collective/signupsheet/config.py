@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import logging
+logger = logging.getLogger('Signupsheet.configuration')
 
 PROJECTNAME = "collective.signupsheet"
 
