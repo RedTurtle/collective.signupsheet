@@ -17,7 +17,7 @@ def setupVarious(context):
         return
     portal = context.getSite()
     setup_signupsheet(portal)
-    setup_new_portal_type(portal)
+    setup_registrant_portal_type(portal)
 
 
 def setup_signupsheet(portal):
@@ -70,11 +70,15 @@ def setup_portal_calendar(portal):
         logger.info(msg)
 
 
-def setup_new_portal_type(portal):
+def setup_registrant_portal_type(portal):
     """
     Use the same method used in uwosh.pfg.d2c to create the new content type
     we'll use as event subscriber.
     """
+    add_registrant_portal_type(portal)
+
+
+def add_registrant_portal_type(portal):
     name = "registrant"
     portal_types = getToolByName(portal, 'portal_types')
     if name in portal_types.keys():
