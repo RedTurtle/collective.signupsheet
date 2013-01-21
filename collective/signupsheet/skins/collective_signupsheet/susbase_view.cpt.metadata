@@ -2,10 +2,9 @@
 title = Form View
 
 [validators]
-validators = sus_fgvalidate_base
+validators = ss_fgvalidate_base
 validators..form_add =
 validators..cancel =
 
 [actions]
 action.success..cancel = traverse_to:string:go_back
-action.failure.. = redirect_to:string:signup

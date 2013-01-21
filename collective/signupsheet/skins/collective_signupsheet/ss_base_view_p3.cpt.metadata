@@ -2,7 +2,7 @@
 title = Form View
 
 [validators]
-validators = sus_fgvalidate_base
+validators = ss_fgvalidate_base
 validators..form_add =
 validators..cancel =
 
