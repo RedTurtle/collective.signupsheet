@@ -27,5 +27,23 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    name="check_manager_mail_form"
+    class=".pfg_checks.ChecksManagerMailerSendAction"
+    permission="zope2.View"
+    />
+
+  <browser:pages
+    for="*"
+    permission="zope2.View"
+    class=".pfg_field_messages.PfgFieldMessages">
+
+     <browser:page attribute="user_mailer_subject"
+                   name="user_mailer_subject" />
+
+     <browser:page attribute="manager_mailer_subject"
+                   name="manager_mailer_subject" />
+  </browser:pages>
 
 </configure>

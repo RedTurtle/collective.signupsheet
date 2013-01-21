@@ -10,9 +10,11 @@
   <i18n:registerTranslations directory="locales" />
   <cmf:registerDirectory name="skins" directory="skins" recursive="True"/>
 
+  <include package=".adapters" />
   <include package=".browsers" />
   <include package=".contents" />
-  <include package=".adapters" />
+  <include package=".events" />
+  <include package=".utilities" />
 
   <genericsetup:registerProfile
       name="default"
@@ -21,9 +23,5 @@
       description="Installs the collective.signupsheet package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
-  <utility
-     provides=".interfaces.IGetRegistrants"
-     factory=".utilities.GetRegistrant" />
 
 </configure>
