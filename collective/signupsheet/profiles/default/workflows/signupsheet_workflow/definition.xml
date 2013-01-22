@@ -2,7 +2,8 @@
 <dc-workflow workflow_id="signupsheet_workflow"
              title="signupsheet_workflow" description=""
              state_variable="review_state"
-             initial_state="closed">
+             initial_state="closed"
+             manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Add portal content</permission>
  <permission>List folder contents</permission>
@@ -10,8 +11,7 @@
  <permission>View</permission>
  <state state_id="closed" title="Closed for submissions">
   <exit-transition transition_id="open"/>
-  <permission-map name="Access contents information"
-                  acquired="True">
+  <permission-map name="Access contents information" acquired="True">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
@@ -21,15 +21,13 @@
   </permission-map>
   <permission-map name="Add portal content" acquired="True">
   </permission-map>
-  <permission-map name="List folder contents"
-                  acquired="False">
+  <permission-map name="List folder contents" acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="SignupSheet: Add Registrant"
-                  acquired="False">
+  <permission-map name="SignupSheet: Add Registrant" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -45,26 +43,20 @@
  </state>
  <state state_id="open" title="Open for submissions">
   <exit-transition transition_id="close"/>
-  <permission-map name="Access contents information"
-                  acquired="True">
+  <permission-map name="Access contents information" acquired="True">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Add portal content" acquired="True">
-   <permission-role>Anonymous</permission-role>
-  </permission-map>
-  <permission-map name="List folder contents"
-                  acquired="False">
+  <permission-map name="List folder contents" acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="SignupSheet: Add Registrant"
-                  acquired="True">
+  <permission-map name="SignupSheet: Add Registrant" acquired="True">
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>Editor</permission-role>
@@ -74,24 +66,19 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <transition transition_id="close" title="Close tracker"
-             new_state="closed" trigger="USER"
-             before_script="" after_script="">
-  <action url="" category="workflow">Close Signup Sheet</action>
+ <transition transition_id="close" title="Close tracker" new_state="closed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">Close Signup Sheet</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="open" title="Open tracker"
-             new_state="open" trigger="USER"
-             before_script="" after_script="">
-  <action url="" category="workflow">Open Signup Sheet</action>
+ <transition transition_id="open" title="Open tracker" new_state="open" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">Open Signup Sheet</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <variable variable_id="action" for_catalog="False"
-           for_status="True" update_always="True">
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
   <description>The last transition</description>
   <default>
    
@@ -100,8 +87,7 @@
   <guard>
   </guard>
  </variable>
- <variable variable_id="actor" for_catalog="False"
-           for_status="True" update_always="True">
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
   <description>The ID of the user who performed the last transition</description>
   <default>
    
@@ -110,8 +96,7 @@
   <guard>
   </guard>
  </variable>
- <variable variable_id="comments" for_catalog="False"
-           for_status="True" update_always="True">
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
   <description>Comments about the last transition</description>
   <default>
    
@@ -120,8 +105,7 @@
   <guard>
   </guard>
  </variable>
- <variable variable_id="review_history" for_catalog="False"
-           for_status="False" update_always="False">
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
   <description>Provides access to workflow history</description>
   <default>
    
@@ -132,8 +116,7 @@
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </variable>
- <variable variable_id="time" for_catalog="False"
-           for_status="True" update_always="True">
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
   <description>Time of the last transition</description>
   <default>
    
