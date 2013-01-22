@@ -1,18 +1,25 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-21 15:33+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: 1\n"
+"POT-Creation-Date: 2013-01-22 11:11+0000\n"
+"PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
+"Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
+"Language-Team: ITALIAN sviluppo@redturtle.it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: collective.signupsheet\n"
+
+#: ./profiles/default/types/SignupSheet.xml
+msgid "A folderish type used as signup sheet"
+msgstr ""
+
+msgid "Collective Signupsheet"
+msgstr ""
 
 #: ./browsers/view_registrants.pt:72
 msgid "Confirm"
@@ -23,6 +30,7 @@ msgid "Download"
 msgstr ""
 
 #: ./browsers/signupsheet_baseview.pt:17
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:101
 msgid "Early bird until"
 msgstr ""
 
@@ -34,15 +42,24 @@ msgstr ""
 msgid "Export Registrants"
 msgstr ""
 
+msgid "Installs the collective.signupsheet package"
+msgstr ""
+
 #: ./skins/collective_signupsheet/ss_fgvalidate_base.vpy:37
 msgid "Please correct the indicated errors."
 msgstr ""
 
 #: ./browsers/signupsheet_baseview.pt:21
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:105
 msgid "Registration deadline"
 msgstr ""
 
+#: ./profiles/default/types/SignupSheet.xml
+msgid "Signup Sheet Title"
+msgstr ""
+
 #: ./browsers/signupsheet_baseview.pt:31
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:115
 msgid "The registration is closed"
 msgstr ""
 
@@ -64,18 +81,23 @@ msgstr ""
 msgid "confirmed"
 msgstr ""
 
+#. Default: "When"
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:94
+msgid "event_view_when"
+msgstr ""
+
 #. Default: "Display seats left"
-#: ./contents/signupsheet.py:58
+#: ./contents/signupsheet.py:59
 msgid "field_display_size_left"
 msgstr ""
 
 #. Default: "Early bird phase until"
-#: ./contents/signupsheet.py:92
+#: ./contents/signupsheet.py:93
 msgid "field_early_bird_phase"
 msgstr ""
 
 #. Default: "Number of registrants"
-#: ./contents/signupsheet.py:34
+#: ./contents/signupsheet.py:35
 msgid "field_eventsize"
 msgstr ""
 
@@ -85,34 +107,34 @@ msgid "field_name"
 msgstr ""
 
 #. Default: "Registration deadline"
-#: ./contents/signupsheet.py:103
+#: ./contents/signupsheet.py:104
 msgid "field_registration_deadline"
 msgstr ""
 
 #. Default: "Size of wait list"
-#: ./contents/signupsheet.py:48
+#: ./contents/signupsheet.py:49
 msgid "field_waitlist_size"
 msgstr ""
 
 #. Default: "Choose to show in the subscription page the number of seats left"
-#: ./contents/signupsheet.py:59
+#: ./contents/signupsheet.py:60
 msgid "fieldhelp_display_size_left"
 msgstr ""
 
-#: ./contents/signupsheet.py:93
+#: ./contents/signupsheet.py:94
 msgid "fieldhelp_early_bird_phase"
 msgstr ""
 
 #. Default: "Set to 0 for unlimited registration"
-#: ./contents/signupsheet.py:36
+#: ./contents/signupsheet.py:37
 msgid "fieldhelp_eventsize"
 msgstr ""
 
-#: ./contents/signupsheet.py:105
+#: ./contents/signupsheet.py:106
 msgid "fieldhelp_registration_deadline"
 msgstr ""
 
-#: ./contents/signupsheet.py:50
+#: ./contents/signupsheet.py:51
 msgid "fieldhelp_waitlist_size"
 msgstr ""
 
@@ -137,12 +159,12 @@ msgid "heading_review_state"
 msgstr ""
 
 #. Default: "Text for front page of signup"
-#: ./contents/signupsheet.py:122
+#: ./contents/signupsheet.py:123
 msgid "help_body_text"
 msgstr ""
 
 #. Default: "Body Text"
-#: ./contents/signupsheet.py:121
+#: ./contents/signupsheet.py:122
 msgid "label_body_text"
 msgstr ""
 
@@ -161,7 +183,7 @@ msgstr ""
 msgid "mailer_registration_subject_overrides_manager"
 msgstr ""
 
-#: ./adapters/initialize_signup_sheet_form.py:172
+#: ./adapters/initialize_signup_sheet_form.py:170
 msgid "manager_subscribtion_mail"
 msgstr ""
 
@@ -171,32 +193,32 @@ msgid "no registrants"
 msgstr ""
 
 #. Default: "Manager notification mailer"
-#: ./adapters/initialize_signup_sheet_form.py:159
+#: ./adapters/initialize_signup_sheet_form.py:157
 msgid "pfg_manager_notification_mailer"
 msgstr ""
 
 #. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
-#: ./adapters/initialize_signup_sheet_form.py:164
+#: ./adapters/initialize_signup_sheet_form.py:162
 msgid "pfg_manager_notification_mailer_description"
 msgstr ""
 
 #. Default: "Registrants"
-#: ./adapters/initialize_signup_sheet_form.py:124
+#: ./adapters/initialize_signup_sheet_form.py:122
 msgid "pfg_registrants_title"
 msgstr ""
 
 #. Default: "Thank You"
-#: ./adapters/initialize_signup_sheet_form.py:183
+#: ./adapters/initialize_signup_sheet_form.py:181
 msgid "pfg_thankyou_title"
 msgstr ""
 
 #. Default: "User notification mailer "
-#: ./adapters/initialize_signup_sheet_form.py:137
+#: ./adapters/initialize_signup_sheet_form.py:135
 msgid "pfg_user_notification_mailer"
 msgstr ""
 
 #. Default: "E-Mails Form Input for subscribers"
-#: ./adapters/initialize_signup_sheet_form.py:141
+#: ./adapters/initialize_signup_sheet_form.py:139
 msgid "pfg_user_notification_mailer_description"
 msgstr ""
 
@@ -206,6 +228,7 @@ msgstr ""
 
 #. Default: "${seats} seats left."
 #: ./browsers/signupsheet_baseview.pt:39
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
 msgstr ""
 
@@ -224,13 +247,8 @@ msgstr ""
 msgid "sign_up_for_waitinglist"
 msgstr ""
 
-#. Default: "A folderish type used as signup sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_description"
-msgstr ""
-
 #. Default: "E-Mail Address"
-#: ./adapters/initialize_signup_sheet_form.py:112
+#: ./adapters/initialize_signup_sheet_form.py:109
 msgid "signupsheet_emailfield_title"
 msgstr ""
 
@@ -245,33 +263,28 @@ msgid "signupsheet_formfolder_signup"
 msgstr ""
 
 #. Default: "Your Name"
-#: ./adapters/initialize_signup_sheet_form.py:72
+#: ./adapters/initialize_signup_sheet_form.py:66
 msgid "signupsheet_namefield_title"
 msgstr ""
 
 #. Default: "Registered"
-#: ./adapters/initialize_signup_sheet_form.py:94
+#: ./adapters/initialize_signup_sheet_form.py:90
 msgid "signupsheet_statusfield_registered_opt"
 msgstr ""
 
 #. Default: "Status"
-#: ./adapters/initialize_signup_sheet_form.py:90
+#: ./adapters/initialize_signup_sheet_form.py:86
 msgid "signupsheet_statusfield_title"
 msgstr ""
 
 #. Default: "Waiting list"
-#: ./adapters/initialize_signup_sheet_form.py:99
+#: ./adapters/initialize_signup_sheet_form.py:95
 msgid "signupsheet_statusfield_waitinglist_opt"
 msgstr ""
 
 #. Default: "Your surname"
-#: ./adapters/initialize_signup_sheet_form.py:81
+#: ./adapters/initialize_signup_sheet_form.py:76
 msgid "signupsheet_surnamefield_title"
-msgstr ""
-
-#. Default: "Signup Sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_title"
 msgstr ""
 
 #. Default: "Space"
@@ -279,8 +292,13 @@ msgstr ""
 msgid "space"
 msgstr ""
 
-#: ./adapters/initialize_signup_sheet_form.py:148
+#: ./adapters/initialize_signup_sheet_form.py:146
 msgid "subscribtion_mail"
+msgstr ""
+
+#. Default: "Subscribing"
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:147
+msgid "subscription_form_title"
 msgstr ""
 
 #. Default: "Tabulator"
@@ -290,11 +308,12 @@ msgstr ""
 
 #. Default: "Registration is full"
 #: ./browsers/signupsheet_baseview.pt:47
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:136
 msgid "text_registration_full"
 msgstr ""
 
 #. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
-#: ./adapters/initialize_signup_sheet_form.py:186
+#: ./adapters/initialize_signup_sheet_form.py:184
 msgid "thanks_prologue"
 msgstr ""
 

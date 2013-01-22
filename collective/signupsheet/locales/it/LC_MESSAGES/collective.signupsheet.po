@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-01-22 10:50+0000\n"
+"POT-Creation-Date: 2013-01-22 11:11+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -13,6 +13,13 @@ msgstr ""
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.signupsheet\n"
+
+#: ./profiles/default/types/SignupSheet.xml
+msgid "A folderish type used as signup sheet"
+msgstr "Documento basato su PloneFormGen usato come SignupSheet"
+
+msgid "Collective Signupsheet"
+msgstr "Collective Signupsheet"
 
 #: ./browsers/view_registrants.pt:72
 msgid "Confirm"
@@ -35,6 +42,9 @@ msgstr "Edit"
 msgid "Export Registrants"
 msgstr ""
 
+msgid "Installs the collective.signupsheet package"
+msgstr "Installazione di collective.signupsheet"
+
 #: ./skins/collective_signupsheet/ss_fgvalidate_base.vpy:37
 msgid "Please correct the indicated errors."
 msgstr "Per favore correggere gli errori indicati"
@@ -43,6 +53,10 @@ msgstr "Per favore correggere gli errori indicati"
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:105
 msgid "Registration deadline"
 msgstr "Scadenza dell'scrizione"
+
+#: ./profiles/default/types/SignupSheet.xml
+msgid "Signup Sheet"
+msgstr "Signup Sheet"
 
 #: ./browsers/signupsheet_baseview.pt:31
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:115
@@ -235,11 +249,6 @@ msgstr "Iscriviti!"
 msgid "sign_up_for_waitinglist"
 msgstr "Iscriviti in lista di attesa"
 
-#. Default: "A folderish type used as signup sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_description"
-msgstr "Un tipo folderish usato come modulo di iscrizione"
-
 #. Default: "E-Mail Address"
 #: ./adapters/initialize_signup_sheet_form.py:109
 msgid "signupsheet_emailfield_title"
@@ -279,11 +288,6 @@ msgstr "Lista d'attesa"
 #: ./adapters/initialize_signup_sheet_form.py:76
 msgid "signupsheet_surnamefield_title"
 msgstr "Cognome"
-
-#. Default: "Signup Sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_title"
-msgstr "Signup Sheet"
 
 #. Default: "Space"
 #: ./browsers/registrants_data_export.pt:49
