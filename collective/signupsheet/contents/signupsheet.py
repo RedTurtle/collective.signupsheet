@@ -65,11 +65,11 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
         required=True,
         searchable=False,
         accessor='start',
-        write_permission = ModifyPortalContent,
+        write_permission=ModifyPortalContent,
         default_method=DateTime,
         languageIndependent=True,
-        widget = CalendarWidget(
-            description= '',
+        widget=CalendarWidget(
+            description='',
             label=_E(u'label_event_start', default=u'Event Starts')
             )
         ),
@@ -77,12 +77,12 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
         required=True,
         searchable=False,
         accessor='end',
-        write_permission = ModifyPortalContent,
+        write_permission=ModifyPortalContent,
         default_method=DateTime,
         languageIndependent=True,
-        widget = CalendarWidget(
-            description = '',
-            label = _E(u'label_event_end', default=u'Event Ends')
+        widget=CalendarWidget(
+            description='',
+            label=_E(u'label_event_end', default=u'Event Ends')
             )
         ),
     DateTimeField('earlyBirdDate',
