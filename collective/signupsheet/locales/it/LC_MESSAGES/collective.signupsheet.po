@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-01-22 11:11+0000\n"
+"POT-Creation-Date: 2013-01-22 15:54+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -18,6 +18,10 @@ msgstr ""
 msgid "A folderish type used as signup sheet"
 msgstr "Documento basato su PloneFormGen usato come SignupSheet"
 
+#: ./skins/collective_signupsheet/ss_fgvalidate_base.vpy:54
+msgid "Can't subscribe. No more free slots"
+msgstr "Impossibile iscriversi. Non sono disponibili ulteriori posti"
+
 msgid "Collective Signupsheet"
 msgstr "Collective Signupsheet"
 
@@ -29,7 +33,7 @@ msgstr "Conferma"
 msgid "Download"
 msgstr "Download"
 
-#: ./browsers/signupsheet_baseview.pt:17
+#: ./browsers/REMOVEsignupsheet_baseview.pt:15
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:101
 msgid "Early bird until"
 msgstr "Iscrizioni scontate fino al"
@@ -45,11 +49,7 @@ msgstr ""
 msgid "Installs the collective.signupsheet package"
 msgstr "Installazione di collective.signupsheet"
 
-#: ./skins/collective_signupsheet/ss_fgvalidate_base.vpy:37
-msgid "Please correct the indicated errors."
-msgstr "Per favore correggere gli errori indicati"
-
-#: ./browsers/signupsheet_baseview.pt:21
+#: ./browsers/REMOVEsignupsheet_baseview.pt:19
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:105
 msgid "Registration deadline"
 msgstr "Scadenza dell'scrizione"
@@ -58,7 +58,7 @@ msgstr "Scadenza dell'scrizione"
 msgid "Signup Sheet"
 msgstr "Signup Sheet"
 
-#: ./browsers/signupsheet_baseview.pt:31
+#: ./browsers/REMOVEsignupsheet_baseview.pt:29
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:115
 msgid "The registration is closed"
 msgstr "L'iscrizione è chiusa"
@@ -229,7 +229,7 @@ msgid "registrants"
 msgstr "Iscritti"
 
 #. Default: "${seats} seats left."
-#: ./browsers/signupsheet_baseview.pt:39
+#: ./browsers/REMOVEsignupsheet_baseview.pt:36
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
 msgstr "${seats} posti rimanenti."
@@ -240,12 +240,12 @@ msgid "semicolon"
 msgstr "Punto e virgola"
 
 #. Default: "Sign up!"
-#: ./browsers/signupsheet_baseview.py:41
+#: ./browsers/signupsheet_baseview.py:42
 msgid "sign_up"
 msgstr "Iscriviti!"
 
 #. Default: "Signup for waiting list"
-#: ./browsers/signupsheet_baseview.py:43
+#: ./browsers/signupsheet_baseview.py:44
 msgid "sign_up_for_waitinglist"
 msgstr "Iscriviti in lista di attesa"
 
@@ -309,7 +309,7 @@ msgid "tabulator"
 msgstr "Tabulatore"
 
 #. Default: "Registration is full"
-#: ./browsers/signupsheet_baseview.pt:47
+#: ./browsers/REMOVEsignupsheet_baseview.pt:44
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:136
 msgid "text_registration_full"
 msgstr "L'iscrizione è chiusa"
