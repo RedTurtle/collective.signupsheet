@@ -30,9 +30,28 @@
   <browser:page
     for="*"
     name="check_manager_mail_form"
-    class=".pfg_checks.ChecksManagerMailerSendAction"
+    class=".pfg_utilities.ChecksManagerMailerSendAction"
     permission="zope2.View"
     />
+
+  <browser:pages
+    for="*"
+    class=".pfg_utilities.PfgFormUtilities"
+    permission="zope2.View">
+    <browser:page attribute="check_state_field_is_visible"
+                  name="check_state_field_is_visible" />
+
+    <browser:page attribute="default_name_value"
+                  name="default_name_value" />
+
+    <browser:page attribute="default_surname_value"
+                  name="default_surname_value" />
+
+    <browser:page attribute="default_email_value"
+                  name="default_email_value" />
+
+  </browser:pages>
+
 
   <browser:pages
     for="*"
