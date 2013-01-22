@@ -56,7 +56,6 @@ class InitializeSignupSheetForm(object):
 
         oids = self.form.objectIds()
         if not oids:
-            member = self.form.portal_membership.getAuthenticatedMember()
             # create a name field
             self.form.invokeFactory('FormStringField', 'name')
 
@@ -66,6 +65,7 @@ class InitializeSignupSheetForm(object):
             obj.setTitle(zope.i18n.translate(
                          _(u'signupsheet_namefield_title', u'Your Name'),
                          context=self.form.REQUEST))
+            obj.setFgTDefault('here/@@default_name_value')
             self.form._pfFixup(obj)
 
             # create a surname field
@@ -75,6 +75,7 @@ class InitializeSignupSheetForm(object):
             obj.setTitle(zope.i18n.translate(
                         _(u'signupsheet_surnamefield_title', u'Your surname'),
                         context=self.form.REQUEST))
+            obj.setFgTDefault('here/@@default_surname_value')
             self.form._pfFixup(obj)
 
             # create a status field
@@ -97,6 +98,7 @@ class InitializeSignupSheetForm(object):
                                  )
                                 )
             obj.setFgFormat('radio')
+            obj.setFgTEnabled('here/@@check_state_field_is_visible')
             self.form._pfFixup(obj)
 
             # create a mail field
@@ -108,6 +110,7 @@ class InitializeSignupSheetForm(object):
                            u'E-Mail Address'),
                           context=self.form.REQUEST))
             obj.fgField.required = True
+            obj.setFgTDefault('here/@@default_email_value')
             obj.setFgStringValidator('isEmail')
             self.form._pfFixup(obj)
 
