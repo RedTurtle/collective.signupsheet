@@ -10,15 +10,18 @@
   <i18n:registerTranslations directory="locales" />
   <cmf:registerDirectory name="skins" directory="skins" recursive="True"/>
 
+  <include file="permissions.zcml" />
+
   <include package=".adapters" />
   <include package=".browsers" />
   <include package=".contents" />
   <include package=".events" />
   <include package=".utilities" />
 
+
   <genericsetup:registerProfile
       name="default"
-      title="collective.signupsheet"
+      title="Collective Signupsheet"
       directory="profiles/default"
       description="Installs the collective.signupsheet package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
