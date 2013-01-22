@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.signupsheet">
+
+  <genericsetup:upgradeStep
+      title="Upgrade collective.signupsheet from 0001 to 0002"
+      source="1"
+      destination="0002"
+      handler=".upgrade_steps.upgrade_0001_to_0002"
+      sortkey="1"
+      profile="collective.signupsheet:default"/>
+
+  <genericsetup:registerProfile
+      name="upgrade_0001_to_0002"
+      title="Upgrade collective.signupsheet from 0001 to 0002"
+      directory="profiles/upgrade_0001_to_0002"
+      description="Install an upgrade for collective.signupsheet"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+  />
+
+</configure>
