@@ -2,8 +2,8 @@
 import logging
 logger = logging.getLogger('Signupsheet.configuration')
 
-PROJECTNAME = "collective.signupsheet"
+PROJECTNAME = "SignupSheet"
 
 ADD_PERMISSIONS = {
-    'SignupSheet': PROJECTNAME + ': Add Signup Sheet Form',
+    'SignupSheet': PROJECTNAME + ': Add SignupSheet',
 }
