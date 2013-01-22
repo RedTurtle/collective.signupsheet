@@ -26,7 +26,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="collective.signupsheet">
 
   <metal:head fill-slot="top_slot">
     <tal:block define="macro edit_macros/topslot | nothing"
@@ -67,20 +67,37 @@
              tal:content="structure string:&lt;!-- @import url($portal_url/$item); --&gt;">
       </style>
     </tal:css>
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          tal:attributes="href string:${portal/absolute_url}/++resource++collective.signupsheet.css/signupsheet.css">
   </metal:css>
-
-
   <body>
-
     <metal:fill fill-slot="main">
       <metal:main define-macro="main">
-
       <tal:base_view tal:define="plone_view nocall:context/@@plone;
                                  view context/@@susbase_utiltities_view"
                      tal:condition="python: not 'formsubscribe' in request and not 'form_submit' in request">
                 <div tal:replace="structure provider:plone.abovecontenttitle" />
+                <h1 tal:content="context/Title" class="documentFirstHeading">
+                  Title or id
+                </h1>
+                <p class="documentDescription"
+                   tal:content="here/Description"
+                   tal:condition="here/Description">
+                    Description
+                </p>
                 <div id="body-text" tal:content="structure context/getBodyText"/>
-                <div tal:condition="context/getEarlyBirdDate">
+                <div id="signupsheet_date" i18n:domain="plone">
+                    <tal:event tal:content="string:Here the translation domain it's plone: we use as is the plone code for events, except for the label"
+                               tal:condition="nothing"/>
+                    <span class="label"
+                          i18n:domain="collective.signupsheet"
+                          i18n:translate="event_view_when">When</span>
+                    <metal:event metal:use-macro="here/signupsheet_event_macro/macros/ss_event_view_macro" />
+                </div>
+                <div id="signupsheet_early_bird"
+                     tal:condition="context/getEarlyBirdDate">
                     <span class="label" i18n:translate="Early bird until">Early bird until</span>:
                     <span tal:content="python: plone_view.toLocalizedTime(context.getEarlyBirdDate())" />
                 </div>
@@ -88,7 +105,8 @@
                     <span class="label" i18n:translate="Registration deadline">Registration deadline</span>:
                     <span tal:content="python: plone_view.toLocalizedTime(context.getRegistrationDeadline())" />
                 </div>
-                <div tal:define="wf_state python: context.portal_workflow.getInfoFor(context, 'review_state')"
+                <div id="signupsheet_subscribe"
+                  tal:define="wf_state python: context.portal_workflow.getInfoFor(context, 'review_state')"
                   tal:condition="python: not view.getSignupStatus() =='full'">
                 <div>
 
@@ -100,14 +118,12 @@
                   <div id="registration-open"
                        tal:condition="python: wf_state in ('earlybird', 'open')" >
 
-                      <p tal:condition="context/getDisplay_size_left"
+                      <p class="seatsleft"
+                        tal:condition="context/getDisplay_size_left"
                          i18n:translate="seats_left_message">
                          <span tal:replace="view/getSeatsLeft"
                                i18n:name="seats">21</span> seats left.
                       </p>
-                      <!--a class="standalone"
-                         tal:attributes="href string:${context/absolute_url}/signup"
-                         tal:content="view/getSignupMessage"/-->
                          <form method="post" action="#"
                                tal:attributes="action context/absolute_url">
                               <input type="submit" value="" 
@@ -125,20 +141,14 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
       </tal:base_view>
       <tal:subscription-form tal:condition="python: 'formsubscribe' in request or 'form_submit' in request">
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-        <h1 tal:content="context/Title" class="documentFirstHeading">
-          Title or id
-        </h1>
-
-        <p class="documentDescription"
-           tal:content="here/Description"
-           tal:condition="here/Description">
-            Description
-        </p>
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
-            
+            <h1 class="documentFirstHeading">
+               <tal:label i18n:translate="subscription_form_title">
+                   Subscribing
+               </tal:label>
+               <tal:title tal:replace="context/Title"/>
+            </h1>
             <tal:if tal:condition="here/getFormPrologue | nothing">
               <metal:field use-macro="python:context.widget('formPrologue', mode='view')">
                   Body text
