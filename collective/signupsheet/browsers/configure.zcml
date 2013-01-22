@@ -65,4 +65,9 @@
                    name="manager_mailer_subject" />
   </browser:pages>
 
+ <browser:resourceDirectory
+     name="collective.signupsheet.css"
+     directory="css"
+     />
+
 </configure>
