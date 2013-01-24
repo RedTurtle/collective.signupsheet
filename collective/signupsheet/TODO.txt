@@ -1,5 +1,6 @@
-HIGH PRIORITY)
-1) non so ancora come riprodurre, ma dopo un paio di avanti/indietro, non riesco più ad aggiungere registrant dal form (Disallowed subobject type)
-2) Aggiungere il ruolo di Site Administrator ai workflow
-3) Testare il giro completo con tutti gli elementi
+TODO LIST
+ * In the old Products.SignupSheet the user status is send by mail. Right now
+   this functionality is missing
 
+ * Also in Products.SignupSheet in the registrant view the status is not
+   translated.
