@@ -79,9 +79,9 @@ class InitializeSignupSheetForm(object):
             self.form._pfFixup(obj)
 
             # create a status field
-            self.form.invokeFactory('FormSelectionField', 'status')
-            obj = self.form['status']
-            obj.fgField.__name__ = 'status'
+            self.form.invokeFactory('FormSelectionField', 'ssfg_status')
+            obj = self.form['ssfg_status']
+            obj.fgField.__name__ = 'ssfg_status'
             obj.setTitle(zope.i18n.translate(
                         _(u'signupsheet_statusfield_title', u'Status'),
                         context=self.form.REQUEST))
