@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from AccessControl import ModuleSecurityInfo
 from Products.Archetypes import atapi
 from Products.CMFCore import utils
 
 from zope.i18nmessageid import MessageFactory
 signupsheetMessageFactory = MessageFactory('collective.signupsheet')
+ModuleSecurityInfo('collective.signupsheet').declarePublic('signupsheetMessageFactory')
 
 from collective.signupsheet import config
 
