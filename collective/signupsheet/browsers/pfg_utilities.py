@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+from AccessControl import Unauthorized
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
+from Products.Archetypes.utils import shasattr
+from zope.component import getMultiAdapter
 
 
 class ChecksManagerMailerSendAction(BrowserView):
@@ -21,6 +24,10 @@ class ChecksManagerMailerSendAction(BrowserView):
 
 
 class PfgFormUtilities(BrowserView):
+    """
+    This class is a set of pfg utilities used to get values, default values,
+    overrides and so on.
+    """
 
     perm_view_reg_info = "SignupSheet: View Registration Info"
 
@@ -43,6 +50,9 @@ class PfgFormUtilities(BrowserView):
         return ('', '')
 
     def default_name_value(self):
+        """
+        generate the default name for the form field
+        """
         mtool = getToolByName(self, 'portal_membership')
         if mtool.isAnonymousUser():
             return ''
@@ -50,6 +60,9 @@ class PfgFormUtilities(BrowserView):
         return self._get_first_last_member_name(member)[0]
 
     def default_surname_value(self):
+        """
+        generate the default surnamename for the form field
+        """
         mtool = getToolByName(self, 'portal_membership')
         if mtool.isAnonymousUser():
             return ''
@@ -57,5 +70,39 @@ class PfgFormUtilities(BrowserView):
         return self._get_first_last_member_name(member)[1]
 
     def default_email_value(self):
+        """
+        get the default email for the form field
+        """
         member = getToolByName(self, 'portal_membership').getAuthenticatedMember()
         return member.getProperty('email') or ''
+
+
+class PfgPublicFormUtilities(BrowserView):
+
+    def set_registrant_title(self):
+        """
+        Create title for registrant object. Try to take name and then surname;
+        if we are missing both of them, as last try to get email
+        """
+        authenticator = getMultiAdapter(
+                                    (self.context, self.request),
+                                    name=u"authenticator"
+                                   )
+        if not authenticator.verify():
+            raise Unauthorized("This method could be called only by the form")
+
+        title = self.context.title
+        if title:
+            return title
+        else:
+            fullname = []
+            if shasattr(self.context, 'name'):
+                fullname.append(self.context.getField('name').get(self.context))
+            if shasattr(self.context, 'surname'):
+                fullname.append(self.context.getField('surname').get(self.context))
+            #If we don't have both name and surname (maybe those field has been
+            # deleted) we perform a last try with email. Then will use object id
+            #as default title
+            if not fullname and shasattr(self.context, 'email'):
+                fullname.append(self.context.getField('email').get(self.context))
+            return ' '.join(fullname)

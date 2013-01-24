@@ -18,8 +18,9 @@ class SignupSheetBaseView(BrowserView):
         status = ''
         event_size = self.context.getEventsize()
         waitlist_size = self.context.getWaitlist_size()
-        # BBB non avremo degli oggetti registrant all'interno. Vedere come gestire con d2c
-        current_size = len(self.context.contentIds(filter={'portal_type': 'Registrant'}))
+        utility = getUtility(IGetRegistrants)
+        registrant_folder = utility.get_registrants_folder(self.context)
+        current_size = len(registrant_folder.contentIds(filter={'portal_type': 'registrant'}))
         max_size = event_size + waitlist_size
 
         if current_size + nextstatus <= event_size:
@@ -44,7 +45,7 @@ class SignupSheetBaseView(BrowserView):
         return msg
 
     def getSeatsLeft(self):
-        registrants = getUtility(IGetRegistrants).get_registrants_brains
+        registrants = getUtility(IGetRegistrants).get_registrants_brains_anon
         registrants_number = len((registrants(self.context)))
         return self.context.getEventsize() +\
                self.context.getWaitlist_size() -\

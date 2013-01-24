@@ -49,9 +49,17 @@
 
     <browser:page attribute="default_email_value"
                   name="default_email_value" />
-
   </browser:pages>
 
+  <browser:pages
+    for="*"
+    class=".pfg_utilities.PfgPublicFormUtilities"
+    permission="zope.Public">
+
+    <browser:page attribute="set_registrant_title"
+                  name="set_registrant_title" />
+
+  </browser:pages>
 
   <browser:pages
     for="*"

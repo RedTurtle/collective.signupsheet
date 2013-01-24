@@ -69,7 +69,8 @@ class RegistrantDataExport(BrowserView, Common):
         setheader('Content-Length', len(result))
         setheader('Content-Type',
             'text/x-comma-separated-values; charset=%s' % coding)
-        setheader('Content-Disposition', 'filename=%s.csv' % self.context.getId())
+        setheader('Content-Disposition',
+                  'attachment; filename=%s.csv' % self.context.getId())
         return result
 
     def generateCSV(self, objs=None, fields=None, delimiter='semicolon',
