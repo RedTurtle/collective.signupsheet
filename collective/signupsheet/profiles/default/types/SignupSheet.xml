@@ -84,12 +84,12 @@
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/@@view_registrants"
     visible="True">
-  <permission value="Modify portal content"/>
+  <permission value="SignupSheet: View Registrants"/>
  </action>
   <action i18n:attributes="title" title="Export Registrants" action_id="ss_export" category="object"
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_export"
     visible="True">
-  <permission value="Modify portal content"/>
+  <permission value="SignupSheet: View Registrants"/>
  </action>
 </object>
