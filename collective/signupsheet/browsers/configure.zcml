@@ -5,6 +5,14 @@
     i18n_domain="collective.signupsheet">
 
   <browser:page
+    for="collective.signupsheet.interfaces.ISignupSheet"
+    class="Products.PloneFormGen.browser.quickedit.QuickEditView"
+    name="quickedit"
+    template="quickedit.pt"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
     for="..interfaces.ISignupSheet"
     name="susbase_utiltities_view"
     class=".signupsheet_baseview.SignupSheetBaseView"
