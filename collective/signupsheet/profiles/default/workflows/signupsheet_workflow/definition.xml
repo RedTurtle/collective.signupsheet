@@ -2,7 +2,7 @@
 <dc-workflow workflow_id="signupsheet_workflow"
              title="signupsheet_workflow" description=""
              state_variable="review_state"
-             initial_state="closed"
+             initial_state="open"
              manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Add portal content</permission>
