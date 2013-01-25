@@ -109,6 +109,7 @@ class RegistrantDataExport(BrowserView, Common):
                 row = []
                 #code to append creationDate since it is not part of the fields list
                 row.append(obj.CreationDate())
+                row.append(obj.getId())
                 for fieldname in fields:
                     if fieldname.find('.') != -1:
                         fieldname, key = fieldname.split('.')
@@ -119,6 +120,7 @@ class RegistrantDataExport(BrowserView, Common):
                     except KeyError:
                         row.append('')
                 rows.append(row)
+            rows[0].insert(0, 'id')
             rows[0].insert(0, 'date')
             # convert lists to csv string
             ramdisk = StringIO()
