@@ -4,33 +4,14 @@ from zope.component import adapts
 from zope.interface import implements
 
 from collective.signupsheet import signupsheetMessageFactory as _
+from collective.signupsheet.config import (INITIAL_MAIL,
+                                           INITIAL_MAIL_MESSAGE,
+                                           MANAGER_MAIL,
+                                           MANAGER_MAIL_MESSAGE)
 from collective.signupsheet.interfaces import (ISignupSheet,
                                                ISignupSheetInitializer)
 
 import zope.i18n
-
-
-INITIAL_MAIL = u"""<html xmlns='http://www.w3.org/1999/xhtml'>\r\n\r\n
-<head><title></title></head>\r\n\r\n<body>\r\n<p tal:content='here/getBody_pre |nothing' />
-\r\n %s \r\n<dl>\r\n<tal:block repeat='field options/wrappedFields | nothing'>\r\n
-<dt tal:content='field/fgField/widget/label' />\r\n
-<dd tal:content='structure python:field.htmlValue(request)' />\r\n
-</tal:block>\r\n</dl>\r\n<p tal:content='here/getBody_post | nothing' />\r\n
-<pre tal:content='here/getBody_footer | nothing' />\r\n</body>\r\n</html>
-"""
-INITIAL_MAIL_MESSAGE = u"""
-Thank you for registering to <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>
-"""
-
-MANAGER_MAIL = u"""
-<html xmlns='http://www.w3.org/1999/xhtml'>\r\n\r\n<head><title></title></head>
-\r\n\r\n<body>\r\n %s \n
-\r\n</body>\r\n</html>
-"""
-MANAGER_MAIL_MESSAGE = """
-New registrant registered for <tal:s tal:content=\"here/Title\" />
-\nPlease check current registrans: <tal:s tal:content=\"string:${here/absolute_url}/view_registrants\" />
-"""
 
 
 class InitializeSignupSheetForm(object):
@@ -124,7 +105,7 @@ class InitializeSignupSheetForm(object):
             obj.setEntryType('registrant')
             obj.setTitleField('email')
             obj.setNiceIds(True)
-            obj.setDynamicTitle("string:${here/surname} ${here/name}")
+            obj.setDynamicTitle("here/@@set_registrant_title")
             self.form._pfFixup(obj)
 
             #Create first mailer; notification after registration
@@ -186,5 +167,7 @@ class InitializeSignupSheetForm(object):
                                                         context=self.form.REQUEST))
             self.form._pfFixup(obj)
 
-            self.form.actionAdapter = ('registrants', 'mailer')
+            self.form.actionAdapter = ('registrants',
+                                       'manager_notification_mailer',
+                                       'user_notification_mailer',)
             self.form.thanksPage = 'thank-you'
