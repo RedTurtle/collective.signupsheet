@@ -8,7 +8,7 @@ tests_require = ['plone.app.testing', ]
 setup(name='collective.signupsheet',
       version=version,
       description="Signup module based on PFG and uwosh.pfg.d2c",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Development Status :: 4 - Beta"
