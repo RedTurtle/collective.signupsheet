@@ -1,0 +1,91 @@
+Part of this doctest has been created taking the one in uwosh.pfg.d2c as example
+First, we must perform some setup. We use the testbrowser that is shipped
+with Five, as this provides proper Zope 2 integration. Most of the 
+documentation, though, is in the underlying zope.testbrower package.
+
+    >>> from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+    >>> browser.handleErrors = False
+    >>> portal_url = self.portal.absolute_url()
+
+The following is useful when writing and debugging testbrowser tests. It lets
+us see all error messages in the error_log.
+
+    >>> self.portal.error_log._ignored_exceptions = ()
+
+With that in place, we can go to the portal front page and log in. We will
+do this using the default user from PloneTestCase:
+
+    >>> from Products.PloneTestCase.setup import portal_owner, default_password
+    >>> browser.open(portal_url + '/login')
+
+We have the login portlet, so let's use that.
+
+    >>> browser.getControl(name='__ac_name').value = portal_owner
+    >>> browser.getControl(name='__ac_password').value = default_password
+    >>> browser.getControl(name='submit').click()
+
+And we ensure that we get the friendly logged-in message:
+
+    >>> "You are now logged in" in browser.contents
+    True
+
+Add the signupsheet, setting a title and values for event size and waiting list
+
+    >>> browser.open(self.portal.absolute_url())
+    >>> browser.getLink('Signup Sheet').click()
+    >>> browser.getControl(name="title").value = "ss-form"
+    >>> browser.getControl(name="eventsize").value = "2"
+    >>> browser.getControl(name="waitlist_size").value = "2"  
+    >>> browser.getControl(name="text").value = "This is a nice test"
+    >>> browser.getControl("Save").click()
+    >>> form = self.portal['ss-form']
+    >>> browser.open(portal_url + '/ss-form')
+
+Check we are on the form and then open subscription
+    >>> "Closed for submission" in browser.contents
+    True
+    >>> browser.getLink("Open Signup Sheet").click()
+
+Now check we have the subscription button in the form and we can try to add
+registrants
+    >>> "Sign up!" in browser.contents
+    True
+    >>> browser.getControl(name='formsubscribe').click()
+    >>> "Sign up" in browser.contents
+    True
+    >>> browser.getControl(name='name').value = "John"
+    >>> browser.getControl(name='surname').value = "Dillinger"
+    >>> browser.getControl(name='email').value = "john.dillinger@mailprovider.com"
+    >>> browser.getControl(name='form_submit').click()
+
+Right now we can move to the real protagonist of this test: the subscriber view,
+but first of all, take the registrant
+    >>> reg = form.registrants['john-dillinger']
+    >>> browser.open(portal_url + '/ss-form/@@view_registrants')
+    >>> "View Registrants" in browser.contents
+    True
+    >>> "John" in browser.contents
+    True
+    >>> "unconfirmed" in browser.contents
+    True
+    >>> self.portal.portal_workflow.getInfoFor(reg, 'review_state')
+    'unconfirmed'
+
+Let's try to confirm registration
+    >>> browser.getLink(url='confirm_registrant?id').click()
+    >>> self.portal.portal_workflow.getInfoFor(reg, 'review_state')
+    'confirmed'
+
+And now 'confirmed' is in the page
+    >>> "confirmed" in browser.contents
+    True
+
+Finaly, just to check it, try the edit link and check if we are in the edit form
+    >>> browser.getLink(url='dillinger/edit').click()
+    >>> "Default" in browser.contents
+    True
+    >>> "Categorization" in browser.contents
+    True
+    >>> browser.getControl(name='name').value == 'John'
+    True
