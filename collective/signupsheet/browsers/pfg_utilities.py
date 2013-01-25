@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from AccessControl import Unauthorized
+from Acquisition import aq_inner, aq_parent
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Archetypes.utils import shasattr
@@ -81,16 +82,44 @@ class PfgPublicFormUtilities(BrowserView):
 
     def set_registrant_title(self):
         """
-        Create title for registrant object. Try to take name and then surname;
-        if we are missing both of them, as last try to get email
+        This method create title for registrant object.
+        Try to take name and then surname; if we are missing both of them, as
+        last try to get email.
+
+        BBB This method need some explanation!
+        This view is needed 'cause we want a callable to put in the 'Dynamic title'
+        field in FormSaveData2ContentAdapter.
+
+        Following the rules in the registrant workflow from original signupsheet,
+        object's owner can't do anything on the registrant object out of the 'new'
+        state.
+
+        When we create a new registrant we need to move it from a new state, and
+        then a reindex try to update registrant data in the catalog.
+
+        So we need to have this view Public; but in this way we could call it by
+        url in the browser and this is bad.
+
+        Trying to secure it I added a check over the authenticator field in the
+        form.
+
+        But uwosh.pfg.d2d create registrant using a newSecurityManager, so when
+        anonymous subscribe the form, the authenticator token in the form is
+        generated considering anonymous user. Due to the new security managers
+        the verify method work on a different user, so the verify method return
+        false. So in the method I try to validate the authenticator, and if it
+        fails, I try to check if the current user (the one used by uwosh) has
+        permission to modify the adapter
         """
         authenticator = getMultiAdapter(
                                     (self.context, self.request),
                                     name=u"authenticator"
                                    )
         if not authenticator.verify():
-            raise Unauthorized("This method could be called only by the form")
-
+            member = self.context.portal_membership.getAuthenticatedMember()
+            adapter = aq_parent(aq_inner(self.context))
+            if not member.has_permission('Modify portal content', adapter):
+                raise Unauthorized("This method could be called only by the form")
         title = self.context.title
         if title:
             return title
