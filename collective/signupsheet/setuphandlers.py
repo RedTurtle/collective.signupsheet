@@ -98,6 +98,13 @@ def add_registrant_portal_type(portal):
     portal_types.manage_renameObject(id, new_id)
     new_type = portal_types[new_id]
     new_type.title = name
+
+    #We need to add registrant also in portal_factory
+    factory = getToolByName(portal, 'portal_factory')
+    factoryTypes = factory.getFactoryTypes().keys()
+    factoryTypes.extend(['registrant'])
+    factory.manage_setPortalFactoryTypes(listOfTypeIds=factoryTypes)
+
     new_type.icon_expr = "string:${portal_url}/registrant.gif"
     msg = u'Add registrant to D2C adapter'
     logger.info(msg)
