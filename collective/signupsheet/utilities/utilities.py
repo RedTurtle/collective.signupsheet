@@ -19,6 +19,21 @@ class GetRegistrant(object):
             return brains
         return []
 
+    def get_registrants_brains_anon(self, form):
+        """
+        This method it's used just to count number of registrants, so we want
+        ask without security checks. Maybe we can use only this one?
+        """
+        catalog = getToolByName(form, 'portal_catalog')
+        registrants_folder = self.get_registrants_folder(form)
+        if registrants_folder:
+            path = '/'.join(registrants_folder.getPhysicalPath())
+            brains = catalog.unrestrictedSearchResults(
+                                            path={'query': path, 'depth': 1}
+                                           )
+            return brains
+        return []
+
     def get_registrants_folder(self, form):
         adapters = form.actionAdapter
         registrants_folder = None

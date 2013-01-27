@@ -10,6 +10,9 @@
 ##
 FORM_ERROR_MARKER = '_pfg_form_error'
 
+
+
+
 try:
     from AccessControl import Unauthorized
 except:
@@ -18,23 +21,37 @@ except:
     Unauthorized = Exception
 
 try:
-    from Products.Archetypes import PloneMessageFactory as _
+    from Products.Archetypes import PloneMessageFactory as ATmf
     from Products.Archetypes.utils import addStatusMessage
     P3StyleErrors = True
 except (ImportError, Unauthorized):
     P3StyleErrors = False
 
+from collective.signupsheet import signupsheetMessageFactory as CSSmf
+
 request = context.REQUEST
 
+
 errors = state.getErrors()
+
+#initial validation. If no seats, fail and exit. It's ok do that before form
+# validation: if no seats available, it's not important know if you are submitting
+# a correct form
+no_seat_left = context.no_seat_left()
+if no_seat_left:
+    message = CSSmf(u"Can't subscribe. No more free slots")
+    addStatusMessage(request, message, type='error')
+    return state.set(status='failure', errors=errors)
+
 errors = context.fgvalidate(REQUEST=request, errors=errors, data=1, metadata=0)
+
 
 if errors:
     if P3StyleErrors:
         if FORM_ERROR_MARKER in errors:
             message = errors.pop(FORM_ERROR_MARKER)
         else:
-            message = _(u'Please correct the indicated errors.')
+            message = ATmf(u'Please correct the indicated errors.')
         addStatusMessage(request, message, type='error')
         return state.set(status='failure', errors=errors)
     else:
