@@ -15,6 +15,7 @@ from Products.PloneFormGen.content.form import (FormFolder,
 from Products.ATContentTypes import ATCTMessageFactory as _E
 
 from zope.interface import implements
+from zope.component import getMultiAdapter
 
 from collective.signupsheet import signupsheetMessageFactory as _
 from collective.signupsheet.config import PROJECTNAME, logger
@@ -22,12 +23,11 @@ from collective.signupsheet.interfaces import (ISignupSheet,
                                                ISignupSheetInitializer)
 
 
-# BBB Permessi per la lettura dei dati??
 SignupSheetSchema = FormFolderSchema.copy() + Schema((
     IntegerField('eventsize',
         required=1,
         default=0,
-        #read_permission="SignupSheet: View Registration Info",
+        read_permission="SignupSheet: View Registration Info",
         validators=('isInt',),
         widget=StringWidget(
             visible={'edit': 'visible', 'view': 'invisible'},
@@ -37,11 +37,11 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
             description=_('fieldhelp_eventsize',
                           default=u"Set to 0 for unlimited registration",)
              )
-        ),
+       ),
     IntegerField('waitlist_size',
         required=1,
         default=0,
-        #read_permission="SignupSheet: View Registration Info",
+        read_permission="SignupSheet: View Registration Info",
         validators=('isInt',),
         widget=StringWidget(
             visible={'edit': 'visible', 'view': 'invisible'},
@@ -62,11 +62,10 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
             )
         ),
     DateTimeField('startDate',
-        required=True,
+        required=False,
         searchable=False,
         accessor='start',
         write_permission=ModifyPortalContent,
-        default_method=DateTime,
         languageIndependent=True,
         widget=CalendarWidget(
             description='',
@@ -74,11 +73,10 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
             )
         ),
     DateTimeField('endDate',
-        required=True,
+        required=False,
         searchable=False,
         accessor='end',
         write_permission=ModifyPortalContent,
-        default_method=DateTime,
         languageIndependent=True,
         widget=CalendarWidget(
             description='',
@@ -88,7 +86,7 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
     DateTimeField('earlyBirdDate',
         required=0,
         default=None,
-        #read_permission="SignupSheet: View Thank You",
+        read_permission="View",
         widget=CalendarWidget(
             label=_('field_early_bird_phase', default=u"Early bird phase until"),
             description=_("fieldhelp_early_bird_phase", default=u""),
@@ -99,7 +97,7 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
     DateTimeField('registrationDeadline',
         required=0,
         default=None,
-        #read_permission="SignupSheet: View Thank You",
+        read_permission="View",
         widget=CalendarWidget(
             label=_('field_registration_deadline',
                     default=u'Registration deadline'),
@@ -154,5 +152,17 @@ class SignupSheet(FormFolder):
             ISignupSheetInitializer(self).form_initializer()
         else:
             logger.warning("Anonymous user: not allowd to create fields")
+
+    def no_seat_left(self):
+        """
+        use this method to provide a some like a validation when we have two user
+        that are both trying to subscribe the form
+        """
+        base_view = getMultiAdapter((self, self.REQUEST),
+                                     name='susbase_utiltities_view')
+        left = base_view.getSeatsLeft()
+        if self.getEventsize() and left <= 0:
+            return True
+        return False
 
 registerATCT(SignupSheet, PROJECTNAME)
