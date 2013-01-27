@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from Products.CMFCore.utils import getToolByName
 
 from zope.component import adapts
 from zope.interface import implements
@@ -95,10 +96,16 @@ class InitializeSignupSheetForm(object):
             obj.setFgStringValidator('isEmail')
             self.form._pfFixup(obj)
 
-            #d2c adapter to save registrant under the form
-            self.form.invokeFactory('FormSaveData2ContentAdapter',
-                                    'registrants')
-            obj = self.form['registrants']
+            #self.form.invokeFactory('FormSaveData2ContentAdapter',
+            #                        'registrants')
+            #according to FormSaveData2ContentAdapter security seems that only
+            #manager can create this kind of adapter
+            pt = getToolByName(self.form, 'portal_types')
+            type_info = pt.getTypeInfo('FormSaveData2ContentAdapter')
+            obj = type_info._constructInstance(self.form, 'registrants')
+            # CMFCore compatibility
+            if hasattr(type_info, '_finishConstruction'):
+                type_info._finishConstruction(obj)
             obj.setTitle(zope.i18n.translate(
                          _(u'pfg_registrants_title', u'Registrants'),
                          context=self.form.REQUEST))
@@ -109,7 +116,8 @@ class InitializeSignupSheetForm(object):
             self.form._pfFixup(obj)
 
             #Create first mailer; notification after registration
-            self.form.invokeFactory('FormMailerAdapter', 'user_notification_mailer')
+            self.form.invokeFactory('FormMailerAdapter',
+                                    'user_notification_mailer')
             mailer = self.form['user_notification_mailer']
             mailer.setIncludeEmpties(False)
             mailer.setTitle(zope.i18n.translate(
