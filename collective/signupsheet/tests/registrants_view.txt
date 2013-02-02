@@ -42,11 +42,6 @@ Add the signupsheet, setting a title and values for event size and waiting list
     >>> form = self.portal['ss-form']
     >>> browser.open(portal_url + '/ss-form')
 
-Check we are on the form and then open subscription
-    >>> "Closed for submission" in browser.contents
-    True
-    >>> browser.getLink("Open Signup Sheet").click()
-
 Now check we have the subscription button in the form and we can try to add
 registrants
     >>> "Sign up!" in browser.contents

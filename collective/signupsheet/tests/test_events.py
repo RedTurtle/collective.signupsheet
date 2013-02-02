@@ -29,9 +29,7 @@ class TestEvents(FunctionalTestCase):
         """
         state = self.pwf.getInfoFor(self.registrant, 'review_state')
         self.assertTrue(state == 'new')
-        self.assertTrue(self.registrant.ssfg_status == '')
         notify(FormSaveData2ContentEntryFinalizedEvent(self.registrant,
                                                        self.form))
         state = self.pwf.getInfoFor(self.registrant, 'review_state')
         self.assertTrue(state == 'unconfirmed')
-        self.assertTrue(self.registrant.ssfg_status == 'registered')

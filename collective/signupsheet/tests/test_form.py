@@ -46,19 +46,6 @@ class TestForm(FunctionalTestCase):
         self.assertNotEqual('here/@@default_surname_value',
                             surname.getFgTDefault())
 
-    def test_ssfg_status_field(self):
-        self.failUnless(hasattr(self.form, 'ssfg_status'))
-        status = getattr(self.form, 'ssfg_status')
-        self.assertEqual(u'Status',
-                            status.Title())
-        self.assertEqual(('registered|Registered',
-                             'waitinglist|Waiting list'),
-                            status.getFgVocabulary())
-        self.assertEqual('radio',
-                            status.getFgFormat())
-        self.assertEqual('here/@@check_state_field_is_visible',
-                            status.fgTEnabled.text)
-
     def test_email_field(self):
         self.failUnless(hasattr(self.form, 'email'))
         email = getattr(self.form, 'email')

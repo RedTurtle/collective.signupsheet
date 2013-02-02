@@ -105,6 +105,7 @@ class RegistrantDataExport(BrowserView, Common):
             result = ''
         else:
             rows = [fields]
+            pwf = self.context.portal_workflow
             for obj in objs:
                 row = []
                 #code to append creationDate since it is not part of the fields list
@@ -119,9 +120,11 @@ class RegistrantDataExport(BrowserView, Common):
                         row.append(value)
                     except KeyError:
                         row.append('')
+                row.append(pwf.getInfoFor(obj, 'review_state'))
                 rows.append(row)
             rows[0].insert(0, 'id')
             rows[0].insert(0, 'date')
+            rows[0].append('review_state')
             # convert lists to csv string
             ramdisk = StringIO()
             writer = csv.writer(ramdisk, delimiter=delimiter)
@@ -143,6 +146,13 @@ class RegistrantDataExport(BrowserView, Common):
 
 
 class ViewRegistrants(BrowserView, Common):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+
+class ImportRegistrants(BrowserView):
 
     def __init__(self, context, request):
         self.context = context

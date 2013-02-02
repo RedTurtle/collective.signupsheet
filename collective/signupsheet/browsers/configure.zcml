@@ -30,6 +30,14 @@
 
   <browser:page
     for="..interfaces.ISignupSheet"
+    name="import_registrants"
+    class=".registrants_data.ImportRegistrants"
+    template="import_registrants.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="..interfaces.ISignupSheet"
     name="registrants_data_export"
     class=".registrants_data.RegistrantDataExport"
     permission="zope2.View"

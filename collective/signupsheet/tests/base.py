@@ -49,8 +49,9 @@ class FunctionalTestCase(PloneTestCase.FunctionalTestCase):
     code in here.
     """
 
-    def afterSetUp(self):
-        roles = ('Member', 'Contributor')
-        self.portal.portal_membership.addMember('contributor',
-                                                'secret',
-                                                roles, [])
+
+class FunctionalDocTestCase(PloneTestCase.FunctionalTestCase):
+    """We use this class for functional integration tests that use
+    doctest syntax. Again, we can put basic common utility or setup
+    code in here.
+    """

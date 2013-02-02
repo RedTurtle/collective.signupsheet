@@ -1,6 +1,23 @@
 TODO LIST
- * In the old Products.SignupSheet the user status is send by mail. Right now
-   this functionality is missing
 
- * Also in Products.SignupSheet in the registrant view the status is not
-   translated.
+ * Facciamo un bottone da qualche parte che vedono solo manager e contributor?
+
+
+
+MAILER solo da configurazione senza usarlo (in cui aggiungere lo stato da mandare al cliente)
+s
+
+
+
+Un SS lo può aggiungere che è manager e chi è contributor.
+
+Lo può modificare il manager, l'owner e chi è editor [base plone]
+
+Quando un ss è aperto, possono creare contenuti:
+ * gli anonimi
+ * manager owner anon
+
+ Quando un ss è chiuso possono creare contenuti:
+ * contributor e manager
+
+IMPORT delle informazioni
