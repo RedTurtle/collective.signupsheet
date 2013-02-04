@@ -1,23 +1,5 @@
 TODO LIST
 
- * Facciamo un bottone da qualche parte che vedono solo manager e contributor?
-
-
-
-MAILER solo da configurazione senza usarlo (in cui aggiungere lo stato da mandare al cliente)
-s
-
-
-
-Un SS lo può aggiungere che è manager e chi è contributor.
-
-Lo può modificare il manager, l'owner e chi è editor [base plone]
-
-Quando un ss è aperto, possono creare contenuti:
- * gli anonimi
- * manager owner anon
-
- Quando un ss è chiuso possono creare contenuti:
- * contributor e manager
-
-IMPORT delle informazioni
+1) Verify if it's possible remove the event that disable the first mailer
+2) Make some "import registrant" stuff
+3) It could be nice to have a mailer that notify user 

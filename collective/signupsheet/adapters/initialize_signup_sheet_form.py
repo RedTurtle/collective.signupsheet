@@ -73,8 +73,6 @@ class InitializeSignupSheetForm(object):
             obj.setFgStringValidator('isEmail')
             self.form._pfFixup(obj)
 
-            #self.form.invokeFactory('FormSaveData2ContentAdapter',
-            #                        'registrants')
             #according to FormSaveData2ContentAdapter security seems that only
             #manager can create this kind of adapter
             pt = getToolByName(self.form, 'portal_types')
@@ -89,7 +87,7 @@ class InitializeSignupSheetForm(object):
             obj.setEntryType('registrant')
             obj.setTitleField('email')
             obj.setNiceIds(True)
-            obj.setDynamicTitle("here/@@set_registrant_title")
+            obj.setDynamicTitle("here/@@get_registrant_title")
             self.form._pfFixup(obj)
 
             #Create first mailer; notification after registration
@@ -151,8 +149,8 @@ class InitializeSignupSheetForm(object):
                                                         default=u"Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"),
                                                         context=self.form.REQUEST))
             self.form._pfFixup(obj)
-
-            self.form.actionAdapter = ('registrants',
-                                       'manager_notification_mailer',
-                                       'user_notification_mailer',)
+            #self.form.actionAdapter = ('registrants',
+            #                              'manager_notification_mailer')
+            self.form.addActionAdapter('registrants')
+            self.form.addActionAdapter('manager_notification_mailer')
             self.form.thanksPage = 'thank-you'

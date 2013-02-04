@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-02-02 13:11+0000\n"
+"POT-Creation-Date: 2013-02-04 10:50+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -25,11 +25,15 @@ msgstr "Collective Signupsheet"
 msgid "Confirm"
 msgstr "Conferma"
 
+#: ./browsers/registrants_data.py:193
+msgid "Created %s new registrant"
+msgstr ""
+
 #: ./browsers/registrants_data_export.pt:55
 msgid "Download"
 msgstr "Download"
 
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:101
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:102
 msgid "Early bird until"
 msgstr "Iscrizioni scontate fino al"
 
@@ -41,10 +45,23 @@ msgstr "Edit"
 msgid "Export Registrants"
 msgstr ""
 
+#: ./browsers/import_registrants.pt:27
+msgid "Import"
+msgstr ""
+
+#: ./profiles/default/types/SignupSheet.xml
+msgid "Import Registrants"
+msgstr ""
+
 msgid "Installs the collective.signupsheet package"
 msgstr "Installazione di collective.signupsheet"
 
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:105
+
+#: ./browsers/registrants_data.py:178
+msgid "No file loaded"
+msgstr ""
+
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:106
 msgid "Registration deadline"
 msgstr "Scadenza dell'scrizione"
 
@@ -52,7 +69,7 @@ msgstr "Scadenza dell'scrizione"
 msgid "Signup Sheet"
 msgstr "Signup Sheet"
 
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:115
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:116
 msgid "The registration is closed"
 msgstr "L'iscrizione è chiusa"
 
@@ -75,7 +92,7 @@ msgid "confirmed"
 msgstr "confermati"
 
 #. Default: "When"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:94
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:95
 msgid "event_view_when"
 msgstr "Quando"
 
@@ -156,6 +173,36 @@ msgstr "Stato"
 msgid "help_body_text"
 msgstr "Testo per la pagina principale dell'iscrizione."
 
+#. Default: "Select a csv from which import registrants"
+#: ./browsers/import_registrants.pt:12
+msgid "help_import_registrants"
+msgstr ""
+
+#. Default: "Use semicolon as separator"
+#: ./browsers/import_registrants.pt:15
+msgid "import_first_rule"
+msgstr ""
+
+#. Default: "Import Registrants"
+#: ./browsers/import_registrants.pt:11
+msgid "import_registrants"
+msgstr ""
+
+#. Default: "The uploaded csv file must observe the following rules"
+#: ./browsers/import_registrants.pt:13
+msgid "import_rules"
+msgstr ""
+
+#. Default: "First line in csv have as header the name of all the fields in the form"
+#: ./browsers/import_registrants.pt:16
+msgid "import_second_rule"
+msgstr ""
+
+#. Default: "Empty for a missing value (e.g. ;;mail@provider.com)"
+#: ./browsers/import_registrants.pt:17
+msgid "import_third_rule"
+msgstr ""
+
 #. Default: "Body Text"
 #: ./contents/signupsheet.py:120
 msgid "label_body_text"
@@ -176,7 +223,7 @@ msgstr "La sua registrazione per ${title} è stata ricevuta"
 msgid "mailer_registration_subject_overrides_manager"
 msgstr "Notifica: nuova registrazione per ${title} ricevuta"
 
-#: ./adapters/initialize_signup_sheet_form.py:136
+#: ./adapters/initialize_signup_sheet_form.py:134
 msgid "manager_subscribtion_mail"
 msgstr ""
 "Nuova iscrizione per <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
@@ -188,32 +235,32 @@ msgid "no registrants"
 msgstr "Nessuna registrazione"
 
 #. Default: "Manager notification mailer"
-#: ./adapters/initialize_signup_sheet_form.py:123
+#: ./adapters/initialize_signup_sheet_form.py:121
 msgid "pfg_manager_notification_mailer"
 msgstr "Mailer per le notifiche ai manager del modulo"
 
 #. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
-#: ./adapters/initialize_signup_sheet_form.py:128
+#: ./adapters/initialize_signup_sheet_form.py:126
 msgid "pfg_manager_notification_mailer_description"
 msgstr "Questo mailer se opportunamente compilato manda notifiche di iscrizione ai manager del signup sheet"
 
 #. Default: "Registrants"
-#: ./adapters/initialize_signup_sheet_form.py:87
+#: ./adapters/initialize_signup_sheet_form.py:85
 msgid "pfg_registrants_title"
 msgstr "Iscritti"
 
 #. Default: "Thank You"
-#: ./adapters/initialize_signup_sheet_form.py:147
+#: ./adapters/initialize_signup_sheet_form.py:145
 msgid "pfg_thankyou_title"
 msgstr "Grazie!"
 
 #. Default: "User notification mailer "
-#: ./adapters/initialize_signup_sheet_form.py:101
+#: ./adapters/initialize_signup_sheet_form.py:99
 msgid "pfg_user_notification_mailer"
 msgstr "Mailer per le notifiche all'utente"
 
 #. Default: "E-Mails Form Input for subscribers"
-#: ./adapters/initialize_signup_sheet_form.py:105
+#: ./adapters/initialize_signup_sheet_form.py:103
 msgid "pfg_user_notification_mailer_description"
 msgstr "Questo mailer invia notifiche a chi sottoscrive il signup sheet"
 
@@ -221,10 +268,19 @@ msgstr "Questo mailer invia notifiche a chi sottoscrive il signup sheet"
 msgid "registrants"
 msgstr "Iscritti"
 
+#: ./events/finalize_registrant.py:62
+msgid "review_state"
+msgstr ""
+
 #. Default: "${seats} seats left."
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:125
 msgid "seats_left_message"
 msgstr "${seats} posti rimanenti."
+
+#. Default: "Select a csv file to import"
+#: ./browsers/import_registrants.pt:24
+msgid "select_registrnats_csv"
+msgstr ""
 
 #. Default: "Semicolon"
 #: ./browsers/registrants_data_export.pt:48
@@ -232,12 +288,12 @@ msgid "semicolon"
 msgstr "Punto e virgola"
 
 #. Default: "Sign up!"
-#: ./browsers/signupsheet_baseview.py:42
+#: ./browsers/signupsheet_baseview.py:43
 msgid "sign_up"
 msgstr "Iscriviti!"
 
 #. Default: "Signup for waiting list"
-#: ./browsers/signupsheet_baseview.py:44
+#: ./browsers/signupsheet_baseview.py:45
 msgid "sign_up_for_waitinglist"
 msgstr "Iscriviti in lista di attesa"
 
@@ -271,12 +327,14 @@ msgstr "Cognome"
 msgid "space"
 msgstr "Spazio"
 
-#: ./adapters/initialize_signup_sheet_form.py:112
+#: ./adapters/initialize_signup_sheet_form.py:110
 msgid "subscribtion_mail"
-msgstr "La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>"
+msgstr ""
+"La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\n"
+"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show>"
 
 #. Default: "Subscribing"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:147
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:156
 msgid "subscription_form_title"
 msgstr "Iscrizione per"
 
@@ -286,12 +344,12 @@ msgid "tabulator"
 msgstr "Tabulatore"
 
 #. Default: "Registration is full"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:136
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:137
 msgid "text_registration_full"
 msgstr "L'iscrizione è chiusa"
 
 #. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
-#: ./adapters/initialize_signup_sheet_form.py:150
+#: ./adapters/initialize_signup_sheet_form.py:148
 msgid "thanks_prologue"
 msgstr ""
 "La ringraziamo per la registrazione, verrà contattato a breve. <br/>\n"
@@ -299,12 +357,7 @@ msgstr ""
 
 #: ./browsers/view_registrants.pt:30
 msgid "unconfirmed"
-msgstr "non confermato"
-
-#. Default: "waiting_list_unconfirmed"
-#: ./browsers/view_registrants.pt:32
-msgid "waiting_list_unconfirmed"
-msgstr "in lista d'attesa"
+msgstr "da confermare"
 
 #. Default: "Export Registrants"
 #: ./browsers/registrants_data_export.pt:13
@@ -315,4 +368,9 @@ msgstr "Esporta i dati"
 #: ./browsers/view_registrants.pt:21
 msgid "view_registrants"
 msgstr "Vedi gli iscritti"
+
+#. Default: "waiting_list_unconfirmed"
+#: ./browsers/view_registrants.pt:32
+msgid "waiting_list_unconfirmed"
+msgstr "da confermare (in lista d'attesa)"
 

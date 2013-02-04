@@ -88,7 +88,8 @@
                     Description
                 </p>
                 <div id="body-text" tal:content="structure context/getBodyText"/>
-                <div id="signupsheet_date" i18n:domain="plone">
+                <div tal:condition="python: context.start() and context.end()"
+                     id="signupsheet_date" i18n:domain="plone">
                     <tal:event tal:content="string:Here the translation domain it's plone: we use as is the plone code for events, except for the label"
                                tal:condition="nothing"/>
                     <span class="label"
@@ -117,7 +118,21 @@
 
                   <div id="registration-open"
                        tal:condition="python: wf_state in ('earlybird', 'open')" >
-
+                      <p class="seatsleft"
+                        tal:condition="context/getDisplay_size_left"
+                         i18n:translate="seats_left_message">
+                         <span tal:replace="view/getSeatsLeft"
+                               i18n:name="seats">21</span> seats left.
+                      </p>
+                         <form method="post" action="#"
+                               tal:attributes="action context/absolute_url">
+                              <input type="submit" value="" 
+                                     tal:attributes="value view/getSignupMessage"
+                                     name="formsubscribe"/>
+                         </form>
+                  </div>
+                  <div id="registration-open"
+                       tal:condition="python: wf_state in ('closed') and view.check_add_registrants_permission()" >
                       <p class="seatsleft"
                         tal:condition="context/getDisplay_size_left"
                          i18n:translate="seats_left_message">

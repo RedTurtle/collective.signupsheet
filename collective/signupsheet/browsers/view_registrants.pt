@@ -9,7 +9,7 @@
     <div metal:fill-slot="main">
         <tal:main-macro metal:define-macro="main"
                 tal:define="getInfoFor  python: context.portal_workflow.getInfoFor;
-                      registrant_folder view/get_registrants_folder;
+                      registrant_folder view/get_registrants_folder_url;
                       registrants view/get_registrants;
                       member python:context.portal_membership.getAuthenticatedMember();
                       confirmed_registrants python: [r for r in registrants if getInfoFor(r, 'review_state') == 'confirmed'];
@@ -59,7 +59,7 @@
                     <span tal:content="python: context.toLocalizedTime(r.created(), True)" />
                 </td>
                 <td tal:define="state python: context.portal_workflow.getInfoFor(r, 'review_state')" >
-                    <span i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
+                    <span i18n:domain='plone' i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
                 </td>
                 <td>
                     <a tal:attributes="href string:${r/absolute_url}/edit"

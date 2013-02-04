@@ -7,6 +7,10 @@ from zope.event import notify
 from collective.signupsheet.tests.base import FunctionalTestCase
 
 
+def onSuccessMock(fields, REQUEST):
+    return True
+
+
 class TestForm(FunctionalTestCase):
     """
     Use this test class to test SignupSheet form configuration
@@ -21,6 +25,8 @@ class TestForm(FunctionalTestCase):
         self.form = getattr(self.portal, self.newid)
         self.form.setEventsize(1)
         self.form.setEventsize(1)
+        # need to mock onSuccess: we don't test mail
+        self.form['user_notification_mailer'].onSuccess = onSuccessMock
 
     def test_available_action(self):
         """

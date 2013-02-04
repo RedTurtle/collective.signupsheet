@@ -87,7 +87,8 @@ class TestDataExport(FunctionalTestCase):
 
         lines = csv.split('\r\n')
         #Check header
-        self.assertTrue(lines[0].split(':') == ['date', 'id', 'name', 'surname'])
+        self.assertTrue(lines[0].split(':') == ['date', 'id', 'name', 'surname',
+                                                'review_state'])
 
         #Check if we have export all registrants
         #filter: exclude empty last values coming from split
@@ -98,7 +99,8 @@ class TestDataExport(FunctionalTestCase):
         #Check with a more real export
         lines = csv.split('\r\n')
         self.assertTrue(lines[0].split(';') == ['date', 'id',
-                                                'name', 'surname', 'email'])
+                                                'name', 'surname', 'email',
+                                                'review_state'])
         self.assertTrue(lines[1].split(';')[1] == 'rgs1')
         self.assertTrue(lines[1].split(';')[2] == 'John')
         self.assertTrue(lines[1].split(';')[3] == 'Dillinger')

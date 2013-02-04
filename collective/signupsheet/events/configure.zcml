@@ -10,4 +10,10 @@
       handler=".finalize_registrant.finalize_registrant_creation"
       />
 
+  <subscriber
+      for="collective.signupsheet.interfaces.ISignupSheet
+           Products.Archetypes.interfaces.IObjectInitializedEvent"
+      handler=".signupsheet_events.form_initialized"
+      />
+
 </configure>

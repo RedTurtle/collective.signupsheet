@@ -1,10 +1,13 @@
 # -*- conding: utf-8 -*-
 
+from Products.Archetypes.interfaces.field import IField
 from Products.CMFCore.utils import getToolByName
+
 from zope.component.hooks import getSite
 from zope.component import getUtility
 
 from collective.signupsheet.interfaces import IGetRegistrants
+from collective.signupsheet import signupsheetMessageFactory as _
 
 
 def compute_next_action(obj, signupsheet):
@@ -47,3 +50,14 @@ def finalize_registrant_creation(obj, event):
 
         if portal_membership.isAnonymousUser():
             obj.setCreators(('(anonymous)',))
+
+        #Simulate mailer action
+        #we want send also information about review state and we want mailer do
+        #all the job
+        form = obj.getForm()
+        adapter = getattr(form.aq_explicit, 'user_notification_mailer', None)
+        fields = [fo for fo in obj.getForm()._getFieldObjects()
+                                          if not IField.providedBy(fo)]
+        obj.REQUEST['review_state'] = _(unicode(portal_workflow.getInfoFor(obj,
+                                                               'review_state')))
+        adapter.onSuccess(fields, obj.REQUEST)
