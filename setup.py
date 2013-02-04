@@ -30,7 +30,7 @@ setup(name='collective.signupsheet',
       install_requires=[
           'setuptools',
           'Products.PloneFormGen',
-          'uwosh.pfg.d2c'
+          'uwosh.pfg.d2c>=2.3.0b4'
       ],
       entry_points="""
       # -*- Entry points: -*-
