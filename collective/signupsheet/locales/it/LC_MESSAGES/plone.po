@@ -53,6 +53,9 @@ msgstr "Confermato"
 msgid "confirm"
 msgstr "Conferma"
 
+msgid "Import Registrants"
+msgstr "Importa registrazioni"
+
 
 #. Default: "A folderish type used as signup sheet"
 #: ./profiles/default/types/SignupSheet.xml

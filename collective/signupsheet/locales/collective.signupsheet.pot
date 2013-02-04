@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-02-04 10:50+0000\n"
+"POT-Creation-Date: 2013-02-04 16:46+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -25,10 +25,6 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ./browsers/registrants_data.py:193
-msgid "Created %s new registrant"
-msgstr ""
-
 #: ./browsers/registrants_data_export.pt:55
 msgid "Download"
 msgstr ""
@@ -45,7 +41,7 @@ msgstr ""
 msgid "Export Registrants"
 msgstr ""
 
-#: ./browsers/import_registrants.pt:27
+#: ./browsers/import_registrants.pt:38
 msgid "Import"
 msgstr ""
 
@@ -56,11 +52,7 @@ msgstr ""
 msgid "Installs the collective.signupsheet package"
 msgstr ""
 
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:145
-msgid "Manager subscription"
-msgstr ""
-
-#: ./browsers/registrants_data.py:178
+#: ./browsers/registrants_data.py:177
 msgid "No file loaded"
 msgstr ""
 
@@ -78,6 +70,11 @@ msgstr ""
 
 #: ./profiles/default/types/SignupSheet.xml
 msgid "View Registrants"
+msgstr ""
+
+#. Default: "Notify registrants by mail"
+#: ./browsers/import_registrants.pt:35
+msgid "avoid_mail_notification"
 msgstr ""
 
 #. Default: "Colon"
@@ -177,32 +174,32 @@ msgid "help_body_text"
 msgstr ""
 
 #. Default: "Select a csv from which import registrants"
-#: ./browsers/import_registrants.pt:12
+#: ./browsers/import_registrants.pt:20
 msgid "help_import_registrants"
 msgstr ""
 
 #. Default: "Use semicolon as separator"
-#: ./browsers/import_registrants.pt:15
+#: ./browsers/import_registrants.pt:23
 msgid "import_first_rule"
 msgstr ""
 
 #. Default: "Import Registrants"
-#: ./browsers/import_registrants.pt:11
+#: ./browsers/import_registrants.pt:19
 msgid "import_registrants"
 msgstr ""
 
 #. Default: "The uploaded csv file must observe the following rules"
-#: ./browsers/import_registrants.pt:13
+#: ./browsers/import_registrants.pt:21
 msgid "import_rules"
 msgstr ""
 
 #. Default: "First line in csv have as header the name of all the fields in the form"
-#: ./browsers/import_registrants.pt:16
+#: ./browsers/import_registrants.pt:24
 msgid "import_second_rule"
 msgstr ""
 
 #. Default: "Empty for a missing value (e.g. ;;mail@provider.com)"
-#: ./browsers/import_registrants.pt:17
+#: ./browsers/import_registrants.pt:25
 msgid "import_third_rule"
 msgstr ""
 
@@ -269,17 +266,22 @@ msgstr ""
 msgid "registrants"
 msgstr ""
 
-#: ./events/finalize_registrant.py:62
+#. Default: "Created ${registrants} new registrant"
+#: ./browsers/registrants_data.py:195
+msgid "registrants_imported"
+msgstr ""
+
+#: ./events/finalize_registrant.py:61
 msgid "review_state"
 msgstr ""
 
 #. Default: "${seats} seats left."
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:125
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
 msgstr ""
 
 #. Default: "Select a csv file to import"
-#: ./browsers/import_registrants.pt:24
+#: ./browsers/import_registrants.pt:33
 msgid "select_registrnats_csv"
 msgstr ""
 
@@ -333,7 +335,7 @@ msgid "subscribtion_mail"
 msgstr ""
 
 #. Default: "Subscribing"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:156
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:162
 msgid "subscription_form_title"
 msgstr ""
 
@@ -343,7 +345,7 @@ msgid "tabulator"
 msgstr ""
 
 #. Default: "Registration is full"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:137
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:151
 msgid "text_registration_full"
 msgstr ""
 
