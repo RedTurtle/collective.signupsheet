@@ -98,4 +98,5 @@
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
+
 </object>
