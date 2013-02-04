@@ -18,9 +18,9 @@ __ http://plone.org/products/uwosh.pfg.d2c
 Usage
 =====
 
-Install collective.signupsheet from portal_quickinstaller, and the install profile will install also uwosh.pfg.d2c. After product installation you'll have in the content menu a new entry called Signup Sheet.
+Install collective.signupsheet from portal_quickinstaller; the install profile will install also uwosh.pfg.d2c. After product installation you'll have in the content menu a new entry called Signup Sheet.
 
-When someone create a new form, you have all the FormFolder functionality plus the field from Products.SignupSheet. You will see two more fields: start and end date. In this way you will be able to treat the Signup Sheet as an event and it will be put in plone calendar portlet.
+When someone create a new form, you will have all the FormFolder functionality plus fields from Products.SignupSheet. You will see two more fields: start and end date. In this way you will be able to treat the Signup Sheet as an event and it will be put in plone calendar portlet.
 
 Adding a new signup sheet will give you also a set of objects within the form:
 
@@ -37,7 +37,7 @@ Those object are configured with default values and text (depending on site lang
 
 Sub object configuration
 ------------------------
-Here all the settings made on sub objects during signupsheet creation:
+Here all the settings made on sub objects during signup sheet creation:
  * *name* field: the default value is setted to 'here/@@default_name_value'. In this way when user try to sign up, if it's a registered user, his name is calculated;
  * *surname* field: the same as name, calling 'here/@@default_surname_value';
  * *email* field: same as name and surname; default value is computed by 'here/@@default_email_value'; there is also *isEmail* validator setted;
@@ -47,12 +47,15 @@ Here all the settings made on sub objects during signupsheet creation:
 
 If you want, on user subscription, you can send a mail also to a signup sheet
 'manger', manually setting the second mailer in the form (the "Manager notification
-mailer"): need to add a mail addres.
+mailer"): you need to add a mail addres.
 
 
 Main difference from Products.Signupsheet
 -----------------------------------------
- * gestione dello stato tramite workflow (and so slitghlty different wf)
+I think the main difference between old signup sheet and the new one is that the
+status is no more available as field, but is handled with object status. So we have
+a slightly different workflow for registrants: they will be divided into two states,
+'unconfirmed' and 'unconfirmed in waiting list'.
 
 Authors
 -------
