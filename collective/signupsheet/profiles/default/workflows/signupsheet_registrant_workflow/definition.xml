@@ -1,10 +1,5 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="signupsheet_registrant_workflow"
-             title="signupsheet_registrant_workflow"
-             description=""
-             state_variable="review_state"
-             initial_state="new"
-             manager_bypass="False">
+<dc-workflow workflow_id="signupsheet_registrant_workflow" title="signupsheet_registrant_workflow" description="" state_variable="review_state" initial_state="new" manager_bypass="False">
  <permission>Delete objects</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
@@ -95,7 +90,7 @@
   <guard>
   </guard>
  </transition>
-  <transition transition_id="post_waitinglist" title="Post issue on save" new_state="waiting_list_unconfirmed" trigger="USER" before_script="" after_script="">
+ <transition transition_id="post_waitinglist" title="Post issue on save" new_state="waiting_list_unconfirmed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">Submit registrant</action>
   <guard>
   </guard>
