@@ -5,10 +5,13 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from zope.component import getUtility
 
+from collective.signupsheet import signupsheetMessageFactory as _
+from uwosh.pfg.d2c.events import FormSaveData2ContentEntryFinalizedEvent
 from collective.signupsheet.interfaces import IGetRegistrants
 
 from cStringIO import StringIO
 import csv
+import zope
 
 
 class Common(object):
@@ -32,7 +35,10 @@ class Common(object):
         form = self.context
         utility = getUtility(IGetRegistrants)
         folder = utility.get_registrants_folder(form)
-        return folder.absolute_url()
+        return folder
+
+    def get_registrants_folder_url(self):
+        return self.get_registrants_folder().absolute_url()
 
 
 class RegistrantDataExport(BrowserView, Common):
@@ -105,6 +111,7 @@ class RegistrantDataExport(BrowserView, Common):
             result = ''
         else:
             rows = [fields]
+            pwf = self.context.portal_workflow
             for obj in objs:
                 row = []
                 #code to append creationDate since it is not part of the fields list
@@ -119,9 +126,11 @@ class RegistrantDataExport(BrowserView, Common):
                         row.append(value)
                     except KeyError:
                         row.append('')
+                row.append(self.translate(pwf.getInfoFor(obj, 'review_state')))
                 rows.append(row)
             rows[0].insert(0, 'id')
             rows[0].insert(0, 'date')
+            rows[0].append('review_state')
             # convert lists to csv string
             ramdisk = StringIO()
             writer = csv.writer(ramdisk, delimiter=delimiter)
@@ -141,9 +150,46 @@ class RegistrantDataExport(BrowserView, Common):
             site_props = portal_properties.site_properties
             return site_props.default_charset or 'utf-8'
 
+    def translate(self, value):
+        return zope.i18n.translate(_(value), context=self.request)
+
 
 class ViewRegistrants(BrowserView, Common):
 
     def __init__(self, context, request):
         self.context = context
         self.request = request
+
+
+class ImportRegistrants(BrowserView, Common):
+
+    template = ViewPageTemplateFile('import_registrants.pt')
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
+        if not 'importRegistrants' in self.request.form:
+            return self.template()
+        else:
+            csvfile = self.request.get('uploaded_csv', None)
+            if not csvfile:
+                response = _("No file loaded")
+                return self.template(**{'status': 'error',
+                                        'import_response': response})
+            else:
+                lines = csvfile.readlines()
+                #clean the line
+                reg_folder = self.get_registrants_folder()
+                #let's emulate onSuccess adapter method
+                csvfields = lines[0].replace('\n', '').replace('\r', '').split(';')
+                form_fields = self.context._getFieldObjects()
+                for line in lines[1:len(lines) - 1]:
+                    line_values = line.replace('\n', '').replace('\r', '').split(';')
+                    for index in range(0, len(csvfields)):
+                        self.request.form[csvfields[index]] = line_values[index]
+                    reg_folder.onSuccess(form_fields, self.request)
+                response = _("Created %s new registrant" % len(lines))
+                return self.template(**{'status': 'done',
+                                        'import_response': response})

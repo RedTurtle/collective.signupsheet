@@ -1,5 +1,4 @@
 <div metal:define-macro="ss_event_view_macro">
-<tal:have_data tal:condition="python: context.start() and context.end()">
   <tal:differentday tal:condition="python:not context.start().Date() == context.end().Date()"
                     i18n:translate="event_when_differentday">
       <abbr i18n:name="startdate"
@@ -55,5 +54,4 @@
                   tal:content="python:plone_view.toLocalizedTime(context.end(), time_only=1)">End Time</span>
       </abbr>
   </tal:sameday>
-</tal:have_data>
 </div>

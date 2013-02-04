@@ -1,6 +1,5 @@
 TODO LIST
- * In the old Products.SignupSheet the user status is send by mail. Right now
-   this functionality is missing
 
- * Also in Products.SignupSheet in the registrant view the status is not
-   translated.
+1) Verify if it's possible remove the event that disable the first mailer
+2) Make some "import registrant" stuff
+3) It could be nice to have a mailer that notify user 

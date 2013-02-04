@@ -7,6 +7,10 @@ from zope.event import notify
 from collective.signupsheet.tests.base import FunctionalTestCase
 
 
+def onSuccessMock(fields, REQUEST):
+    return True
+
+
 class TestEvents(FunctionalTestCase):
     """
     Test events configuration
@@ -21,6 +25,8 @@ class TestEvents(FunctionalTestCase):
         self.form = getattr(self.portal, self.newid)
         self.form.registrants.invokeFactory('registrant', id='rgs1')
         self.registrant = self.form.registrants['rgs1']
+        # need to mock onSuccess: we don't test mail
+        self.form['user_notification_mailer'].onSuccess = onSuccessMock
 
     def test_new_registrant(self):
         """
@@ -29,9 +35,7 @@ class TestEvents(FunctionalTestCase):
         """
         state = self.pwf.getInfoFor(self.registrant, 'review_state')
         self.assertTrue(state == 'new')
-        self.assertTrue(self.registrant.ssfg_status == '')
         notify(FormSaveData2ContentEntryFinalizedEvent(self.registrant,
                                                        self.form))
         state = self.pwf.getInfoFor(self.registrant, 'review_state')
         self.assertTrue(state == 'unconfirmed')
-        self.assertTrue(self.registrant.ssfg_status == 'registered')

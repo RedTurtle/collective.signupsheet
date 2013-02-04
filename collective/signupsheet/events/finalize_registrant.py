@@ -1,14 +1,16 @@
 # -*- conding: utf-8 -*-
 
-from Products.Archetypes.utils import shasattr
+from Products.Archetypes.interfaces.field import IField
 from Products.CMFCore.utils import getToolByName
+
 from zope.component.hooks import getSite
 from zope.component import getUtility
 
 from collective.signupsheet.interfaces import IGetRegistrants
+from collective.signupsheet import signupsheetMessageFactory as _
 
 
-def compute_and_set_status(obj, signupsheet):
+def compute_next_action(obj, signupsheet):
     """
     if we don't get any value from the form we decide to compute the value in
     this way.
@@ -22,11 +24,10 @@ def compute_and_set_status(obj, signupsheet):
                        )
                     )
     if current_size <= event_size or event_size == 0:
-        status = 'registered'
+        action = 'post'
     else:
-        status = 'waitinglist'
-
-    setattr(obj, 'ssfg_status', status)
+        action = 'post_waitinglist'
+    return action
 
 
 def finalize_registrant_creation(obj, event):
@@ -41,25 +42,22 @@ def finalize_registrant_creation(obj, event):
         site = getSite()
         portal_workflow = getToolByName(site, 'portal_workflow')
         portal_membership = getToolByName(site, 'portal_membership')
-
         current_state = portal_workflow.getInfoFor(obj, 'review_state')
         if current_state in ('new', ):
-            portal_workflow.doActionFor(obj, 'post')
+            signupsheet = obj.getForm()
+            action = compute_next_action(obj, signupsheet)
+            portal_workflow.doActionFor(obj, action)
 
         if portal_membership.isAnonymousUser():
             obj.setCreators(('(anonymous)',))
 
-        # set the status for the object if needed:
-        # if we have anonymous/not-manager registration we need to set the value
-        # if we have a manager-registration we could have or not the value,
-        # 'cause it's not mandatory in the form
-        signupsheet = obj.getForm()
-        form_fields_list = [field.__name__ for field in signupsheet.values()]
-        if 'ssfg_status' in form_fields_list:
-            have_status = shasattr(obj, 'ssfg_status')
-            if not have_status:
-                compute_and_set_status(obj, signupsheet)
-            elif have_status and not obj.getField('ssfg_status').get(obj):
-                compute_and_set_status(obj, signupsheet)
-            else:
-                pass
+        #Simulate mailer action
+        #we want send also information about review state and we want mailer do
+        #all the job
+        form = obj.getForm()
+        adapter = getattr(form.aq_explicit, 'user_notification_mailer', None)
+        fields = [fo for fo in obj.getForm()._getFieldObjects()
+                                          if not IField.providedBy(fo)]
+        obj.REQUEST['review_state'] = _(unicode(portal_workflow.getInfoFor(obj,
+                                                               'review_state')))
+        adapter.onSuccess(fields, obj.REQUEST)

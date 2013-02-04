@@ -37,3 +37,15 @@ msgstr ""
 
 msgid "signupsheet_title"
 msgstr ""
+
+msgid "Unconfirmed in waiting list"
+msgstr ""
+
+msgid "Unconfirmed"
+msgstr ""
+
+msgid "Confirmed"
+msgstr ""
+
+msgid "confirm"
+msgstr ""

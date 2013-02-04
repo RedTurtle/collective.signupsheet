@@ -9,11 +9,12 @@
     <div metal:fill-slot="main">
         <tal:main-macro metal:define-macro="main"
                 tal:define="getInfoFor  python: context.portal_workflow.getInfoFor;
-                      registrant_folder view/get_registrants_folder;
+                      registrant_folder view/get_registrants_folder_url;
                       registrants view/get_registrants;
                       member python:context.portal_membership.getAuthenticatedMember();
                       confirmed_registrants python: [r for r in registrants if getInfoFor(r, 'review_state') == 'confirmed'];
                       unconfirmed_registrants python: [r for r in registrants if getInfoFor(r, 'review_state') == 'unconfirmed'];
+                      unconfirmed_registrants_waiting python: [r for r in registrants if getInfoFor(r, 'review_state') == 'waiting_list_unconfirmed'];
                       fieldnames  python:view.registrantFieldNames();
                       fieldnames  python: [name for name in fieldnames if not name in ('id', )];
                       canReview python:member.has_permission('Review portal content', context);">
@@ -27,7 +28,9 @@
             <span i18n:translate="confirmed">confirmed</span>
             <span tal:replace="python: len(confirmed_registrants)"/>,
             <span i18n:translate="unconfirmed">unconfirmed</span>
-            <span tal:replace="python: len(unconfirmed_registrants)"/>
+            <span tal:replace="python: len(unconfirmed_registrants)"/>,
+            <span i18n:translate="waiting_list_unconfirmed">waiting_list_unconfirmed</span>
+            <span tal:replace="python: len(unconfirmed_registrants_waiting)"/>
         </tal:if>
 
         <table class="listing" summary="Registrants" tal:condition="registrants">
@@ -56,7 +59,7 @@
                     <span tal:content="python: context.toLocalizedTime(r.created(), True)" />
                 </td>
                 <td tal:define="state python: context.portal_workflow.getInfoFor(r, 'review_state')" >
-                    <span i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
+                    <span i18n:domain='plone' i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
                 </td>
                 <td>
                     <a tal:attributes="href string:${r/absolute_url}/edit"

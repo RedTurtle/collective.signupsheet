@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 
 from zope.component import getUtility
@@ -50,3 +51,11 @@ class SignupSheetBaseView(BrowserView):
         return self.context.getEventsize() +\
                self.context.getWaitlist_size() -\
                registrants_number
+
+    def check_add_registrants_permission(self):
+        """
+        check if you have the permission to create registrants
+        """
+        pm = getToolByName(self.context, 'portal_membership')
+        member = pm.getAuthenticatedMember()
+        return member.has_permission('SignupSheet: Add Registrant', self.context)

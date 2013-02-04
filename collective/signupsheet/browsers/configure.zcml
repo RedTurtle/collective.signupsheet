@@ -17,7 +17,7 @@
     name="susbase_utiltities_view"
     class=".signupsheet_baseview.SignupSheetBaseView"
     permission="zope2.View"
-    allowed_attributes="getSignupStatus getSeatsLeft getSignupMessage"
+    allowed_attributes="getSignupStatus getSeatsLeft getSignupMessage check_add_registrants_permission"
     />
 
   <browser:page
@@ -25,6 +25,13 @@
     name="view_registrants"
     class=".registrants_data.ViewRegistrants"
     template="view_registrants.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="..interfaces.ISignupSheet"
+    name="registrants_data_import"
+    class=".registrants_data.ImportRegistrants"
     permission="zope2.View"
     />
 
@@ -64,8 +71,8 @@
     class=".pfg_utilities.PfgPublicFormUtilities"
     permission="zope.Public">
 
-    <browser:page attribute="set_registrant_title"
-                  name="set_registrant_title" />
+    <browser:page attribute="get_registrant_title"
+                  name="get_registrant_title" />
 
   </browser:pages>
 
@@ -85,5 +92,4 @@
      name="collective.signupsheet.css"
      directory="css"
      />
-
 </configure>

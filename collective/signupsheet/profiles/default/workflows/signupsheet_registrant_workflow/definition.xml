@@ -30,6 +30,7 @@
  </state>
  <state state_id="new" title="Being created">
   <exit-transition transition_id="post"/>
+  <exit-transition transition_id="post_waitinglist"/>
   <permission-map name="Delete objects" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
@@ -63,6 +64,26 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
+ <state state_id="waiting_list_unconfirmed" title="Unconfirmed in waiting list">
+  <exit-transition transition_id="accept-unconfirmed"/>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
  <transition transition_id="accept-unconfirmed" title="confirm" new_state="confirmed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">confirm</action>
   <guard>
@@ -70,6 +91,11 @@
   </guard>
  </transition>
  <transition transition_id="post" title="Post issue on save" new_state="unconfirmed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">Submit registrant</action>
+  <guard>
+  </guard>
+ </transition>
+  <transition transition_id="post_waitinglist" title="Post issue on save" new_state="waiting_list_unconfirmed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">Submit registrant</action>
   <guard>
   </guard>

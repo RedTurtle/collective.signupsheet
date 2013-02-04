@@ -32,6 +32,28 @@ msgstr "Vedi gli iscritti"
 msgid "Export Registrants"
 msgstr "Esporta i dati"
 
+msgid "Unconfirmed in waiting list"
+msgstr "Da confermare (in lista d'attesa)"
+
+msgid "unconfirmed"
+msgstr "Da confermare"
+
+msgid "confirmed"
+msgstr "Confermato"
+
+msgid "waiting_list_unconfirmed"
+msgstr "Da confermare (in lista d'attesa)"
+
+msgid "Unconfirmed"
+msgstr "Da confermare"
+
+msgid "Confirmed"
+msgstr "Confermato"
+
+msgid "confirm"
+msgstr "Conferma"
+
+
 #. Default: "A folderish type used as signup sheet"
 #: ./profiles/default/types/SignupSheet.xml
 msgid "signupsheet_description"

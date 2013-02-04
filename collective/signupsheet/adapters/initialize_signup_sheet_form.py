@@ -60,29 +60,6 @@ class InitializeSignupSheetForm(object):
             obj.setFgTDefault('here/@@default_surname_value')
             self.form._pfFixup(obj)
 
-            # create a status field
-            self.form.invokeFactory('FormSelectionField', 'ssfg_status')
-            obj = self.form['ssfg_status']
-            obj.fgField.__name__ = 'ssfg_status'
-            obj.setTitle(zope.i18n.translate(
-                        _(u'signupsheet_statusfield_title', u'Status'),
-                        context=self.form.REQUEST))
-            obj.setFgVocabulary(('registered|%s' %
-                                 zope.i18n.translate(
-                                   _(u'signupsheet_statusfield_registered_opt',
-                                     u'Registered'),
-                                   context=self.form.REQUEST),
-                                 'waitinglist|%s' %
-                                 zope.i18n.translate(
-                                  _(u'signupsheet_statusfield_waitinglist_opt',
-                                    u'Waiting list'),
-                                    context=self.form.REQUEST)
-                                 )
-                                )
-            obj.setFgFormat('radio')
-            obj.setFgTEnabled('here/@@check_state_field_is_visible')
-            self.form._pfFixup(obj)
-
             # create a mail field
             self.form.invokeFactory('FormStringField', 'email')
             obj = self.form['email']
@@ -96,8 +73,6 @@ class InitializeSignupSheetForm(object):
             obj.setFgStringValidator('isEmail')
             self.form._pfFixup(obj)
 
-            #self.form.invokeFactory('FormSaveData2ContentAdapter',
-            #                        'registrants')
             #according to FormSaveData2ContentAdapter security seems that only
             #manager can create this kind of adapter
             pt = getToolByName(self.form, 'portal_types')
@@ -112,7 +87,7 @@ class InitializeSignupSheetForm(object):
             obj.setEntryType('registrant')
             obj.setTitleField('email')
             obj.setNiceIds(True)
-            obj.setDynamicTitle("here/@@set_registrant_title")
+            obj.setDynamicTitle("here/@@get_registrant_title")
             self.form._pfFixup(obj)
 
             #Create first mailer; notification after registration
@@ -174,8 +149,8 @@ class InitializeSignupSheetForm(object):
                                                         default=u"Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"),
                                                         context=self.form.REQUEST))
             self.form._pfFixup(obj)
-
-            self.form.actionAdapter = ('registrants',
-                                       'manager_notification_mailer',
-                                       'user_notification_mailer',)
+            #self.form.actionAdapter = ('registrants',
+            #                              'manager_notification_mailer')
+            self.form.addActionAdapter('registrants')
+            self.form.addActionAdapter('manager_notification_mailer')
             self.form.thanksPage = 'thank-you'
