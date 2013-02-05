@@ -6,7 +6,6 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.component import getUtility
 
 from collective.signupsheet import signupsheetMessageFactory as _
-from uwosh.pfg.d2c.events import FormSaveData2ContentEntryFinalizedEvent
 from collective.signupsheet.interfaces import IGetRegistrants
 
 from cStringIO import StringIO
@@ -182,14 +181,20 @@ class ImportRegistrants(BrowserView, Common):
                 lines = csvfile.readlines()
                 #clean the line
                 reg_folder = self.get_registrants_folder()
-                #let's emulate onSuccess adapter method
+                # We emulate on success
                 csvfields = lines[0].replace('\n', '').replace('\r', '').split(';')
                 form_fields = self.context._getFieldObjects()
-                for line in lines[1:len(lines) - 1]:
+
+                for line in lines[1:len(lines)]:
                     line_values = line.replace('\n', '').replace('\r', '').split(';')
                     for index in range(0, len(csvfields)):
                         self.request.form[csvfields[index]] = line_values[index]
+                    self.request.form['last_referer'] = self.context.absolute_url()
                     reg_folder.onSuccess(form_fields, self.request)
-                response = _("Created %s new registrant" % len(lines))
+                translator = zope.i18n.translate
+                response = translator(_(u"registrants_imported",
+                           default=u"Created ${registrants} new registrant",
+                           mapping={'registrants': len(lines) - 1}),
+                        context=self.context.REQUEST)
                 return self.template(**{'status': 'done',
                                         'import_response': response})

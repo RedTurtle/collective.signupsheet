@@ -60,4 +60,7 @@ def finalize_registrant_creation(obj, event):
                                           if not IField.providedBy(fo)]
         obj.REQUEST['review_state'] = _(unicode(portal_workflow.getInfoFor(obj,
                                                                'review_state')))
-        adapter.onSuccess(fields, obj.REQUEST)
+        # If we are importing registrants from csv file, this flag allow to decide
+        # to send or not notification mail
+        if 'avoid_mail_notification' not in obj.REQUEST.form:
+            adapter.onSuccess(fields, obj.REQUEST)

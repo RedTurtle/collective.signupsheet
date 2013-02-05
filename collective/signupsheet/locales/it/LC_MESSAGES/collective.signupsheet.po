@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-02-04 10:50+0000\n"
+"POT-Creation-Date: 2013-02-04 16:46+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -25,10 +25,6 @@ msgstr "Collective Signupsheet"
 msgid "Confirm"
 msgstr "Conferma"
 
-#: ./browsers/registrants_data.py:193
-msgid "Created %s new registrant"
-msgstr ""
-
 #: ./browsers/registrants_data_export.pt:55
 msgid "Download"
 msgstr "Download"
@@ -45,21 +41,20 @@ msgstr "Edit"
 msgid "Export Registrants"
 msgstr ""
 
-#: ./browsers/import_registrants.pt:27
+#: ./browsers/import_registrants.pt:38
 msgid "Import"
-msgstr ""
+msgstr "Importa"
 
 #: ./profiles/default/types/SignupSheet.xml
 msgid "Import Registrants"
-msgstr ""
+msgstr "Importa registrazioni"
 
 msgid "Installs the collective.signupsheet package"
 msgstr "Installazione di collective.signupsheet"
 
-
-#: ./browsers/registrants_data.py:178
+#: ./browsers/registrants_data.py:177
 msgid "No file loaded"
-msgstr ""
+msgstr "Nessun file caricato"
 
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:106
 msgid "Registration deadline"
@@ -76,6 +71,11 @@ msgstr "L'iscrizione è chiusa"
 #: ./profiles/default/types/SignupSheet.xml
 msgid "View Registrants"
 msgstr ""
+
+#. Default: "Don't notify registrants"
+#: ./browsers/import_registrants.pt:35
+msgid "avoid_mail_notification"
+msgstr "Non notificare via mail"
 
 #. Default: "Colon"
 #: ./browsers/registrants_data_export.pt:46
@@ -174,34 +174,34 @@ msgid "help_body_text"
 msgstr "Testo per la pagina principale dell'iscrizione."
 
 #. Default: "Select a csv from which import registrants"
-#: ./browsers/import_registrants.pt:12
+#: ./browsers/import_registrants.pt:20
 msgid "help_import_registrants"
-msgstr ""
+msgstr "Selezionare un file csv da cui importare iscritti"
 
 #. Default: "Use semicolon as separator"
-#: ./browsers/import_registrants.pt:15
+#: ./browsers/import_registrants.pt:23
 msgid "import_first_rule"
-msgstr ""
+msgstr "Usa il 'punto e virgola' come separatore"
 
 #. Default: "Import Registrants"
-#: ./browsers/import_registrants.pt:11
+#: ./browsers/import_registrants.pt:19
 msgid "import_registrants"
-msgstr ""
+msgstr "Importa gli iscritti"
 
 #. Default: "The uploaded csv file must observe the following rules"
-#: ./browsers/import_registrants.pt:13
+#: ./browsers/import_registrants.pt:21
 msgid "import_rules"
-msgstr ""
+msgstr "Il file csv caricato deve rispettare le seguenti regole"
 
 #. Default: "First line in csv have as header the name of all the fields in the form"
-#: ./browsers/import_registrants.pt:16
+#: ./browsers/import_registrants.pt:24
 msgid "import_second_rule"
-msgstr ""
+msgstr "La prima riga del csv deve contenere il nome dei campi del form"
 
 #. Default: "Empty for a missing value (e.g. ;;mail@provider.com)"
-#: ./browsers/import_registrants.pt:17
+#: ./browsers/import_registrants.pt:25
 msgid "import_third_rule"
-msgstr ""
+msgstr "Per valori mancanti inserire solo il 'punto e virgola' (es: ;;mail@provider.com)"
 
 #. Default: "Body Text"
 #: ./contents/signupsheet.py:120
@@ -268,19 +268,24 @@ msgstr "Questo mailer invia notifiche a chi sottoscrive il signup sheet"
 msgid "registrants"
 msgstr "Iscritti"
 
-#: ./events/finalize_registrant.py:62
+#. Default: "Created ${registrants} new registrant"
+#: ./browsers/registrants_data.py:195
+msgid "registrants_imported"
+msgstr "Sono stati importati ${registrants} nuovi iscritti"
+
+#: ./events/finalize_registrant.py:61
 msgid "review_state"
 msgstr ""
 
 #. Default: "${seats} seats left."
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:125
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
 msgstr "${seats} posti rimanenti."
 
 #. Default: "Select a csv file to import"
-#: ./browsers/import_registrants.pt:24
+#: ./browsers/import_registrants.pt:33
 msgid "select_registrnats_csv"
-msgstr ""
+msgstr "Seleziona un file csv"
 
 #. Default: "Semicolon"
 #: ./browsers/registrants_data_export.pt:48
@@ -334,7 +339,7 @@ msgstr ""
 "<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show>"
 
 #. Default: "Subscribing"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:156
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:162
 msgid "subscription_form_title"
 msgstr "Iscrizione per"
 
@@ -344,7 +349,7 @@ msgid "tabulator"
 msgstr "Tabulatore"
 
 #. Default: "Registration is full"
-#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:137
+#: ./skins/collective_signupsheet/ss_base_view_p3.cpt:151
 msgid "text_registration_full"
 msgstr "L'iscrizione è chiusa"
 

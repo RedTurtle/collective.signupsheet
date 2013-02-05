@@ -11,3 +11,11 @@
     font-size: 1.2em;
 }
 
+form.import_registrant_form{
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+form.import_registrant_form label{
+    margin-top: 0.5em;
+}

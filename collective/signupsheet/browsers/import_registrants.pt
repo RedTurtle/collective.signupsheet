@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.signupsheet">
+
+  <metal:css fill-slot="style_slot"
+             tal:define="portal context/@@plone_portal_state/portal">
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          tal:attributes="href string:${portal/absolute_url}/++resource++collective.signupsheet.css/signupsheet.css">
+  </metal:css>
+    <body>
+    <div metal:fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+            <h1 i18n:translate="import_registrants">Import Registrants</h1>
+            <h4 i18n:translate="help_import_registrants">Select a csv from which import registrants</h4>
+            <p class="discreet import_rules" i18n:translate="import_rules">The uploaded csv file must observe the following rules</p>
+              <ul class="discreet">
+                <li i18n:translate="import_first_rule">Use semicolon as separator</li>
+                <li i18n:translate="import_second_rule">First line in csv have as header the name of all the fields in the form</li>
+                <li i18n:translate="import_third_rule">Empty for a missing value (e.g. ;;mail@provider.com)</li>
+              </ul>
+          <form name="form"
+                action="#"
+                method="post"
+                enctype="multipart/form-data"
+                class="import_registrant_form"
+                tal:attributes="action string:${context/absolute_url}/@@registrants_data_import">
+            <div><label i18n:translate="select_registrnats_csv">Select a csv file to import</label></div>
+            <div><input type="file" name="uploaded_csv"/></div>
+            <div><label i18n:translate="avoid_mail_notification">Don't notify registrants</label></div>
+            <input type="checkbox" checked="on" name="avoid_mail_notification" />
+            <div class="submit">
+              <input class="context"
+                      type="submit"
+                      value="Import"
+                      name="importRegistrants"
+                      i18n:attributes="value"
+                      />
+          </div>
+          </form>
+          <div class="import_results">
+            <tal:message tal:replace="options/import_response|nothing"/>
+          </div>
+          </tal:main-macro>
+    </div>
+    </body>
+</html>
