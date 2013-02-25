@@ -28,4 +28,12 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Collective Signupsheet"
+      directory="profiles/uninstall"
+      description="Installs the collective.signupsheet package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
 </configure>
