@@ -16,7 +16,6 @@
   <include package=".browsers" />
   <include package=".contents" />
   <include package=".events" />
-  <include package=".upgrades" />
   <include package=".utilities" />
 
 
