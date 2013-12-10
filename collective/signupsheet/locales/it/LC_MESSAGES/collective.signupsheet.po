@@ -48,7 +48,7 @@ msgstr "Nessun file caricato"
 
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:106
 msgid "Registration deadline"
-msgstr "Scadenza dell'scrizione"
+msgstr "Scadenza dell'iscrizione"
 
 #: ./profiles/default/types/SignupSheet.xml
 msgid "Signup Sheet"
@@ -338,7 +338,7 @@ msgstr "Tabulatore"
 #. Default: "Registration is full"
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:151
 msgid "text_registration_full"
-msgstr "L'iscrizione è chiusa"
+msgstr "L'iscrizione è al completo"
 
 #. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
 #: ./adapters/initialize_signup_sheet_form.py:148
