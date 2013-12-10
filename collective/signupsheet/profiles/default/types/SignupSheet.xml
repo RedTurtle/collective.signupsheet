@@ -5,7 +5,8 @@
    i18n:domain="collective.signupsheet">
  <property name="title" i18n:translate="">Signup Sheet</property>
  <property
-    name="description" i18n:translate="">A folderish type used as signup sheet</property>
+    name="description"
+	i18n:translate="signup_sheet_type_description">Handle attendance registrations to workshops, fundraisers and other type of events</property>
  <property name="content_icon">signup.gif</property>
  <property name="content_meta_type">SignupSheet</property>
  <property name="product">collective.signupsheet</property>

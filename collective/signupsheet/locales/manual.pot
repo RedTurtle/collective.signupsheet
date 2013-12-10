@@ -14,8 +14,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.signupsheet\n"
 
-msgid "Collective Signupsheet"
+msgid "SignupSheet"
 msgstr ""
 
-msgid "Installs the collective.signupsheet package"
+msgid "A solution for manage signup attendance to events"
 msgstr ""

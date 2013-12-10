@@ -62,10 +62,12 @@
                     <span i18n:domain='plone' i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
                 </td>
                 <td>
-                    <a tal:attributes="href string:${r/absolute_url}/edit"
-                                       tal:condition="python: member.has_permission('Modify portal content', r)">
+                    <a title="Edit"
+                       tal:attributes="href string:${r/absolute_url}/edit"
+                       tal:condition="python: member.has_permission('Modify portal content', r)"
+					   i18n:domain="plone"
+					   i18n:attributes="title">
                         <img tal:attributes="src string:$portal_url/edit.gif"
-                             title="Edit"
                              alt="Edit"
                              i18n:attributes="title;alt"
                         />
@@ -75,7 +77,7 @@
                         <img tal:attributes="src string:$portal_url/confirm_icon.gif"
                              title="Confirm"
                              alt="Confirm"
-                             i18n:attributes="title;alt"/>
+                             i18n:attributes="alt" />
                     </a>
                 </td>
             </tr>

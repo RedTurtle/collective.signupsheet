@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-02-04 16:46+0000\n"
+"POT-Creation-Date: 2013-12-10 11:21+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
-"Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
-"Language-Team: ITALIAN sviluppo@redturtle.it\n"
+"Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
+"Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,15 +13,12 @@ msgstr ""
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.signupsheet\n"
+"X-Is-Fallback-For: it-ch it-it\n"
 
-#: ./profiles/default/types/SignupSheet.xml
-msgid "A folderish type used as signup sheet"
-msgstr "Documento basato su PloneFormGen usato come SignupSheet"
+msgid "A solution for manage signup attendance to events"
+msgstr "Una soluzione per la gestione di iscrizione ad eventi"
 
-msgid "Collective Signupsheet"
-msgstr "Collective Signupsheet"
-
-#: ./browsers/view_registrants.pt:75
+#: ./browsers/view_registrants.pt:77
 msgid "Confirm"
 msgstr "Conferma"
 
@@ -33,13 +30,9 @@ msgstr "Download"
 msgid "Early bird until"
 msgstr "Iscrizioni scontate fino al"
 
-#: ./browsers/view_registrants.pt:67
-msgid "Edit"
-msgstr "Edit"
-
 #: ./profiles/default/types/SignupSheet.xml
 msgid "Export Registrants"
-msgstr ""
+msgstr "Esporta iscritti"
 
 #: ./browsers/import_registrants.pt:38
 msgid "Import"
@@ -48,9 +41,6 @@ msgstr "Importa"
 #: ./profiles/default/types/SignupSheet.xml
 msgid "Import Registrants"
 msgstr "Importa registrazioni"
-
-msgid "Installs the collective.signupsheet package"
-msgstr "Installazione di collective.signupsheet"
 
 #: ./browsers/registrants_data.py:177
 msgid "No file loaded"
@@ -64,13 +54,16 @@ msgstr "Scadenza dell'scrizione"
 msgid "Signup Sheet"
 msgstr "Signup Sheet"
 
+msgid "SignupSheet"
+msgstr ""
+
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:116
 msgid "The registration is closed"
 msgstr "L'iscrizione è chiusa"
 
 #: ./profiles/default/types/SignupSheet.xml
 msgid "View Registrants"
-msgstr ""
+msgstr "Vedi iscritti"
 
 #. Default: "Don't notify registrants"
 #: ./browsers/import_registrants.pt:35
@@ -97,12 +90,12 @@ msgid "event_view_when"
 msgstr "Quando"
 
 #. Default: "Display seats left"
-#: ./contents/signupsheet.py:59
+#: ./contents/signupsheet.py:57
 msgid "field_display_size_left"
 msgstr "Visualizza posti rimanenti"
 
 #. Default: "Early bird phase until"
-#: ./contents/signupsheet.py:91
+#: ./contents/signupsheet.py:89
 msgid "field_early_bird_phase"
 msgstr "Iscrizioni scontate fino al"
 
@@ -117,7 +110,7 @@ msgid "field_name"
 msgstr "Campo"
 
 #. Default: "Registration deadline"
-#: ./contents/signupsheet.py:102
+#: ./contents/signupsheet.py:99
 msgid "field_registration_deadline"
 msgstr "Scadenza dell'iscrizione"
 
@@ -127,26 +120,19 @@ msgid "field_waitlist_size"
 msgstr "Dimensione della lista di attesa"
 
 #. Default: "Choose to show in the subscription page the number of seats left"
-#: ./contents/signupsheet.py:60
+#: ./contents/signupsheet.py:58
 msgid "fieldhelp_display_size_left"
 msgstr "Scegli se visualizzare nella pagina di iscrizione i posti rimanenti"
-
-#: ./contents/signupsheet.py:92
-msgid "fieldhelp_early_bird_phase"
-msgstr ""
 
 #. Default: "Set to 0 for unlimited registration"
 #: ./contents/signupsheet.py:37
 msgid "fieldhelp_eventsize"
 msgstr "Impostare a 0 per un'iscrizione illimitata"
 
-#: ./contents/signupsheet.py:104
+#. Default: "Registrations will be stopped after this date"
+#: ./contents/signupsheet.py:101
 msgid "fieldhelp_registration_deadline"
-msgstr ""
-
-#: ./contents/signupsheet.py:51
-msgid "fieldhelp_waitlist_size"
-msgstr ""
+msgstr "Le registrazioni saranno fermate dopo il raggiungimento di questa data"
 
 #. Default: "Action"
 #: ./browsers/view_registrants.pt:46
@@ -169,7 +155,7 @@ msgid "heading_review_state"
 msgstr "Stato"
 
 #. Default: "Text for front page of signup"
-#: ./contents/signupsheet.py:121
+#: ./contents/signupsheet.py:119
 msgid "help_body_text"
 msgstr "Testo per la pagina principale dell'iscrizione."
 
@@ -204,7 +190,7 @@ msgid "import_third_rule"
 msgstr "Per valori mancanti inserire solo il 'punto e virgola' (es: ;;mail@provider.com)"
 
 #. Default: "Body Text"
-#: ./contents/signupsheet.py:120
+#: ./contents/signupsheet.py:118
 msgid "label_body_text"
 msgstr "Corpo del testo"
 
@@ -273,10 +259,6 @@ msgstr "Iscritti"
 msgid "registrants_imported"
 msgstr "Sono stati importati ${registrants} nuovi iscritti"
 
-#: ./events/finalize_registrant.py:61
-msgid "review_state"
-msgstr ""
-
 #. Default: "${seats} seats left."
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
@@ -302,6 +284,11 @@ msgstr "Iscriviti!"
 msgid "sign_up_for_waitinglist"
 msgstr "Iscriviti in lista di attesa"
 
+#. Default: "Handle attendance registrations to workshops, fundraisers and other type of events"
+#: ./profiles/default/types/SignupSheet.xml
+msgid "signup_sheet_type_description"
+msgstr "Gestisci le registrazioni alla partecipazione di workshop, raccolta fondi e altri tipi di eventi"
+
 #. Default: "E-Mail Address"
 #: ./adapters/initialize_signup_sheet_form.py:68
 msgid "signupsheet_emailfield_title"
@@ -310,7 +297,7 @@ msgstr "Indirizzo e-mail"
 #. Default: "Reset"
 #: ./adapters/initialize_signup_sheet_form.py:35
 msgid "signupsheet_formfolder_reset"
-msgstr "Reset"
+msgstr "Annulla"
 
 #. Default: "Sign up"
 #: ./adapters/initialize_signup_sheet_form.py:31

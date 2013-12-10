@@ -7,7 +7,7 @@ from zope.component.hooks import getSite
 from zope.component import getUtility
 
 from collective.signupsheet.interfaces import IGetRegistrants
-from collective.signupsheet import signupsheetMessageFactory as _
+from collective.signupsheet import signupsheetMessageFactory
 
 
 def compute_next_action(obj, signupsheet):
@@ -58,8 +58,9 @@ def finalize_registrant_creation(obj, event):
         adapter = getattr(form.aq_explicit, 'user_notification_mailer', None)
         fields = [fo for fo in obj.getForm()._getFieldObjects()
                                           if not IField.providedBy(fo)]
-        obj.REQUEST['review_state'] = _(unicode(portal_workflow.getInfoFor(obj,
-                                                               'review_state')))
+        obj.REQUEST['review_state'] = \
+                signupsheetMessageFactory(unicode(portal_workflow.getInfoFor(obj,
+                                                                             'review_state')))
         # If we are importing registrants from csv file, this flag allow to decide
         # to send or not notification mail
         if 'avoid_mail_notification' not in obj.REQUEST.form:

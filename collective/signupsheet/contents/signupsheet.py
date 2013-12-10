@@ -48,8 +48,6 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
             size=6,
             label=_('field_waitlist_size',
                     default=u'Size of wait list',),
-            description=_('fieldhelp_waitlist_size',
-                          default=u""),
             )
         ),
     BooleanField('display_size_left',
@@ -89,7 +87,6 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
         read_permission="View",
         widget=CalendarWidget(
             label=_('field_early_bird_phase', default=u"Early bird phase until"),
-            description=_("fieldhelp_early_bird_phase", default=u""),
             visible={'edit': 'visible', 'view': 'invisible'},
             size=6,
             )
@@ -101,7 +98,8 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
         widget=CalendarWidget(
             label=_('field_registration_deadline',
                     default=u'Registration deadline'),
-            description=_("fieldhelp_registration_deadline", default=u""),
+            description=_("fieldhelp_registration_deadline",
+                          default=u"Registrations will be stopped after this date"),
             visible={'edit': 'visible', 'view': 'invisible'},
             size=6,
             )

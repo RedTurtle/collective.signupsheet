@@ -21,17 +21,17 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Collective Signupsheet"
+      title="SignupSheet"
       directory="profiles/default"
-      description="Installs the collective.signupsheet package"
+      description="A solution for manage signup attendance to events"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Collective Signupsheet"
+      title="Uninstall SignupSheet"
       directory="profiles/uninstall"
-      description="Installs the collective.signupsheet package"
+      description="Remove collective.signupsheet"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

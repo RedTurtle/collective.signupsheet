@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2013-02-04 16:46+0000\n"
+"POT-Creation-Date: 2013-12-10 11:21+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi luica.bellenghi@redturtle.it\n"
 "Language-Team: ITALIAN sviluppo@redturtle.it\n"
@@ -14,14 +14,10 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.signupsheet\n"
 
-#: ./profiles/default/types/SignupSheet.xml
-msgid "A folderish type used as signup sheet"
+msgid "A solution for manage signup attendance to events"
 msgstr ""
 
-msgid "Collective Signupsheet"
-msgstr ""
-
-#: ./browsers/view_registrants.pt:75
+#: ./browsers/view_registrants.pt:77
 msgid "Confirm"
 msgstr ""
 
@@ -31,10 +27,6 @@ msgstr ""
 
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:102
 msgid "Early bird until"
-msgstr ""
-
-#: ./browsers/view_registrants.pt:67
-msgid "Edit"
 msgstr ""
 
 #: ./profiles/default/types/SignupSheet.xml
@@ -49,9 +41,6 @@ msgstr ""
 msgid "Import Registrants"
 msgstr ""
 
-msgid "Installs the collective.signupsheet package"
-msgstr ""
-
 #: ./browsers/registrants_data.py:177
 msgid "No file loaded"
 msgstr ""
@@ -64,6 +53,9 @@ msgstr ""
 msgid "Signup Sheet"
 msgstr ""
 
+msgid "SignupSheet"
+msgstr ""
+
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:116
 msgid "The registration is closed"
 msgstr ""
@@ -72,7 +64,7 @@ msgstr ""
 msgid "View Registrants"
 msgstr ""
 
-#. Default: "Notify registrants by mail"
+#. Default: "Don't notify registrants"
 #: ./browsers/import_registrants.pt:35
 msgid "avoid_mail_notification"
 msgstr ""
@@ -97,12 +89,12 @@ msgid "event_view_when"
 msgstr ""
 
 #. Default: "Display seats left"
-#: ./contents/signupsheet.py:59
+#: ./contents/signupsheet.py:57
 msgid "field_display_size_left"
 msgstr ""
 
 #. Default: "Early bird phase until"
-#: ./contents/signupsheet.py:91
+#: ./contents/signupsheet.py:89
 msgid "field_early_bird_phase"
 msgstr ""
 
@@ -117,7 +109,7 @@ msgid "field_name"
 msgstr ""
 
 #. Default: "Registration deadline"
-#: ./contents/signupsheet.py:102
+#: ./contents/signupsheet.py:99
 msgid "field_registration_deadline"
 msgstr ""
 
@@ -127,12 +119,8 @@ msgid "field_waitlist_size"
 msgstr ""
 
 #. Default: "Choose to show in the subscription page the number of seats left"
-#: ./contents/signupsheet.py:60
+#: ./contents/signupsheet.py:58
 msgid "fieldhelp_display_size_left"
-msgstr ""
-
-#: ./contents/signupsheet.py:92
-msgid "fieldhelp_early_bird_phase"
 msgstr ""
 
 #. Default: "Set to 0 for unlimited registration"
@@ -140,12 +128,9 @@ msgstr ""
 msgid "fieldhelp_eventsize"
 msgstr ""
 
-#: ./contents/signupsheet.py:104
+#. Default: "Registrations will be stopped after this date"
+#: ./contents/signupsheet.py:101
 msgid "fieldhelp_registration_deadline"
-msgstr ""
-
-#: ./contents/signupsheet.py:51
-msgid "fieldhelp_waitlist_size"
 msgstr ""
 
 #. Default: "Action"
@@ -169,7 +154,7 @@ msgid "heading_review_state"
 msgstr ""
 
 #. Default: "Text for front page of signup"
-#: ./contents/signupsheet.py:121
+#: ./contents/signupsheet.py:119
 msgid "help_body_text"
 msgstr ""
 
@@ -204,7 +189,7 @@ msgid "import_third_rule"
 msgstr ""
 
 #. Default: "Body Text"
-#: ./contents/signupsheet.py:120
+#: ./contents/signupsheet.py:118
 msgid "label_body_text"
 msgstr ""
 
@@ -271,10 +256,6 @@ msgstr ""
 msgid "registrants_imported"
 msgstr ""
 
-#: ./events/finalize_registrant.py:61
-msgid "review_state"
-msgstr ""
-
 #. Default: "${seats} seats left."
 #: ./skins/collective_signupsheet/ss_base_view_p3.cpt:124
 msgid "seats_left_message"
@@ -298,6 +279,11 @@ msgstr ""
 #. Default: "Signup for waiting list"
 #: ./browsers/signupsheet_baseview.py:45
 msgid "sign_up_for_waitinglist"
+msgstr ""
+
+#. Default: "Handle attendance registrations to workshops, fundraisers and other type of events"
+#: ./profiles/default/types/SignupSheet.xml
+msgid "signup_sheet_type_description"
 msgstr ""
 
 #. Default: "E-Mail Address"

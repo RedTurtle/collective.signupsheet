@@ -92,9 +92,8 @@
                      id="signupsheet_date" i18n:domain="plone">
                     <tal:event tal:content="string:Here the translation domain it's plone: we use as is the plone code for events, except for the label"
                                tal:condition="nothing"/>
-                    <span class="label"
-                          i18n:domain="collective.signupsheet"
-                          i18n:translate="event_view_when">When</span>
+                    <h3 i18n:domain="collective.signupsheet"
+                        i18n:translate="event_view_when">When</h3>
                     <metal:event metal:use-macro="here/signupsheet_event_macro/macros/ss_event_view_macro" />
                 </div>
                 <div id="signupsheet_early_bird"

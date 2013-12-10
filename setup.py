@@ -1,22 +1,23 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b'
+version = '0.1.0'
 
 tests_require = ['plone.app.testing', ]
 
 setup(name='collective.signupsheet',
       version=version,
-      description="Signup module based on PFG and uwosh.pfg.d2c",
+      description="A solution for manage signup attendance to events in Plone",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Development Status :: 4 - Beta"
         "Framework :: Plone",
         "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
         ],
-      keywords='signupsheet ploneformgen pfg',
+      keywords='signupsheet plone plonegov ploneformgen event subscription',
       author='RedTurtle Technology',
       author_email='sviluppoplone@redturtle.it',
       url='http://plone.org/products/collective.signupsheet',
