@@ -89,7 +89,7 @@
   </browser:pages>
 
  <browser:resourceDirectory
-     name="collective.signupsheet.css"
-     directory="css"
+     name="collective.signupsheet.resources"
+     directory="resources"
      />
 </configure>

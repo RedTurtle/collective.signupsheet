@@ -67,14 +67,14 @@
                        tal:condition="python: member.has_permission('Modify portal content', r)"
 					   i18n:domain="plone"
 					   i18n:attributes="title">
-                        <img tal:attributes="src string:$portal_url/edit.gif"
+                        <img tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/edit.png"
                              alt="Edit"
                              i18n:attributes="title;alt"
                         />
                     </a>
                     <a tal:attributes="href string:${registrant_folder}/confirm_registrant?id=${r/getId}"
                         tal:condition="python: context.portal_workflow.getInfoFor(r, 'review_state') != 'confirmed' and canReview">
-                        <img tal:attributes="src string:$portal_url/confirm_icon.gif"
+                        <img tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/confirm_icon.png"
                              title="Confirm"
                              alt="Confirm"
                              i18n:attributes="alt" />

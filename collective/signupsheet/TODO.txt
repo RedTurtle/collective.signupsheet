@@ -1,4 +1,5 @@
-TODO LIST
+TODO
+====
 
-1) Verify if it's possible remove the event that disable the first mailer
-2) Could be nice to have a mailer that notify user when it's subscription is confirmed
+1. Verify if it's possible remove the event that disable the first mailer
+2. Could be nice to have a mailer that notify user when it's subscription is confirmed

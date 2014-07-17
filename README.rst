@@ -58,9 +58,10 @@ a slightly different workflow for registrants: they will be divided into two sta
 'unconfirmed' and 'unconfirmed in waiting list'.
 
 Authors
--------
-The product was developed by
+=======
 
-.. image:: http://www.redturtle.net/redturtle_banner.png
+This product was developed by RedTurtle Technology team.
+
+.. image:: http://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
-   :target: http://www.redturtle.net/
+   :target: http://www.redturtle.it/

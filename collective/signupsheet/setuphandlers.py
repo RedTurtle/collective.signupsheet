@@ -16,7 +16,7 @@ def setupVarious(context):
         return
     portal = context.getSite()
     setup_signupsheet(portal)
-    setup_registrant_portal_type(portal)
+    add_registrant_portal_type(portal)
 
 
 def setup_signupsheet(portal):
@@ -26,16 +26,11 @@ def setup_signupsheet(portal):
 
 def setup_uwosh_adapter(portal):
     types = getToolByName(portal, 'portal_types')
-    if SIGNUPSHEET_TYPE in types.objectIds():
-        folder = types[SIGNUPSHEET_TYPE]
-        allowed_content_types = set(folder.allowed_content_types)
-        allowed_content_types.add('FormSaveData2ContentAdapter')
-        folder.allowed_content_types = tuple(allowed_content_types)
-        msg = u'D2C adapter add to signup sheet folder'
-        logger.info(msg)
-        return
-    msg = u'Error adding D2C adapter to signup sheet folder'
-    logger.error(msg)
+    folder = types[SIGNUPSHEET_TYPE]
+    allowed_content_types = set(folder.allowed_content_types)
+    allowed_content_types.add('FormSaveData2ContentAdapter')
+    folder.allowed_content_types = tuple(allowed_content_types)
+    logger.info('D2C adapter added to signup sheet folder')
 
 
 def setup_portal_calendar(portal):
@@ -43,20 +38,18 @@ def setup_portal_calendar(portal):
     portal_calendar = getToolByName(portal, 'portal_calendar')
     old_types = portal_calendar.calendar_types
     if SIGNUPSHEET_TYPE in old_types:
-        msg = u'SignupSheet it\'s already in calendar_types attribute'
-        logger.info(msg)
+        logger.info('SignupSheet is already in calendar_types attribute')
     else:
         new_types = list(old_types) + [SIGNUPSHEET_TYPE, ]
         portal_calendar.calendar_types = tuple(new_types)
-        msg = u'SignupSheet added in calendar_types attribute'
-        logger.info(msg)
+        logger.info('SignupSheet added in calendar_types attribute')
 
     #configure states
     old_states = list(portal_calendar.calendar_states)
     new_states = old_states[:]
     for state in SIGNUPSHEET_STATES:
         if state in old_states:
-            msg = u'%s it\'s already in calendar_states attribute' % state
+            msg = u'%s is already in calendar_states attribute' % state
             logger.info(msg)
         else:
             new_states.append(state)
@@ -65,24 +58,14 @@ def setup_portal_calendar(portal):
 
     if new_states != old_states:
         portal_calendar.calendar_states = tuple(new_states)
-        msg = u"portal_calendar.calendare_states updatet with new values"
-        logger.info(msg)
-
-
-def setup_registrant_portal_type(portal):
-    """
-    Use the same method used in uwosh.pfg.d2c to create the new content type
-    we'll use as event subscriber.
-    """
-    add_registrant_portal_type(portal)
+        logger.info("portal_calendar.calendare_states updated with new values")
 
 
 def add_registrant_portal_type(portal):
     name = "registrant"
     portal_types = getToolByName(portal, 'portal_types')
     if name in portal_types.keys():
-        msg = u'Registrant it\'s already present in portal_types'
-        logger.error(msg)
+        logger.error('Registrant is already present in portal_types')
         return
     data = portal_types.manage_copyObjects(['FormSaveData2ContentEntry'])
     res = portal_types.manage_pasteObjects(data)
@@ -106,6 +89,4 @@ def add_registrant_portal_type(portal):
     factory.manage_setPortalFactoryTypes(listOfTypeIds=factoryTypes)
 
     new_type.icon_expr = "string:${portal_url}/registrant.gif"
-    msg = u'Add registrant to D2C adapter'
-    logger.info(msg)
-    return
+    logger.info('Add registrant to D2C adapter')

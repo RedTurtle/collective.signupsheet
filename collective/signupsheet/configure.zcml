@@ -10,6 +10,7 @@
   <i18n:registerTranslations directory="locales" />
   <cmf:registerDirectory name="skins" directory="skins" recursive="True"/>
 
+  <include package="Products.CMFCore" />
   <include file="permissions.zcml" />
 
   <include package=".adapters" />
@@ -17,7 +18,6 @@
   <include package=".contents" />
   <include package=".events" />
   <include package=".utilities" />
-
 
   <genericsetup:registerProfile
       name="default"
@@ -29,10 +29,18 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Uninstall SignupSheet"
+      title="SignupSheet: uninstall"
       directory="profiles/uninstall"
       description="Remove collective.signupsheet"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
+  <genericsetup:importStep
+      name="collective.signupsheet.various"
+      title="collective.signupsheet: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="collective.signupsheet.setuphandlers.setupVarious">
+    <depends name="types"/>
+  </genericsetup:importStep>
 
 </configure>
