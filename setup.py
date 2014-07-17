@@ -7,9 +7,9 @@ tests_require = ['plone.app.testing', ]
 
 setup(name='collective.signupsheet',
       version=version,
-      description="A solution for manage signup attendance to events in Plone",
+      description="A Plone solution for manage signup attendance to events",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       classifiers=[
         "Development Status :: 4 - Beta"
         "Framework :: Plone",
