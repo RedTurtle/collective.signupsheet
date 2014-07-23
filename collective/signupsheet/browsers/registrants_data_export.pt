@@ -22,7 +22,7 @@
                         class="noborder"
                         name="alr_toggle"
                         value="#"
-						checked="checked"
+                        checked="checked"
                         id="alr_toggle"/>
                 </th>
                 <th  class="nosort" i18n:translate="field_name">Field Name</th>
@@ -40,9 +40,9 @@
               </tal:block>
           </tbody>
           </table>
-          <div>
-              <span i18n:translate="label_delimiter">Delimiter</span>
-              <select name="delimiter" size="1">
+          <div class="field">
+              <label for="delimiter" i18n:translate="label_delimiter">Delimiter</label>
+              <select id="delimiter" name="delimiter" size="1">
                   <option value="comma" i18n:translate="comma">Comma</option>
                   <option value="colon" i18n:translate="colon">Colon</option>
                   <option value="tabulator" i18n:translate="tabulator">Tabulator</option>
@@ -52,14 +52,12 @@
           </div>
 
 
-          <div class="submit">
-              <input class="context"
-                      type="submit"
-                      value="Download"
-                      name="exportCSV"
-                      i18n:attributes="value"
-                      />
-          </div>
+          <input class="context"
+                  type="submit"
+                  value="Download"
+                  name="exportCSV"
+                  i18n:attributes="value"
+                  />
         </form>
         </tal:main-macro>
     </div>
