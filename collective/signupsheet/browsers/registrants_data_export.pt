@@ -18,13 +18,14 @@
             <tr>
                 <th class="nosort">
                     <input type="checkbox"
-                        onclick="toggleSelect(this, 'fields:list');"
+                        onclick="toggleSelect(this, 'fields:list', true);"
                         class="noborder"
                         name="alr_toggle"
                         value="#"
+						checked="checked"
                         id="alr_toggle"/>
                 </th>
-                <th i18n:translate="field_name">Field Name</th>
+                <th  class="nosort" i18n:translate="field_name">Field Name</th>
             </tr>
             </thead>
             <tbody>

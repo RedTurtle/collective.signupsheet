@@ -31,12 +31,12 @@
                 class="import_registrant_form"
                 tal:attributes="action string:${context/absolute_url}/@@registrants_data_import">
             <div class="field">
-            	<label i18n:translate="select_registrnats_csv">Select a csv file to import</label> <br/>
-            	<input type="file" name="uploaded_csv"/>
+            	<label for="uploaded_csv" i18n:translate="select_registrnats_csv">Select a csv file to import</label> <br/>
+            	<input type="file" id="uploaded_csv" name="uploaded_csv"/>
 			</div>
             <div class="field">
-            	<input type="checkbox" checked="on" name="avoid_mail_notification" />
-				<label i18n:translate="avoid_mail_notification">Don't notify registrants</label><br />
+            	<input type="checkbox" checked="on" id="avoid_mail_notification" name="avoid_mail_notification" />
+				<label for="avoid_mail_notification" i18n:translate="avoid_mail_notification">Don't notify registrants</label><br />
               	<input class="context" type="submit" value="Import" name="importRegistrants" i18n:attributes="value" />
           </div>
           </form>
