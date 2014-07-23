@@ -37,6 +37,7 @@
   <element value="FormLikertField"/>
   <element value="FormSaveDataAdapter"/>
 
+  <element value="FormSaveData2ContentAdapter"/>
   <element value="FormMailerAdapter"/>
   <element value="FormCustomScriptAdapter"/>
   <element value="FormThanksPage"/>
@@ -81,19 +82,19 @@
     visible="True">
   <permission value="Modify portal content"/>
  </action>
-  <action i18n:attributes="title" title="View Registrants" action_id="ss_subscriber" category="object"
+  <action i18n:attributes="title" i18n:domain="plone" title="View Registrants" action_id="ss_subscriber" category="object"
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/@@view_registrants"
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
-  <action i18n:attributes="title" title="Import Registrants" action_id="ss_import" category="object"
+  <action i18n:attributes="title" i18n:domain="plone" title="Import Registrants" action_id="ss_import" category="object"
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_import"
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
-  <action i18n:attributes="title" title="Export Registrants" action_id="ss_export" category="object"
+  <action i18n:attributes="title" i18n:domain="plone" title="Export Registrants" action_id="ss_export" category="object"
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_export"
     visible="True">

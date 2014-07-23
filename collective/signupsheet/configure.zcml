@@ -40,7 +40,8 @@
       title="collective.signupsheet: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
       handler="collective.signupsheet.setuphandlers.setupVarious">
-    <depends name="types"/>
+    <depends name="typeinfo"/>
+	<depends name="types"/>
   </genericsetup:importStep>
 
 </configure>

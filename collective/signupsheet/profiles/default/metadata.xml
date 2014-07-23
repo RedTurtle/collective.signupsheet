@@ -2,6 +2,7 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+    <dependency>profile-Products.PloneFormGen:default</dependency>
     <dependency>profile-uwosh.pfg.d2c:default</dependency>
   </dependencies>
 </metadata>

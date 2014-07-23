@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="signupsheet_registrant_workflow" title="signupsheet_registrant_workflow" description="" state_variable="review_state" initial_state="new" manager_bypass="False">
+<dc-workflow workflow_id="signupsheet_registrant_workflow" title="signupsheet_registrant_workflow" description="" state_variable="review_state" initial_state="new" manager_bypass="False"
+             xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+			 i18n:domain="plone">
  <permission>Delete objects</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
- <state state_id="confirmed" title="Confirmed">
+ <state state_id="confirmed" title="Confirmed" i18n:attributes="title">
   <exit-transition transition_id="reject-open"/>
   <permission-map name="Delete objects" acquired="False">
    <permission-role>Manager</permission-role>
@@ -39,7 +41,7 @@
   <permission-map name="View" acquired="True">
   </permission-map>
  </state>
- <state state_id="unconfirmed" title="Unconfirmed">
+ <state state_id="unconfirmed" title="Unconfirmed" i18n:attributes="title">
   <exit-transition transition_id="accept-unconfirmed"/>
   <permission-map name="Delete objects" acquired="False">
    <permission-role>Editor</permission-role>
@@ -59,7 +61,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="waiting_list_unconfirmed" title="Unconfirmed in waiting list">
+ <state state_id="waiting_list_unconfirmed" title="Unconfirmed in waiting list" i18n:attributes="title">
   <exit-transition transition_id="accept-unconfirmed"/>
   <permission-map name="Delete objects" acquired="False">
    <permission-role>Editor</permission-role>
@@ -79,24 +81,24 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <transition transition_id="accept-unconfirmed" title="confirm" new_state="confirmed" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">confirm</action>
+ <transition transition_id="accept-unconfirmed" title="Confirm" i18n:attributes="title" new_state="confirmed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Confirm</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="post" title="Post issue on save" new_state="unconfirmed" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">Submit registrant</action>
+ <transition transition_id="post" title="Post subscriber on save" i18n:attributes="title" new_state="unconfirmed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Submit registrant</action>
   <guard>
   </guard>
  </transition>
- <transition transition_id="post_waitinglist" title="Post issue on save" new_state="waiting_list_unconfirmed" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">Submit registrant</action>
+ <transition transition_id="post_waitinglist" title="Post subscriber on save, in waitling list" new_state="waiting_list_unconfirmed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Submit registrant (waiting list)</action>
   <guard>
   </guard>
  </transition>
- <transition transition_id="reject-open" title="Reject" new_state="unconfirmed" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">Reject</action>
+ <transition transition_id="reject-open" title="Reject" i18n:attributes="title" new_state="unconfirmed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Reject</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>

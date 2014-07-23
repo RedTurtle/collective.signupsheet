@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.signupsheet\n"
 
-msgid "SignupSheet"
+msgid "Signup Sheet"
 msgstr ""
 
 msgid "A solution for manage signup attendance to events"

@@ -20,7 +20,7 @@ def setupVarious(context):
 
 
 def setup_signupsheet(portal):
-    setup_uwosh_adapter(portal)
+    #setup_uwosh_adapter(portal)
     setup_portal_calendar(portal)
 
 
@@ -81,6 +81,12 @@ def add_registrant_portal_type(portal):
     portal_types.manage_renameObject(id, new_id)
     new_type = portal_types[new_id]
     new_type.title = name
+    new_type.icon_expr = "string:${portal_url}/registrant.gif"
+
+    d2ca = portal_types['FormSaveData2ContentAdapter']
+    allowed_content_types = set(d2ca.allowed_content_types)
+    allowed_content_types.add('registrant')
+    d2ca.allowed_content_types = tuple(allowed_content_types)
 
     #We need to add registrant also in portal_factory
     factory = getToolByName(portal, 'portal_factory')
@@ -88,5 +94,4 @@ def add_registrant_portal_type(portal):
     factoryTypes.extend(['registrant'])
     factory.manage_setPortalFactoryTypes(listOfTypeIds=factoryTypes)
 
-    new_type.icon_expr = "string:${portal_url}/registrant.gif"
     logger.info('Add registrant to D2C adapter')

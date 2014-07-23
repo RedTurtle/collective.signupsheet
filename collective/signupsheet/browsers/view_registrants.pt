@@ -58,24 +58,25 @@
                 <td>
                     <span tal:content="python: context.toLocalizedTime(r.created(), True)" />
                 </td>
-                <td tal:define="state python: context.portal_workflow.getInfoFor(r, 'review_state')" >
-                    <span i18n:domain='plone' i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
+                <td tal:define="state python: context.portal_workflow.getTitleForStateOnType(context.portal_workflow.getInfoFor(r, 'review_state'), 'registrant')" >
+                    <span i18n:domain="plone" i18n:translate="" tal:content="state" tal:attributes="class string:state-$state" />
                 </td>
                 <td>
-                    <a title="Edit"
+                    <a title="Edit subscriber data"
                        tal:attributes="href string:${r/absolute_url}/edit"
                        tal:condition="python: member.has_permission('Modify portal content', r)"
-					   i18n:domain="plone"
-					   i18n:attributes="title">
+                       i18n:attributes="title">
                         <img tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/edit.png"
+						     i18n:domain="plone"
                              alt="Edit"
-                             i18n:attributes="title;alt"
+                             i18n:attributes="alt"
                         />
                     </a>
-                    <a tal:attributes="href string:${registrant_folder}/confirm_registrant?id=${r/getId}"
+                    <a title="Confirm subscription"
+                       i18n:attributes="title"
+                       tal:attributes="href string:${registrant_folder}/confirm_registrant?id=${r/getId}"
                         tal:condition="python: context.portal_workflow.getInfoFor(r, 'review_state') != 'confirmed' and canReview">
                         <img tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/confirm_icon.png"
-                             title="Confirm"
                              alt="Confirm"
                              i18n:attributes="alt" />
                     </a>

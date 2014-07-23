@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="signupsheet_workflow" title="signupsheet_workflow" description="" state_variable="review_state" initial_state="open" manager_bypass="False">
+<dc-workflow workflow_id="signupsheet_workflow" title="signupsheet_workflow" description="" state_variable="review_state" initial_state="open" manager_bypass="False"
+             xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+			 i18n:domain="plone">
  <permission>Access contents information</permission>
  <permission>Add portal content</permission>
  <permission>List folder contents</permission>
  <permission>SignupSheet: Add Registrant</permission>
  <permission>View</permission>
- <state state_id="closed" title="Closed for submissions">
+ <state state_id="closed" title="Closed for submissions" i18n:attributes="title">
   <exit-transition transition_id="open"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>Editor</permission-role>
@@ -37,7 +39,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="open" title="Open for submissions">
+ <state state_id="open" title="Open for submissions" i18n:attributes="title">
   <exit-transition transition_id="close"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>Editor</permission-role>
@@ -62,14 +64,14 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <transition transition_id="close" title="Close tracker" new_state="closed" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">Close Signup Sheet</action>
+ <transition transition_id="close" title="Close signup sheet and stop submissions"  i18n:attributes="title" new_state="closed" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Close Signup Sheet</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="open" title="Open tracker" new_state="open" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">Open Signup Sheet</action>
+ <transition transition_id="open" title="Open signup sheet for submissions" i18n:attributes="title" new_state="open" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="" i18n:translate="">Open Signup Sheet</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>

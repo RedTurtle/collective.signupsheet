@@ -1,7 +1,10 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-18 10:33+0000\n"
+"POT-Creation-Date: 2014-07-23 10:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,40 +15,73 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: plone\n"
 
-msgid "Closed for submissions"
-msgstr ""
-
-msgid "Open for submissions
-msgstr ""
-
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Close Signup Sheet"
 msgstr ""
 
-msgid "Open Signup Sheet"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Close signup sheet and stop submissions"
 msgstr ""
 
-msgid "View Registrants"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Closed for submissions"
 msgstr ""
 
-msgid "Export Registrants"
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Confirm"
 msgstr ""
 
-msgid "signupsheet_description"
-msgstr ""
-
-msgid "signupsheet_title"
-msgstr ""
-
-msgid "Unconfirmed in waiting list"
-msgstr ""
-
-msgid "Unconfirmed"
-msgstr ""
-
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Confirmed"
 msgstr ""
 
-msgid "confirm"
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Export Registrants"
 msgstr ""
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Import Registrants"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open Signup Sheet"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open for submissions"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open signup sheet for submissions"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Post subscriber on save"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Reject"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant (waiting list)"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed"
+msgstr ""
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed in waiting list"
+msgstr ""
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "View Registrants"
+msgstr ""
+

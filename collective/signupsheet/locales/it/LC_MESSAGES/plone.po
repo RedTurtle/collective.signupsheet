@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-18 10:33+0000\n"
+"POT-Creation-Date: 2014-07-23 10:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,60 +9,76 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: plone\n"
 
-msgid "Closed for submissions"
-msgstr "Iscrizioni chiuse"
-
-msgid "Open for submissions"
-msgstr "Iscrizioni aperte"
-
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Close Signup Sheet"
 msgstr "Chiudi le iscrizioni"
 
-msgid "Open Signup Sheet"
-msgstr "Apri le iscrizioni"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Close signup sheet and stop submissions"
+msgstr "Chiudi le iscrizioni e ferma l'invio di richieste"
 
-msgid "View Registrants"
-msgstr "Vedi gli iscritti"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Closed for submissions"
+msgstr "Iscrizioni chiuse"
 
-msgid "Export Registrants"
-msgstr "Esporta i dati"
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Confirm"
+msgstr "Conferma"
 
-msgid "Unconfirmed in waiting list"
-msgstr "Da confermare (in lista d'attesa)"
-
-msgid "unconfirmed"
-msgstr "Da confermare"
-
-msgid "confirmed"
-msgstr "Confermato"
-
-msgid "waiting_list_unconfirmed"
-msgstr "Da confermare (in lista d'attesa)"
-
-msgid "Unconfirmed"
-msgstr "Da confermare"
-
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Confirmed"
 msgstr "Confermato"
 
-msgid "confirm"
-msgstr "Conferma"
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Export Registrants"
+msgstr "Esporta Iscritti"
 
+#: ../profiles/default/types/SignupSheet.xml
 msgid "Import Registrants"
-msgstr "Importa registrazioni"
+msgstr "Importa Iscritti"
 
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open Signup Sheet"
+msgstr "Apri le iscrizioni"
 
-#. Default: "A folderish type used as signup sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_description"
-msgstr "Un modulo basato su PFG per iscrivere utenti a partecipare ad un evento"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open for submissions"
+msgstr "Iscrizioni aperte"
 
-#. Default: "Signup Sheet"
-#: ./profiles/default/types/SignupSheet.xml
-msgid "signupsheet_title"
-msgstr "Signup Sheet"
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open signup sheet for submissions"
+msgstr "Apri le iscrizioni per gli invii di richieste"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Post subscriber on save"
+msgstr "Invia iscrizione al salvataggio"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Reject"
+msgstr "Rifiuta"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant"
+msgstr "Sottometti iscrizione"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant (waiting list)"
+msgstr "Sottometti iscrizione (lista d'attesa)"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed"
+msgstr "Non confermato"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed in waiting list"
+msgstr "Non confermato, in lista d'attesa"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "View Registrants"
+msgstr "Vedi gli iscritti"
+
