@@ -106,6 +106,7 @@ class InitializeSignupSheetForm(object):
             mailer.setTo_field('email')
             mailer.setReplyto_field('email')
             mailer.setSubjectOverride('here/@@user_mailer_subject')
+            mailer.setExecCondition("request/review_state|nothing")
             mailer.setBody_pt(INITIAL_MAIL % zope.i18n.translate(
                                _(u'subscribtion_mail',
                                 default=INITIAL_MAIL_MESSAGE,),

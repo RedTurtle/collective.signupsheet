@@ -19,6 +19,7 @@ INITIAL_MAIL = u"""<html xmlns='http://www.w3.org/1999/xhtml'>\r\n\r\n
 INITIAL_MAIL_MESSAGE = u"""
 Thank you for registering to <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\r\n
 <tal:show tal:condition='request/review_state|nothing'><p>Your registration state is: <tal:review_state tal:replace='request/review_state' /></p></tal:show>
+<p>Those informations has been provided:</p>
 """
 
 MANAGER_MAIL = u"""
