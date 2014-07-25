@@ -6,6 +6,11 @@ those events filling a **customizable form**.
 How to use
 ==========
 
+.. image:: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-01.png/image_preview
+   :target: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-01.png
+   :align: right
+   :alt: Example form
+
 After installation you can add a new content type to you site: the "*Signup Sheet*".
 
 Starting configuration in the edit form is only about general information about the event, like:
@@ -42,6 +47,11 @@ Whatever form you define, your users must fill the form to subscribe.
 Handling subscriptions
 ----------------------
 
+.. image:: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-02.png/image_mini
+   :target: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-02.png
+   :align: right
+   :alt: Editing a subscriber
+
 Every time a user fill the form, a "*registrant*" content is created inside the "*Registrants*" subsection of
 the form.
 The registrant is *real* working document that an administrator can edit later (we are using the poweful
@@ -51,12 +61,20 @@ __ http://plone.org/products/uwosh.pfg.d2c
 
 For users able to manage the signup sheet an administrative view "*View Registrant*" is given.
 
+.. image:: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-03.png/image_preview
+   :target: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.1.0-03.png
+   :align: center
+   :alt: View Registrants
+
 From this view you can see the status of all subscriptions and confim them.
 Right now confirming a user subscription has only internal meaning and confirmed or unconfirmed users are not
 handled in different way.
 
+Other features
+--------------
+
 Notification system
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 The Signup Sheet contains also two PloneFormGen mailer adapter, one for notification to the manager at every
 new subscription, another for notify the user itself after the subscription (for receive a confirmation of filled
@@ -65,25 +83,14 @@ data).
 You can customize tuose adapter for fit your needs (new mail messages, notify additional users, ...).
 
 Import/Export
--------------
+~~~~~~~~~~~~~
 
 Subscribers can be exported in a CSV format, or imported from a CSV with the proper format.
 
 Calendar friendly
------------------
+~~~~~~~~~~~~~~~~~
 
 Signup sheet are shown in the Plone calendar portlet.
-
-Historical tribute to SignupSheet
-=================================
-
-Altough this product is using more recent Plone add-ons, it's miming all the features of another product:
-`SignupSheet`__.
-
-__ http://plone.org/products/signupsheet
-
-The software stack used in the orginal product has became too old to be maintained anymore. We hope this new add-on
-will give same features and best flexibility.
 
 Credits
 =======
@@ -93,6 +100,18 @@ S. Anna Hospital supports the `PloneGov initiative`__.
 
 __ http://www.ospfe.it/
 __ http://www.plonegov.it/
+
+Historical tribute to SignupSheet
+---------------------------------
+
+Altough this product is using more recent Plone add-technologies, it's miming all the features of another product:
+`SignupSheet`__.
+
+__ http://plone.org/products/signupsheet
+
+The software stack used in the orginal product has become too old to be maintained anymore. We hope this new add-on
+will give same features and best flexibility.
+
 
 Authors
 =======
