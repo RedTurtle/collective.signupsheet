@@ -1,61 +1,98 @@
-Introduction
-============
+A **signup sheet implementation** for Plone. New events-like content are added to your site, **users can subscribe** to
+those events filling a **customizable form**.
 
-This package has beed created thinking to switch the old `Products.SignupSheet`__ with a new product more in the Plone 4.x way.
+.. contents:: **Table of contents**
 
-__ http://plone.org/products/signupsheet
+How to use
+==========
 
-Products.SignupSheet looks like a form with a bunch of fields that an admin can change dinamically. From here to `Products.PloneFormGen`__ it's just a short step.
+After installation you can add a new content type to you site: the "*Signup Sheet*".
+
+Starting configuration in the edit form is only about general information about the event, like:
+
+* Max number of registrants (if any)
+* Waiting list size (if any)
+* Start/End date of the event
+* Start/End date of early bird phase
+* Registration deadline
+* ...much more
+
+After that your users can access a **subscription form**, but you can easily customize
+*how* the form looks like.
+
+Customizing the subscription form
+---------------------------------
+
+This product is based on `PloneFormGen`__ so you can use the same form construction features.
+You have a great set of form fields available, but 3rd party products can enhance this list (for example:
+a captcha protection field could help).
 
 __ http://plone.org/products/ploneformgen
 
+The form is automatically generated with three core fields:
 
-PloneFormGen allow us to create form dinamically and this is the first important brick. The old Products.SignupSheet was able to create objects (Registrant archetypes) and add/remove/modify it's fields dinamically. In this case we decide to use `uwosh.pfg.d2c`__. This is a PloneFormGen adapter that allow to add a new action; at form submission this action saves form data into an archetype. This archetype is completely based on schema extender, so every time someone change fields in the form, also fields on this archetypes changes.
+* Name
+* Surname
+* Email
+
+The *email* field is recommended but you can freely change/delete them all and add much more fields.
+
+Whatever form you define, your users must fill the form to subscribe.
+
+Handling subscriptions
+----------------------
+
+Every time a user fill the form, a "*registrant*" content is created inside the "*Registrants*" subsection of
+the form.
+The registrant is *real* working document that an administrator can edit later (we are using the poweful
+`uwosh.pfg.d2c`__ here).
 
 __ http://plone.org/products/uwosh.pfg.d2c
 
+For users able to manage the signup sheet an administrative view "*View Registrant*" is given.
 
-Usage
-=====
+From this view you can see the status of all subscriptions and confim them.
+Right now confirming a user subscription has only internal meaning and confirmed or unconfirmed users are not
+handled in different way.
 
-Install collective.signupsheet from portal_quickinstaller; the install profile will install also uwosh.pfg.d2c. After product installation you'll have in the content menu a new entry called Signup Sheet.
+Notification system
+-------------------
 
-When someone create a new form, you will have all the FormFolder functionality plus fields from Products.SignupSheet. You will see two more fields: start and end date. In this way you will be able to treat the Signup Sheet as an event and it will be put in plone calendar portlet.
+The Signup Sheet contains also two PloneFormGen mailer adapter, one for notification to the manager at every
+new subscription, another for notify the user itself after the subscription (for receive a confirmation of filled
+data).
 
-Adding a new signup sheet will give you also a set of objects within the form:
+You can customize tuose adapter for fit your needs (new mail messages, notify additional users, ...).
 
- * a *name* FormStringField;
- * a *surname* FormStringField;
- * an *email* FormStringField;
- * a *registrants* FormSaveData2ContentAdapter;
- * a couple of mailer FormMailerAdapter;
- * a *thank-you* page FormThanksPage;ter;
- * a thank-you page FormThanksPage;
+Import/Export
+-------------
 
-Those object are configured with default values and text (depending on site language) more or less in the way the old Products.SignupSheet was configured.
+Subscribers can be exported in a CSV format, or imported from a CSV with the proper format.
 
+Calendar friendly
+-----------------
 
-Sub object configuration
-------------------------
-Here all the settings made on sub objects during signup sheet creation:
- * *name* field: the default value is setted to 'here/@@default_name_value'. In this way when user try to sign up, if it's a registered user, his name is calculated;
- * *surname* field: the same as name, calling 'here/@@default_surname_value';
- * *email* field: same as name and surname; default value is computed by 'here/@@default_email_value'; there is also *isEmail* validator setted;
- * *registrants* adapter: is configured to calculate dynamically created object's title, basing on name and surname fields;
- * *subscriber mail* and *manager mail* adapter: creation configure dynamically mail subject and mail body;
- * *thank you* page: there is a default message;
+Signup sheet are shown in the Plone calendar portlet.
 
-If you want, on user subscription, you can send a mail also to a signup sheet
-'manger', manually setting the second mailer in the form (the "Manager notification
-mailer"): you need to add a mail addres.
+Historical tribute to SignupSheet
+=================================
 
+Altough this product is using more recent Plone add-ons, it's miming all the features of another product:
+`SignupSheet`__.
 
-Main difference from Products.Signupsheet
------------------------------------------
-I think the main difference between old signup sheet and the new one is that the
-status is no more available as field, but is handled with object status. So we have
-a slightly different workflow for registrants: they will be divided into two states,
-'unconfirmed' and 'unconfirmed in waiting list'.
+__ http://plone.org/products/signupsheet
+
+The software stack used in the orginal product has became too old to be maintained anymore. We hope this new add-on
+will give same features and best flexibility.
+
+Credits
+=======
+
+Developed with the support of `S. Anna Hospital, Ferrara`__;
+S. Anna Hospital supports the `PloneGov initiative`__.
+
+__ http://www.ospfe.it/
+__ http://www.plonegov.it/
 
 Authors
 =======

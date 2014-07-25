@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
-
 from zope.component import getUtility
-
 from collective.signupsheet.interfaces import IGetRegistrants
 from collective.signupsheet import signupsheetMessageFactory as _
+from collective.signupsheet import config
+from AccessControl import getSecurityManager
 
 
 class SignupSheetBaseView(BrowserView):
@@ -48,14 +50,32 @@ class SignupSheetBaseView(BrowserView):
     def getSeatsLeft(self):
         registrants = getUtility(IGetRegistrants).get_registrants_brains_anon
         registrants_number = len((registrants(self.context)))
-        return self.context.getEventsize() +\
-               self.context.getWaitlist_size() -\
+        return self.context.getEventsize() + \
+               self.context.getWaitlist_size() - \
                registrants_number
+
+    def check_deadline(self):
+        deadline = self.context.getRegistrationDeadline()
+        if not deadline:
+            return True
+        now = DateTime()
+        return now < deadline
+
+    def can_subscribe(self):
+        """
+        Check if subscription is possibile, checking all the logic
+        """
+        context = self.context
+        wtool = getToolByName(context, 'portal_workflow')
+        wf_state = wtool.getInfoFor(context, 'review_state')
+        if not self.check_deadline():
+            return False
+        return wf_state in ('earlybird', 'open') or \
+               (wf_state=='closed' and self.check_add_registrants_permission())
 
     def check_add_registrants_permission(self):
         """
         check if you have the permission to create registrants
         """
-        pm = getToolByName(self.context, 'portal_membership')
-        member = pm.getAuthenticatedMember()
-        return member.has_permission('SignupSheet: Add Registrant', self.context)
+        sm = getSecurityManager()
+        return sm.checkPermission(config.ADD_PERMISSIONS['SignupSheet'], self.context)

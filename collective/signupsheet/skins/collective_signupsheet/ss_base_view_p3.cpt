@@ -116,7 +116,7 @@
                   </div>
 
                   <div id="registration-open"
-                       tal:condition="python: wf_state in ('earlybird', 'open')" >
+                       tal:condition="view/can_subscribe" >
                       <p class="seatsleft"
                         tal:condition="context/getDisplay_size_left"
                          i18n:translate="seats_left_message">
@@ -130,21 +130,7 @@
                                      name="formsubscribe"/>
                          </form>
                   </div>
-                  <div id="registration-open"
-                       tal:condition="python: wf_state in ('closed') and view.check_add_registrants_permission()" >
-                      <p class="seatsleft"
-                        tal:condition="context/getDisplay_size_left"
-                         i18n:translate="seats_left_message">
-                         <span tal:replace="view/getSeatsLeft"
-                               i18n:name="seats">21</span> seats left.
-                      </p>
-                         <form method="post" action="#"
-                               tal:attributes="action context/absolute_url">
-                              <input type="submit" value="" 
-                                     tal:attributes="value view/getSignupMessage"
-                                     name="formsubscribe"/>
-                         </form>
-                  </div>
+
                 </div>
               </div>
               <div id="ss-registration-full" 

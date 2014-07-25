@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-23 10:49+0000\n"
+"POT-Creation-Date: 2014-07-25 10:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Domain: collective.signupsheet\n"
 
 msgid "A solution for manage signup attendance to events"
+msgstr ""
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
+msgid "Can't subscribe. No more free slots"
 msgstr ""
 
 #: ../browsers/view_registrants.pt:79
@@ -66,12 +70,12 @@ msgid "avoid_mail_notification"
 msgstr ""
 
 #. Default: "Colon"
-#: ../browsers/registrants_data_export.pt:46
+#: ../browsers/registrants_data_export.pt:47
 msgid "colon"
 msgstr ""
 
 #. Default: "Comma"
-#: ../browsers/registrants_data_export.pt:45
+#: ../browsers/registrants_data_export.pt:46
 msgid "comma"
 msgstr ""
 
@@ -100,7 +104,7 @@ msgid "field_eventsize"
 msgstr ""
 
 #. Default: "Field Name"
-#: ../browsers/registrants_data_export.pt:27
+#: ../browsers/registrants_data_export.pt:28
 msgid "field_name"
 msgstr ""
 
@@ -190,7 +194,7 @@ msgid "label_body_text"
 msgstr ""
 
 #. Default: "Delimiter"
-#: ../browsers/registrants_data_export.pt:43
+#: ../browsers/registrants_data_export.pt:44
 msgid "label_delimiter"
 msgstr ""
 
@@ -204,7 +208,7 @@ msgstr ""
 msgid "mailer_registration_subject_overrides_manager"
 msgstr ""
 
-#: ../adapters/initialize_signup_sheet_form.py:134
+#: ../adapters/initialize_signup_sheet_form.py:135
 msgid "manager_subscribtion_mail"
 msgstr ""
 
@@ -214,12 +218,12 @@ msgid "no registrants"
 msgstr ""
 
 #. Default: "Manager notification mailer"
-#: ../adapters/initialize_signup_sheet_form.py:121
+#: ../adapters/initialize_signup_sheet_form.py:122
 msgid "pfg_manager_notification_mailer"
 msgstr ""
 
 #. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
-#: ../adapters/initialize_signup_sheet_form.py:126
+#: ../adapters/initialize_signup_sheet_form.py:127
 msgid "pfg_manager_notification_mailer_description"
 msgstr ""
 
@@ -229,7 +233,7 @@ msgid "pfg_registrants_title"
 msgstr ""
 
 #. Default: "Thank You"
-#: ../adapters/initialize_signup_sheet_form.py:145
+#: ../adapters/initialize_signup_sheet_form.py:146
 msgid "pfg_thankyou_title"
 msgstr ""
 
@@ -263,7 +267,7 @@ msgid "select_registrnats_csv"
 msgstr ""
 
 #. Default: "Semicolon"
-#: ../browsers/registrants_data_export.pt:48
+#: ../browsers/registrants_data_export.pt:49
 msgid "semicolon"
 msgstr ""
 
@@ -308,36 +312,40 @@ msgid "signupsheet_surnamefield_title"
 msgstr ""
 
 #. Default: "Space"
-#: ../browsers/registrants_data_export.pt:49
+#: ../browsers/registrants_data_export.pt:50
 msgid "space"
 msgstr ""
 
-#: ../adapters/initialize_signup_sheet_form.py:110
+#: ../adapters/initialize_signup_sheet_form.py:111
 msgid "subscribtion_mail"
 msgstr ""
 
 #. Default: "Subscribing"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:160
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:161
 msgid "subscription_form_title"
 msgstr ""
 
 #. Default: "Tabulator"
-#: ../browsers/registrants_data_export.pt:47
+#: ../browsers/registrants_data_export.pt:48
 msgid "tabulator"
 msgstr ""
 
 #. Default: "Registration is full"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:152
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:153
 msgid "text_registration_full"
 msgstr ""
 
 #. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
-#: ../adapters/initialize_signup_sheet_form.py:148
+#: ../adapters/initialize_signup_sheet_form.py:149
 msgid "thanks_prologue"
 msgstr ""
 
 #: ../browsers/view_registrants.pt:30
 msgid "unconfirmed"
+msgstr ""
+
+#: ../browsers/view_registrants.pt:32
+msgid "unconfirmed (in wailing list)"
 msgstr ""
 
 #. Default: "Export Registrants"
@@ -348,9 +356,5 @@ msgstr ""
 #. Default: "View Registrants"
 #: ../browsers/view_registrants.pt:21
 msgid "view_registrants"
-msgstr ""
-
-#: ../browsers/view_registrants.pt:32
-msgid "waiting_list_unconfirmed"
 msgstr ""
 

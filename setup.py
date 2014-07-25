@@ -34,8 +34,6 @@ setup(name='collective.signupsheet',
           'uwosh.pfg.d2c>=2.3.0b4'
       ],
       entry_points="""
-      # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,

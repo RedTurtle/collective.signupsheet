@@ -149,7 +149,7 @@ class SignupSheet(FormFolder):
         if not pm.isAnonymousUser():
             ISignupSheetInitializer(self).form_initializer()
         else:
-            logger.warning("Anonymous user: not allowd to create fields")
+            logger.debug("Anonymous user: not allowed to create fields")
 
     def no_seat_left(self):
         """

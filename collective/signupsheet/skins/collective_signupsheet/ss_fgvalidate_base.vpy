@@ -27,7 +27,7 @@ try:
 except (ImportError, Unauthorized):
     P3StyleErrors = False
 
-from collective.signupsheet import signupsheetMessageFactory as CSSmf
+from collective.signupsheet import signupsheetMessageFactory as _
 
 request = context.REQUEST
 
@@ -39,7 +39,7 @@ errors = state.getErrors()
 # a correct form
 no_seat_left = context.no_seat_left()
 if no_seat_left:
-    message = CSSmf(u"Can't subscribe. No more free slots")
+    message = _(u"Can't subscribe. No more free slots")
     addStatusMessage(request, message, type='error')
     return state.set(status='failure', errors=errors)
 

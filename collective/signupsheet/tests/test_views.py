@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
+
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
-
-
 from zope.component import getMultiAdapter
-
 from collective.signupsheet.tests.base import FunctionalTestCase
 
 
@@ -49,6 +48,11 @@ class TestBaseView(FunctionalTestCase):
         self.assertTrue(view.getSeatsLeft() == 1)
         self.form.registrants.invokeFactory('registrant', id='rgs4')
         self.assertTrue(view.getSeatsLeft() == 0)
+
+    def test_deadline(self):
+        self.assertTrue('Sign up!' in self.form())
+        self.form.setRegistrationDeadline(DateTime()-1)
+        self.assertFalse('Sign up!' in self.form())
 
 
 class TestDataExport(FunctionalTestCase):

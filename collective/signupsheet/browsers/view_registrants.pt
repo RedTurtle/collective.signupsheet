@@ -24,12 +24,12 @@
         </div>
         <tal:if condition="registrants" >
             <span tal:replace="python: len(registrants)" />
-            <span i18n:translate="registrants">registrants</span>,
-            <span i18n:translate="confirmed">confirmed</span>
+            <span i18n:translate="">registrants</span>,
+            <span i18n:translate="">confirmed</span>
             <span tal:replace="python: len(confirmed_registrants)"/>,
-            <span i18n:translate="unconfirmed">unconfirmed</span>
+            <span i18n:translate="">unconfirmed</span>
             <span tal:replace="python: len(unconfirmed_registrants)"/>,
-            <span i18n:translate="waiting_list_unconfirmed">waiting_list_unconfirmed</span>
+            <span i18n:translate="">unconfirmed (in wailing list)</span>
             <span tal:replace="python: len(unconfirmed_registrants_waiting)"/>
         </tal:if>
 
