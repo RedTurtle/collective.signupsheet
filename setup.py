@@ -11,7 +11,7 @@ setup(name='collective.signupsheet',
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.rst")).read(),
       classifiers=[
-        "Development Status :: 4 - Beta"
+        "Development Status :: 4 - Beta",
         "Framework :: Plone",
         "Framework :: Plone :: 4.2",
         "Framework :: Plone :: 4.3",
