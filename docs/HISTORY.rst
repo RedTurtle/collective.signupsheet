@@ -4,7 +4,7 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
-- Fixed endocing errors when sending e-mail
+- Fixed encoding errors when sending e-mail
   [keul]
 
 0.1.1 (2014-07-29)
