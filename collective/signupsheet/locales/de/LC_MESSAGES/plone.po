@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-25 10:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Close Signup Sheet"
+msgstr "Anmeldeforumlar schließen"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Close signup sheet and stop submissions"
+msgstr "Forumlar schließen und Anmeldungen stoppen"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Closed for submissions"
+msgstr "Anmeldung geschlossen"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Confirmed"
+msgstr "Bestätigt"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Export Registrants"
+msgstr "Teilnehmerdaten exportieren"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Import Registrants"
+msgstr "Teilnehmerdaten importieren"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open Signup Sheet"
+msgstr "Anmeldeformular öffnen"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open for submissions"
+msgstr "Offen für Anmeldungen"
+
+#: ../profiles/default/workflows/signupsheet_workflow/definition.xml
+msgid "Open signup sheet for submissions"
+msgstr "Formular für Anmeldungen öffnen"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Post subscriber on save"
+msgstr "Post subscriber on save"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Reject"
+msgstr "Ablehnen"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant"
+msgstr "Submit registrant"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Submit registrant (waiting list)"
+msgstr "Submit registrant (waiting list)"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed"
+msgstr "Nicht bestätigt"
+
+#: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
+msgid "Unconfirmed in waiting list"
+msgstr "Nicht bestätigt. In der Warteliste"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "View Registrants"
+msgstr "Teilnehmer anzeigen"

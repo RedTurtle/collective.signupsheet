@@ -1,0 +1,363 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"POT-Creation-Date: 2014-07-25 10:58+0000\n"
+"PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
+"Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
+"Language-Team: de <staeff@arcor.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.signupsheet\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+msgid "A solution for manage signup attendance to events"
+msgstr "Ein Produkt zur Verwaltung von Veranstaltungsanmeldungen"
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
+msgid "Can't subscribe. No more free slots"
+msgstr "Anmeldung nicht möglich. Keine freien Plätze mehr vorhanden."
+
+#: ../browsers/view_registrants.pt:79
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: ../browsers/view_registrants.pt:75
+msgid "Confirm subscription"
+msgstr "Anmeldung bestätigen"
+
+#: ../browsers/registrants_data_export.pt:55
+msgid "Download"
+msgstr "Download"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:101
+msgid "Early bird until"
+msgstr "Frühbucherzeitraum bis"
+
+#: ../browsers/view_registrants.pt:65
+msgid "Edit subscriber data"
+msgstr "Teilnehmerdaten bearbeiten"
+
+#: ../browsers/import_registrants.pt:40
+msgid "Import"
+msgstr "Importieren"
+
+#: ../browsers/registrants_data.py:177
+msgid "No file loaded"
+msgstr "Keine Datei geladen"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:105
+msgid "Registration deadline"
+msgstr "Anmeldeschluss"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Signup Sheet"
+msgstr "Anmeldeformular"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:115
+msgid "The registration is closed"
+msgstr "Die Anmeldung ist geschlossen"
+
+#. Default: "Don't notify registrants"
+#: ../browsers/import_registrants.pt:39
+msgid "avoid_mail_notification"
+msgstr "Teilnehmer nicht benachrichtigen"
+
+#. Default: "Colon"
+#: ../browsers/registrants_data_export.pt:47
+msgid "colon"
+msgstr "Doppelpunkt"
+
+#. Default: "Comma"
+#: ../browsers/registrants_data_export.pt:46
+msgid "comma"
+msgstr "Komma"
+
+#: ../browsers/view_registrants.pt:28
+msgid "confirmed"
+msgstr "bestaetigt"
+
+#. Default: "When"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:95
+msgid "event_view_when"
+msgstr "Wann"
+
+#. Default: "Display seats left"
+#: ../contents/signupsheet.py:57
+msgid "field_display_size_left"
+msgstr "Verbleibende Plätze anzeigen"
+
+#. Default: "Early bird phase until"
+#: ../contents/signupsheet.py:89
+msgid "field_early_bird_phase"
+msgstr "Frühbucherphase bis zum"
+
+#. Default: "Number of registrants"
+#: ../contents/signupsheet.py:35
+msgid "field_eventsize"
+msgstr "Teilnehmerzahl"
+
+#. Default: "Field Name"
+#: ../browsers/registrants_data_export.pt:28
+msgid "field_name"
+msgstr "Feldname"
+
+#. Default: "Registration deadline"
+#: ../contents/signupsheet.py:99
+msgid "field_registration_deadline"
+msgstr "Anmeldeschluss"
+
+#. Default: "Size of wait list"
+#: ../contents/signupsheet.py:49
+msgid "field_waitlist_size"
+msgstr "Umfang der Warteliste"
+
+#. Default: "Choose to show in the subscription page the number of seats left"
+#: ../contents/signupsheet.py:58
+msgid "fieldhelp_display_size_left"
+msgstr "Auswählen um auf der Anmeldeseite die verbleibenden Plätze anzuzeigen"
+
+#. Default: "Set to 0 for unlimited registration"
+#: ../contents/signupsheet.py:37
+msgid "fieldhelp_eventsize"
+msgstr "Auf 0 setzen für eine unbegrenzte Zahl an Anmeldungen"
+
+#. Default: "Registrations will be stopped after this date"
+#: ../contents/signupsheet.py:101
+msgid "fieldhelp_registration_deadline"
+msgstr "Anmeldungen werden nach diesem Termin gestoppt"
+
+#. Default: "Action"
+#: ../browsers/view_registrants.pt:46
+msgid "heading_action"
+msgstr "Aktion"
+
+#. Default: "Created"
+#: ../browsers/view_registrants.pt:44
+msgid "heading_created"
+msgstr "Erzeugt"
+
+#. Default: "Select fields to export and download CSV file"
+#: ../browsers/registrants_data_export.pt:14
+msgid "heading_import_contacts_step_one"
+msgstr "Felder für den Export auswählen und CSV-Datei downloaden"
+
+#. Default: "Review state"
+#: ../browsers/view_registrants.pt:45
+msgid "heading_review_state"
+msgstr "Review-Status"
+
+#. Default: "Text for front page of signup"
+#: ../contents/signupsheet.py:119
+msgid "help_body_text"
+msgstr "Text für die Startseite der Anmeldung."
+
+#. Default: "Select a csv from which import registrants"
+#: ../browsers/import_registrants.pt:20
+msgid "help_import_registrants"
+msgstr "CSV-Datei für den Import von Teilnehmern auswählen"
+
+#. Default: "Use semicolon as separator"
+#: ../browsers/import_registrants.pt:23
+msgid "import_first_rule"
+msgstr "Benutze das Semikolon als Trennsymbol"
+
+#. Default: "Import Registrants"
+#: ../browsers/import_registrants.pt:19
+msgid "import_registrants"
+msgstr "Teilnehmer importieren"
+
+#. Default: "The uploaded csv file must observe the following rules"
+#: ../browsers/import_registrants.pt:21
+msgid "import_rules"
+msgstr "Die hochgeladene CSV-Datei muss diesen Regeln entsprechen"
+
+#. Default: "First line in csv have as header the name of all the fields in the form"
+#: ../browsers/import_registrants.pt:24
+msgid "import_second_rule"
+msgstr "Die erste Zeil der CSV-Datei enthält als Kopfzeile die Namen der Formularfelder"
+
+#. Default: "Empty for a missing value (e.g. ;;mail@provider.com)"
+#: ../browsers/import_registrants.pt:25
+msgid "import_third_rule"
+msgstr "Bei fehlenden Werten Position leer lassen (z.B.: ;;mail@provider.com)"
+
+#. Default: "Body Text"
+#: ../contents/signupsheet.py:118
+msgid "label_body_text"
+msgstr "Haupttext"
+
+#. Default: "Delimiter"
+#: ../browsers/registrants_data_export.pt:44
+msgid "label_delimiter"
+msgstr "Trennsymbol"
+
+#. Default: "Your registration for ${title} has been received"
+#: ../browsers/pfg_field_messages.py:17
+msgid "mailer_registration_subject_overrides"
+msgstr "Ihre Anmeldung für ${title} wurde empfangen"
+
+#. Default: "Notification: New registration for ${title} has been received"
+#: ../browsers/pfg_field_messages.py:29
+msgid "mailer_registration_subject_overrides_manager"
+msgstr "Banachrichtigung: Eine neue Anmeldung für ${title} wurde empfangen"
+
+#: ../adapters/initialize_signup_sheet_form.py:135
+msgid "manager_subscribtion_mail"
+msgstr ""
+"Nuova iscrizione per <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
+"Prego, verificare gli iscritti: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
+
+#. Default: "No registrants"
+#: ../browsers/view_registrants.pt:22
+msgid "no registrants"
+msgstr "Keine Anmeldungen"
+
+#. Default: "Manager notification mailer"
+#: ../adapters/initialize_signup_sheet_form.py:122
+msgid "pfg_manager_notification_mailer"
+msgstr "Manager notification mailer"
+
+#. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
+#: ../adapters/initialize_signup_sheet_form.py:127
+msgid "pfg_manager_notification_mailer_description"
+msgstr "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
+
+#. Default: "Registrants"
+#: ../adapters/initialize_signup_sheet_form.py:85
+msgid "pfg_registrants_title"
+msgstr "Teilnehmer Adapter"
+
+#. Default: "Thank You"
+#: ../adapters/initialize_signup_sheet_form.py:146
+msgid "pfg_thankyou_title"
+msgstr "Vielen Dank"
+
+#. Default: "User notification mailer "
+#: ../adapters/initialize_signup_sheet_form.py:99
+msgid "pfg_user_notification_mailer"
+msgstr "User notification mailer"
+
+#. Default: "E-Mails Form Input for subscribers"
+#: ../adapters/initialize_signup_sheet_form.py:103
+msgid "pfg_user_notification_mailer_description"
+msgstr "E-Mails Form Input for subscribers"
+
+#: ../browsers/view_registrants.pt:27
+msgid "registrants"
+msgstr "Teilnehmer"
+
+#. Default: "Created ${registrants} new registrant"
+#: ../browsers/registrants_data.py:195
+msgid "registrants_imported"
+msgstr "${registrants} neue Teilnehmer angelegt"
+
+#. Default: "${seats} seats left."
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:123
+msgid "seats_left_message"
+msgstr "${seats} Plätze frei."
+
+#. Default: "Select a csv file to import"
+#: ../browsers/import_registrants.pt:34
+msgid "select_registrnats_csv"
+msgstr "CSV-Datei zum Import auswählen"
+
+#. Default: "Semicolon"
+#: ../browsers/registrants_data_export.pt:49
+msgid "semicolon"
+msgstr "Semikolon"
+
+#. Default: "Sign up!"
+#: ../browsers/signupsheet_baseview.py:43
+msgid "sign_up"
+msgstr "Anmelden"
+
+#. Default: "Signup for waiting list"
+#: ../browsers/signupsheet_baseview.py:45
+msgid "sign_up_for_waitinglist"
+msgstr "In die Warteliste eintragen"
+
+#. Default: "Handle attendance registrations to workshops, fundraisers and other type of events"
+#: ../profiles/default/types/SignupSheet.xml
+msgid "signup_sheet_type_description"
+msgstr "Abwicklung der Teilnehmerregistrierung für Workshops und andere Veranstaltungen"
+
+#. Default: "E-Mail Address"
+#: ../adapters/initialize_signup_sheet_form.py:68
+msgid "signupsheet_emailfield_title"
+msgstr "E-Mail Adresse"
+
+#. Default: "Reset"
+#: ../adapters/initialize_signup_sheet_form.py:35
+msgid "signupsheet_formfolder_reset"
+msgstr "Zurücksetzen"
+
+#. Default: "Sign up"
+#: ../adapters/initialize_signup_sheet_form.py:31
+msgid "signupsheet_formfolder_signup"
+msgstr "Anmelden"
+
+#. Default: "Your Name"
+#: ../adapters/initialize_signup_sheet_form.py:48
+msgid "signupsheet_namefield_title"
+msgstr "Name"
+
+#. Default: "Your surname"
+#: ../adapters/initialize_signup_sheet_form.py:58
+msgid "signupsheet_surnamefield_title"
+msgstr "Vorname"
+
+#. Default: "Space"
+#: ../browsers/registrants_data_export.pt:50
+msgid "space"
+msgstr "Space"
+
+#: ../adapters/initialize_signup_sheet_form.py:111
+msgid "subscribtion_mail"
+msgstr ""
+"La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\n"
+"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sono stati foriniti i seguenti dati:</p>"
+
+#. Default: "Subscribing"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:161
+msgid "subscription_form_title"
+msgstr "Anmeldung zu"
+
+#. Default: "Tabulator"
+#: ../browsers/registrants_data_export.pt:48
+msgid "tabulator"
+msgstr "Tabulator"
+
+#. Default: "Registration is full"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:153
+msgid "text_registration_full"
+msgstr "Die Veranstaltung ist ausgebucht"
+
+#. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
+#: ../adapters/initialize_signup_sheet_form.py:149
+msgid "thanks_prologue"
+msgstr ""
+"Vielen Dank für Ihre Anmeldung, wir werden Sie in Kürze kontaktieren. <br/>\n"
+"Sie haben folgende Angaben gemacht:"
+
+#: ../browsers/view_registrants.pt:30
+msgid "unconfirmed"
+msgstr "unbestaetigt"
+
+#: ../browsers/view_registrants.pt:32
+msgid "unconfirmed (in wailing list)"
+msgstr "unbestaetigt (auf der Warteliste)"
+
+#. Default: "Export Registrants"
+#: ../browsers/registrants_data_export.pt:13
+msgid "view_export_registrant"
+msgstr "Anmeldedaten exportieren"
+
+#. Default: "View Registrants"
+#: ../browsers/view_registrants.pt:21
+msgid "view_registrants"
+msgstr "Teilnehmer anzeigen"
