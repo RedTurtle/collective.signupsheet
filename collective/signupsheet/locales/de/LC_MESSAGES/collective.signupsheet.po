@@ -79,7 +79,7 @@ msgstr "Komma"
 
 #: ../browsers/view_registrants.pt:28
 msgid "confirmed"
-msgstr "bestaetigt"
+msgstr "bestätigt"
 
 #. Default: "When"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:95
@@ -346,11 +346,11 @@ msgstr ""
 
 #: ../browsers/view_registrants.pt:30
 msgid "unconfirmed"
-msgstr "unbestaetigt"
+msgstr "unbestätigt"
 
 #: ../browsers/view_registrants.pt:32
 msgid "unconfirmed (in wailing list)"
-msgstr "unbestaetigt (auf der Warteliste)"
+msgstr "unbestätigt (auf der Warteliste)"
 
 #. Default: "Export Registrants"
 #: ../browsers/registrants_data_export.pt:13
