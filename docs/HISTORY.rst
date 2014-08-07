@@ -7,6 +7,9 @@ Changelog
 - Fixed encodings errors on sending mail and exporting
   [keul]
 
+- Added german translation
+  [staeff]
+
 0.1.1 (2014-07-29)
 ------------------
 
