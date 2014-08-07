@@ -125,7 +125,7 @@ class RegistrantDataExport(BrowserView, Common):
                         row.append(value)
                     except KeyError:
                         row.append('')
-                row.append(self.translate(pwf.getInfoFor(obj, 'review_state')))
+                row.append(self.translate(pwf.getInfoFor(obj, 'review_state')).encode('utf-8'))
                 rows.append(row)
             rows[0].insert(0, 'id')
             rows[0].insert(0, 'date')

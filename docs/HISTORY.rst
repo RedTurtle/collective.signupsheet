@@ -4,7 +4,7 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
-- Fixed encoding errors when sending e-mail
+- Fixed encodings errors on sending mail and exporting
   [keul]
 
 0.1.1 (2014-07-29)
