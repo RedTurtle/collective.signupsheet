@@ -106,6 +106,11 @@ class InitializeSignupSheetForm(object):
             mailer.setTo_field('email')
             mailer.setReplyto_field('email')
             mailer.setSubjectOverride('here/@@user_mailer_subject')
+            subject = zope.i18n.translate(_(u"mailer_registration_subject_overrides",
+                                            default=u"Your registration for ${title} has been received",
+                                            mapping={'title': "${title}"}),
+                                          context=self.form.REQUEST,)
+            mailer.setMsg_subject(subject)
             mailer.setExecCondition("request/review_state|nothing")
             mailer.setBody_pt(INITIAL_MAIL % zope.i18n.translate(
                                _(u'subscribtion_mail',
@@ -131,6 +136,11 @@ class InitializeSignupSheetForm(object):
             mailer.setReplyto_field('#NONE#')
             mailer.setExecCondition("python:context.restrictedTraverse('@@check_mailer')()")
             mailer.setSubjectOverride('here/@@manager_mailer_subject')
+            subject = zope.i18n.translate(_(u"mailer_registration_subject_overrides_manager",
+                                            default=u"Notification: New registration for ${title} has been received",
+                                            mapping={'title': "${title}"}),
+                                          context=self.form.REQUEST,)
+            mailer.setMsg_subject(subject)
             mailer.setBody_pt(MANAGER_MAIL % zope.i18n.translate(
                                _(u'manager_subscribtion_mail',
                                 default=MANAGER_MAIL_MESSAGE,),
