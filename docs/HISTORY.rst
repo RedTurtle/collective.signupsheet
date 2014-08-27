@@ -4,6 +4,9 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
+- Fixed subject
+  [fdelia]
+
 - Fixed action adapter "Registrants" not deselectable
   [fdelia]
 
