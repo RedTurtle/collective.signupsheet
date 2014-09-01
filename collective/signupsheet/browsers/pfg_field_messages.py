@@ -7,6 +7,7 @@ from zope.i18n import translate
 
 
 class PfgFieldMessages(BrowserView):
+    # TO BE REMOVED
 
     def user_mailer_subject(self):
         """
