@@ -320,7 +320,7 @@ msgstr "Spazio"
 msgid "subscribtion_mail"
 msgstr ""
 "La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\n"
-"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sono stati foriniti i seguenti dati:</p>"
+"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sono stati forniti i seguenti dati:</p>"
 
 #. Default: "Subscribing"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:161

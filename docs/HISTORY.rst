@@ -4,15 +4,13 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
-- Fixed subject
+- Email's subject is not taken from the "Subject" field
+  (still with dynamic parts)
   [fdelia]
-
 - Fixed action adapter "Registrants" not deselectable
   [fdelia]
-
 - Fixed encodings errors on sending mail and exporting
   [keul]
-
 - Added german translation
   [staeff]
 
