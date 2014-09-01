@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:31+0000\n"
+"POT-Creation-Date: 2014-09-01 15:34+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
 "Language-Team: de <staeff@arcor.de>\n"
@@ -238,8 +238,9 @@ msgstr "Teilnehmer Adapter"
 msgid "pfg_thankyou_title"
 msgstr "Vielen Dank"
 
-#. Default: "User notification mailer "
+#. Default: "User notification mailer"
 #: ../adapters/initialize_signup_sheet_form.py:96
+#, fuzzy
 msgid "pfg_user_notification_mailer"
 msgstr "User notification mailer"
 

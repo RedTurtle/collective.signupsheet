@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-01 15:31+0000\n"
+"POT-Creation-Date: 2014-09-01 15:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,7 +238,7 @@ msgstr ""
 msgid "pfg_thankyou_title"
 msgstr ""
 
-#. Default: "User notification mailer "
+#. Default: "User notification mailer"
 #: ../adapters/initialize_signup_sheet_form.py:96
 msgid "pfg_user_notification_mailer"
 msgstr ""

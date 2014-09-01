@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:31+0000\n"
+"POT-Creation-Date: 2014-09-01 15:34+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -245,7 +245,7 @@ msgstr "Iscritti"
 msgid "pfg_thankyou_title"
 msgstr "Grazie!"
 
-#. Default: "User notification mailer "
+#. Default: "User notification mailer"
 #: ../adapters/initialize_signup_sheet_form.py:96
 msgid "pfg_user_notification_mailer"
 msgstr "Mailer per le notifiche all'utente"

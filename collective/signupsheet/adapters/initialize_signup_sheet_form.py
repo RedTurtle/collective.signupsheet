@@ -93,7 +93,7 @@ class InitializeSignupSheetForm(object):
             mailer = self.form['user_notification_mailer']
             mailer.setIncludeEmpties(False)
             mailer.setTitle(translate(
-                _(u'pfg_user_notification_mailer', u'User notification mailer '),
+                _(u'pfg_user_notification_mailer', u'User notification mailer'),
                 context=self.form.REQUEST))
             mailer.setDescription(
                 translate(
