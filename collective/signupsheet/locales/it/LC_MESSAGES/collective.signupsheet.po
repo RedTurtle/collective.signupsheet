@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:13+0000\n"
+"POT-Creation-Date: 2014-09-01 15:31+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -324,10 +324,10 @@ msgstr "Cognome"
 msgid "space"
 msgstr "Spazio"
 
-#. Default: "Subscribing"
+#. Default: "Subscribing to"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
 msgid "subscription_form_title"
-msgstr "Iscrizione per"
+msgstr "Iscrizione a"
 
 #. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided these informations:</p>"
 #: ../adapters/initialize_signup_sheet_form.py:112

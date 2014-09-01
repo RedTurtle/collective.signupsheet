@@ -83,9 +83,7 @@ class TestForm(FunctionalTestCase):
                             mailer.Description())
         self.assertEqual('email',
                             mailer.getReplyto_field())
-        self.assertEqual('here/@@user_mailer_subject',
-                            mailer.subjectOverride.text)
-        self.assertTrue("\nThank you for registering to" in mailer.getBody_pt())
+        self.assertTrue("Thank you for registering to" in mailer.getBody_pt())
 
     def test_manager_notification_mailer_adapter(self):
         self.failUnless(hasattr(self.form, 'manager_notification_mailer'))
@@ -98,9 +96,7 @@ class TestForm(FunctionalTestCase):
                             mailer.Description())
         self.assertEqual('#NONE#',
                             mailer.getReplyto_field(),)
-        self.assertEqual('here/@@manager_mailer_subject',
-                            mailer.subjectOverride.text)
-        self.assertTrue("\nNew registrant registered for" in mailer.getBody_pt())
+        self.assertTrue("New registrant registered to" in mailer.getBody_pt())
 
     def test_thankyou_page(self):
         self.failUnless(hasattr(self.form, 'thank-you'))

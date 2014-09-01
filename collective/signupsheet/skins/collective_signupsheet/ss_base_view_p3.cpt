@@ -144,7 +144,7 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
             <h1 class="documentFirstHeading">
                <tal:label i18n:translate="subscription_form_title">
-                   Subscribing
+                   Subscribing to
                </tal:label>
                <tal:title tal:replace="context/Title"/>
             </h1>

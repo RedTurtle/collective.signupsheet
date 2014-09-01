@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:13+0000\n"
+"POT-Creation-Date: 2014-09-01 15:31+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
 "Language-Team: de <staeff@arcor.de>\n"
@@ -317,8 +317,9 @@ msgstr "Vorname"
 msgid "space"
 msgstr "Space"
 
-#. Default: "Subscribing"
+#. Default: "Subscribing to"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
+#, fuzzy
 msgid "subscription_form_title"
 msgstr "Anmeldung zu"
 

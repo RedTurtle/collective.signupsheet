@@ -43,7 +43,7 @@ registrants
 >>> "Sign up!" in browser.contents
 True
 >>> browser.getControl(name='formsubscribe').click()
->>> "Sign up" in browser.contents
+>>> "Subscribing" in browser.contents
 True
 >>> browser.getControl(name='name').value = "John"
 >>> browser.getControl(name='surname').value = "Dillinger"
