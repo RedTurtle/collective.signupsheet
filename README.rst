@@ -82,6 +82,9 @@ data).
 
 You can customize tuose adapter for fit your needs (new mail messages, notify additional users, ...).
 
+.. Note:: although both mailers are normal PloneFormGen items, the "*User notification mailer*" is
+          **disabled** by default. It's used in a special way and must stay disabled for proper working.
+
 Import/Export
 ~~~~~~~~~~~~~
 
