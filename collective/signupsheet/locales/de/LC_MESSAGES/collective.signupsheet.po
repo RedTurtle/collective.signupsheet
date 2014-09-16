@@ -56,7 +56,7 @@ msgstr "Anmeldeschluss"
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Signup Sheet"
-msgstr "Anmeldeformular"
+msgstr "Signup Sheet"
 
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:115
 msgid "The registration is closed"
@@ -204,13 +204,13 @@ msgstr "Ihre Anmeldung für ${title} wurde empfangen"
 #. Default: "Notification: New registration for ${title} has been received"
 #: ../browsers/pfg_field_messages.py:29
 msgid "mailer_registration_subject_overrides_manager"
-msgstr "Banachrichtigung: Eine neue Anmeldung für ${title} wurde empfangen"
+msgstr "Benachrichtigung: Eine neue Anmeldung für ${title} wurde empfangen"
 
 #: ../adapters/initialize_signup_sheet_form.py:135
 msgid "manager_subscribtion_mail"
 msgstr ""
-"Nuova iscrizione per <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
-"Prego, verificare gli iscritti: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
+"Neue Anmeldung von <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
+"Bestätigen sie die Anmeldung hier: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
 
 #. Default: "No registrants"
 #: ../browsers/view_registrants.pt:22
@@ -319,8 +319,8 @@ msgstr "Space"
 #: ../adapters/initialize_signup_sheet_form.py:111
 msgid "subscribtion_mail"
 msgstr ""
-"La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\n"
-"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sono stati foriniti i seguenti dati:</p>"
+"Sei haben sich für <tal:title tal:replace='here/aq_inner/aq_parent/Title'/> angemeldet\n"
+"<tal:show tal:condition='request/review_state|nothing'><p>Ihr Registrierungsstatus ist: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sie haben folgenden Daten übermittelt:</p>"
 
 #. Default: "Subscribing"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:161
