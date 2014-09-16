@@ -4,16 +4,24 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
+- Email's subject is now taken from the "Subject" field
+  but dynamically created
+  [fdelia]
+- Fixed action adapter "Registrants" not deselectable
+  (although deselecting it has no meaning)
+  [fdelia]
 - Fixed encodings errors on sending mail and exporting
   [keul]
-
 - Added german translation
   [staeff]
+- Some sanity to i18n structure: defaults better created by
+  i18ndude call
+  [keul]
 
 0.1.1 (2014-07-29)
 ------------------
 
-- Fixing packaging error that prevent this 
+- Fixing packaging error that prevent this
   to be released on the Python Package Index.
   [keul]
 

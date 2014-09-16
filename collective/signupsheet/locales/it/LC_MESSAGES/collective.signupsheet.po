@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-07-25 10:58+0000\n"
+"POT-Creation-Date: 2014-09-01 15:34+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -196,21 +196,30 @@ msgstr "Corpo del testo"
 msgid "label_delimiter"
 msgstr "Delimitatore"
 
-#. Default: "Your registration for ${title} has been received"
-#: ../browsers/pfg_field_messages.py:17
+#. Default: "Your registration to \"${title}\" has been received"
+#: ../adapters/initialize_signup_sheet_form.py:105
 msgid "mailer_registration_subject_overrides"
-msgstr "La sua registrazione per ${title} è stata ricevuta"
+msgstr "La sua registrazione a \"${title}\" è stata ricevuta"
 
-#. Default: "Notification: New registration for ${title} has been received"
-#: ../browsers/pfg_field_messages.py:29
+#. Default: "A new registration to \"${title}\" has been received"
+#: ../adapters/initialize_signup_sheet_form.py:142
 msgid "mailer_registration_subject_overrides_manager"
-msgstr "Notifica: nuova registrazione per ${title} ricevuta"
+msgstr "E' stata ricevuta una nuova registrazione per \"${title}\""
 
-#: ../adapters/initialize_signup_sheet_form.py:135
-msgid "manager_subscribtion_mail"
+#. Default: "<p>\n    New registrant registered to <tal:s tal:content=\"here/aq_inner/aq_parent/Title\" />\n</p>\n\n<p>\n    Please check current registrants status at:\n    <a href=\"\" tal:attributes=\"href string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\"\n       tal:content=\"string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\">\n    </a>\n</p>"
+#: ../adapters/initialize_signup_sheet_form.py:148
+msgid "manager_subscription_mail"
 msgstr ""
-"Nuova iscrizione per <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
-"Prego, verificare gli iscritti: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
+"<p>\n"
+"    Un nuovo iscritto si è registrato a <tal:s tal:content=\"here/aq_inner/aq_parent/Title\" />\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Prego verificare lo stato degli iscritti al seguente indirizzo:\n"
+"    <a href=\"\" tal:attributes=\"href string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\"\n"
+"       tal:content=\"string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\">\n"
+"    </a>\n"
+"</p>"
 
 #. Default: "No registrants"
 #: ../browsers/view_registrants.pt:22
@@ -218,32 +227,32 @@ msgid "no registrants"
 msgstr "Nessuna registrazione"
 
 #. Default: "Manager notification mailer"
-#: ../adapters/initialize_signup_sheet_form.py:122
+#: ../adapters/initialize_signup_sheet_form.py:131
 msgid "pfg_manager_notification_mailer"
 msgstr "Mailer per le notifiche ai manager del modulo"
 
 #. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
-#: ../adapters/initialize_signup_sheet_form.py:127
+#: ../adapters/initialize_signup_sheet_form.py:136
 msgid "pfg_manager_notification_mailer_description"
 msgstr "Questo mailer se opportunamente compilato manda notifiche di iscrizione ai manager del signup sheet"
 
 #. Default: "Registrants"
-#: ../adapters/initialize_signup_sheet_form.py:85
+#: ../adapters/initialize_signup_sheet_form.py:82
 msgid "pfg_registrants_title"
 msgstr "Iscritti"
 
 #. Default: "Thank You"
-#: ../adapters/initialize_signup_sheet_form.py:146
+#: ../adapters/initialize_signup_sheet_form.py:168
 msgid "pfg_thankyou_title"
 msgstr "Grazie!"
 
-#. Default: "User notification mailer "
-#: ../adapters/initialize_signup_sheet_form.py:99
+#. Default: "User notification mailer"
+#: ../adapters/initialize_signup_sheet_form.py:96
 msgid "pfg_user_notification_mailer"
 msgstr "Mailer per le notifiche all'utente"
 
 #. Default: "E-Mails Form Input for subscribers"
-#: ../adapters/initialize_signup_sheet_form.py:103
+#: ../adapters/initialize_signup_sheet_form.py:100
 msgid "pfg_user_notification_mailer_description"
 msgstr "Questo mailer invia notifiche a chi sottoscrive il signup sheet"
 
@@ -272,12 +281,12 @@ msgid "semicolon"
 msgstr "Punto e virgola"
 
 #. Default: "Sign up!"
-#: ../browsers/signupsheet_baseview.py:43
+#: ../browsers/signupsheet_baseview.py:48
 msgid "sign_up"
 msgstr "Iscriviti!"
 
 #. Default: "Signup for waiting list"
-#: ../browsers/signupsheet_baseview.py:45
+#: ../browsers/signupsheet_baseview.py:50
 msgid "sign_up_for_waitinglist"
 msgstr "Iscriviti in lista di attesa"
 
@@ -287,27 +296,27 @@ msgid "signup_sheet_type_description"
 msgstr "Gestisci le registrazioni alla partecipazione di workshop, raccolta fondi e altri tipi di eventi"
 
 #. Default: "E-Mail Address"
-#: ../adapters/initialize_signup_sheet_form.py:68
+#: ../adapters/initialize_signup_sheet_form.py:65
 msgid "signupsheet_emailfield_title"
 msgstr "Indirizzo e-mail"
 
 #. Default: "Reset"
-#: ../adapters/initialize_signup_sheet_form.py:35
+#: ../adapters/initialize_signup_sheet_form.py:31
 msgid "signupsheet_formfolder_reset"
 msgstr "Annulla"
 
 #. Default: "Sign up"
-#: ../adapters/initialize_signup_sheet_form.py:31
+#: ../adapters/initialize_signup_sheet_form.py:27
 msgid "signupsheet_formfolder_signup"
 msgstr "Iscriviti"
 
 #. Default: "Your Name"
-#: ../adapters/initialize_signup_sheet_form.py:48
+#: ../adapters/initialize_signup_sheet_form.py:45
 msgid "signupsheet_namefield_title"
 msgstr "Nome"
 
 #. Default: "Your surname"
-#: ../adapters/initialize_signup_sheet_form.py:58
+#: ../adapters/initialize_signup_sheet_form.py:55
 msgid "signupsheet_surnamefield_title"
 msgstr "Cognome"
 
@@ -316,16 +325,24 @@ msgstr "Cognome"
 msgid "space"
 msgstr "Spazio"
 
-#: ../adapters/initialize_signup_sheet_form.py:111
-msgid "subscribtion_mail"
-msgstr ""
-"La ringraziamo per essersi registrato a <tal:title tal:replace='here/aq_inner/aq_parent/Title'/>\n"
-"<tal:show tal:condition='request/review_state|nothing'><p>Lo stato della sua registrazione è: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sono stati foriniti i seguenti dati:</p>"
-
-#. Default: "Subscribing"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:161
+#. Default: "Subscribing to"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
 msgid "subscription_form_title"
-msgstr "Iscrizione per"
+msgstr "Iscrizione a"
+
+#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided these informations:</p>"
+#: ../adapters/initialize_signup_sheet_form.py:112
+msgid "subscription_mail"
+msgstr ""
+"<p>\n"
+"    Grazie per esserti registrato a <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n"
+"</p>\n"
+"\n"
+"<p tal:condition=\"request/review_state|nothing\">Lo stato della tua registrazione è:\n"
+"    <tal:review_state tal:replace=\"request/review_state\" />\n"
+"</p>\n"
+"\n"
+"<p>Hai fornito le seguenti informazioni:</p>"
 
 #. Default: "Tabulator"
 #: ../browsers/registrants_data_export.pt:48
@@ -333,12 +350,12 @@ msgid "tabulator"
 msgstr "Tabulatore"
 
 #. Default: "Registration is full"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:153
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:138
 msgid "text_registration_full"
 msgstr "L'iscrizione è al completo"
 
 #. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
-#: ../adapters/initialize_signup_sheet_form.py:149
+#: ../adapters/initialize_signup_sheet_form.py:171
 msgid "thanks_prologue"
 msgstr ""
 "La ringraziamo per la registrazione, verrà contattato a breve. <br/>\n"

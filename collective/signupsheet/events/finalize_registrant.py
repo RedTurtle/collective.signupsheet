@@ -2,12 +2,10 @@
 
 from Products.Archetypes.interfaces.field import IField
 from Products.CMFCore.utils import getToolByName
-
-from zope.component.hooks import getSite
-from zope.component import getUtility
-
-from collective.signupsheet.interfaces import IGetRegistrants
 from collective.signupsheet import signupsheetMessageFactory
+from collective.signupsheet.interfaces import IGetRegistrants
+from zope.component import getUtility
+from zope.component.hooks import getSite
 
 
 def compute_next_action(obj, signupsheet):

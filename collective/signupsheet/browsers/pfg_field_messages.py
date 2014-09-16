@@ -7,6 +7,7 @@ from zope.i18n import translate
 
 
 class PfgFieldMessages(BrowserView):
+    # TO BE REMOVED
 
     def user_mailer_subject(self):
         """
@@ -14,10 +15,8 @@ class PfgFieldMessages(BrowserView):
         """
         context = self.context
         sstitle = aq_parent(aq_inner(context)).Title()
-        return translate(_(u"mailer_registration_subject_overrides",
-                           default=u"Your registration for ${title} has been received",
-                           mapping={'title': sstitle.decode('utf-8')}),
-                         context=context.REQUEST,)
+        subject = context.getMsg_subject()
+        return subject.replace("${title}",sstitle).decode('utf-8')
 
     def manager_mailer_subject(self):
         """
@@ -25,7 +24,5 @@ class PfgFieldMessages(BrowserView):
         """
         context = self.context
         sstitle = aq_parent(aq_inner(context)).Title()
-        return translate(_(u"mailer_registration_subject_overrides_manager",
-                           default=u"Notification: New registration for ${title} has been received",
-                           mapping={'title': sstitle.decode('utf-8')}),
-                         context=context.REQUEST)
+        subject = context.getMsg_subject()
+        return subject.replace("${title}",sstitle).decode('utf-8')

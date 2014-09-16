@@ -23,7 +23,10 @@ class SignupSheetBaseView(BrowserView):
         waitlist_size = self.context.getWaitlist_size()
         utility = getUtility(IGetRegistrants)
         registrant_folder = utility.get_registrants_folder(self.context)
-        current_size = len(registrant_folder.contentIds(filter={'portal_type': 'registrant'}))
+        if registrant_folder == []:
+            current_size = 0
+        else:
+            current_size = len(registrant_folder.contentIds(filter={'portal_type': 'registrant'}))
         max_size = event_size + waitlist_size
 
         if current_size + nextstatus <= event_size:

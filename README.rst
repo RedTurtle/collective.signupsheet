@@ -82,6 +82,9 @@ data).
 
 You can customize tuose adapter for fit your needs (new mail messages, notify additional users, ...).
 
+.. Note:: although both mailers are normal PloneFormGen items, the "*User notification mailer*" is
+          **disabled** by default. It's used in a special way and must stay disabled for proper working.
+
 Import/Export
 ~~~~~~~~~~~~~
 
@@ -104,7 +107,7 @@ __ http://www.plonegov.it/
 Historical tribute to SignupSheet
 ---------------------------------
 
-Altough this product is using more recent Plone add-technologies, it's miming all the features of another product:
+Altough this product is using more recent Plone technologies, it's miming all the features of another product:
 `SignupSheet`__.
 
 __ http://plone.org/products/signupsheet

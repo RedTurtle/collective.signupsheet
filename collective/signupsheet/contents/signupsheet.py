@@ -19,8 +19,8 @@ from zope.component import getMultiAdapter
 
 from collective.signupsheet import signupsheetMessageFactory as _
 from collective.signupsheet.config import PROJECTNAME, logger
-from collective.signupsheet.interfaces import (ISignupSheet,
-                                               ISignupSheetInitializer)
+from collective.signupsheet.interfaces import ISignupSheet
+from collective.signupsheet.interfaces import ISignupSheetInitializer
 
 
 SignupSheetSchema = FormFolderSchema.copy() + Schema((
@@ -139,15 +139,13 @@ class SignupSheet(FormFolder):
     schema = SignupSheetSchema
 
     def initializeArchetype(self, **kwargs):
-        """ Create sample content that may help folks
-            figure out how this gadget works.
-            The same as PloneformGen do, but we overrides to create objects we
-            are interest on: name, surname, status, email
+        """ Create initial SignupSheet configuration
         """
         ATFolder.initializeArchetype(self, **kwargs)
         pm = getToolByName(self, 'portal_membership')
-        if not pm.isAnonymousUser():
-            ISignupSheetInitializer(self).form_initializer()
+        portal_factory = getToolByName(self, 'portal_factory')
+        if not pm.isAnonymousUser() and not portal_factory.isTemporary(self):
+            ISignupSheetInitializer(self).form_initializer(**kwargs)
         else:
             logger.debug("Anonymous user: not allowed to create fields")
 
