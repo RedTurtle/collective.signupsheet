@@ -2,8 +2,6 @@
 
 from Acquisition import aq_parent, aq_inner
 from Products.Five.browser import BrowserView
-from collective.signupsheet import signupsheetMessageFactory as _
-from zope.i18n import translate
 
 
 class PfgFieldMessages(BrowserView):

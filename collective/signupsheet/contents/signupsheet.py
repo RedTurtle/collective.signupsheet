@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from DateTime import DateTime
 from Products.Archetypes.atapi import (IntegerField, StringWidget,
                                        BooleanField, BooleanWidget,
                                        DateTimeField, CalendarWidget,

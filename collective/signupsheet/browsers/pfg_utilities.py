@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-from AccessControl import Unauthorized
-from Acquisition import aq_inner, aq_parent
+
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Archetypes.utils import shasattr
-from zope.component import getMultiAdapter
 
 
 class ChecksManagerMailerSendAction(BrowserView):
