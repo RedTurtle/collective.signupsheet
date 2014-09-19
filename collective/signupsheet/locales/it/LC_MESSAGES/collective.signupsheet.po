@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:34+0000\n"
+"POT-Creation-Date: 2014-09-19 12:27+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -22,13 +22,17 @@ msgstr "Una soluzione per la gestione di iscrizione ad eventi"
 msgid "Can't subscribe. No more free slots"
 msgstr "Impossibile iscriversi. Posti liberi esauriti."
 
-#: ../browsers/view_registrants.pt:79
+#: ../browsers/view_registrants.pt:89
 msgid "Confirm"
 msgstr "Conferma"
 
-#: ../browsers/view_registrants.pt:75
+#: ../browsers/view_registrants.pt:85
 msgid "Confirm subscription"
 msgstr "Conferma iscrizione"
+
+#: ../browsers/view_registrants.pt:75
+msgid "Delete subscription"
+msgstr "Cancella iscrizione"
 
 #: ../browsers/registrants_data_export.pt:55
 msgid "Download"

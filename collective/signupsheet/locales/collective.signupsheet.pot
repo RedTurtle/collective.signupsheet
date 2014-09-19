@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-01 15:34+0000\n"
+"POT-Creation-Date: 2014-09-19 12:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,12 +24,16 @@ msgstr ""
 msgid "Can't subscribe. No more free slots"
 msgstr ""
 
-#: ../browsers/view_registrants.pt:79
+#: ../browsers/view_registrants.pt:89
 msgid "Confirm"
 msgstr ""
 
-#: ../browsers/view_registrants.pt:75
+#: ../browsers/view_registrants.pt:85
 msgid "Confirm subscription"
+msgstr ""
+
+#: ../browsers/view_registrants.pt:75
+msgid "Delete subscription"
 msgstr ""
 
 #: ../browsers/registrants_data_export.pt:55

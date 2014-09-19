@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-01 15:34+0000\n"
+"POT-Creation-Date: 2014-09-19 12:27+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
 "Language-Team: de <staeff@arcor.de>\n"
@@ -22,13 +22,17 @@ msgstr "Ein Produkt zur Verwaltung von Veranstaltungsanmeldungen"
 msgid "Can't subscribe. No more free slots"
 msgstr "Anmeldung nicht möglich. Keine freien Plätze mehr vorhanden."
 
-#: ../browsers/view_registrants.pt:79
+#: ../browsers/view_registrants.pt:89
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: ../browsers/view_registrants.pt:75
+#: ../browsers/view_registrants.pt:85
 msgid "Confirm subscription"
 msgstr "Anmeldung bestätigen"
+
+#: ../browsers/view_registrants.pt:75
+msgid "Delete subscription"
+msgstr ""
 
 #: ../browsers/registrants_data_export.pt:55
 msgid "Download"
@@ -319,12 +323,6 @@ msgstr "Vorname"
 #: ../browsers/registrants_data_export.pt:50
 msgid "space"
 msgstr "Space"
-
-#: ../adapters/initialize_signup_sheet_form.py:111
-msgid "subscribtion_mail"
-msgstr ""
-"Sie haben sich für <tal:title tal:replace='here/aq_inner/aq_parent/Title'/> angemeldet\n"
-"<tal:show tal:condition='request/review_state|nothing'><p>Ihr Registrierungsstatus ist: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sie haben folgenden Daten übermittelt:</p>"
 
 #. Default: "Subscribing to"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
