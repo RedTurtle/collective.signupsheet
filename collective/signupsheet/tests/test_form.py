@@ -75,7 +75,7 @@ class TestForm(FunctionalTestCase):
     def test_user_notification_mailer_adapter(self):
         self.failUnless(hasattr(self.form, 'user_notification_mailer'))
         mailer = getattr(self.form, 'user_notification_mailer')
-        self.assertEqual(u'User notification mailer ',
+        self.assertEqual('User notification mailer',
                          mailer.Title())
         self.assertEqual(False,
                             mailer.getIncludeEmpties())
