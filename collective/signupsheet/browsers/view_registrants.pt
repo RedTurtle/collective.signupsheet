@@ -72,6 +72,16 @@
                              i18n:attributes="alt"
                         />
                     </a>
+                    <a title="Delete subscription"
+                       tal:attributes="href string:${r/absolute_url}/delete_confirmation"
+                       tal:condition="python: member.has_permission('Modify portal content', r)"
+                       i18n:attributes="title">
+                        <img tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/delete_icon.png"
+						     i18n:domain="plone"
+                             alt="Delete"
+                             i18n:attributes="alt"
+                        />
+                    </a>
                     <a title="Confirm subscription"
                        i18n:attributes="title"
                        tal:attributes="href string:${registrant_folder}/confirm_registrant?id=${r/getId}"

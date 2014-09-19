@@ -56,7 +56,7 @@ msgstr "Anmeldeschluss"
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Signup Sheet"
-msgstr "Anmeldeformular"
+msgstr "Signup Sheet"
 
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:115
 msgid "The registration is closed"
@@ -206,12 +206,14 @@ msgstr "Ihre Anmeldung für ${title} wurde empfangen"
 #: ../adapters/initialize_signup_sheet_form.py:142
 #, fuzzy
 msgid "mailer_registration_subject_overrides_manager"
-msgstr "Banachrichtigung: Eine neue Anmeldung für ${title} wurde empfangen"
+msgstr "Benachrichtigung: Eine neue Anmeldung für ${title} wurde empfangen"
 
 #. Default: "<p>\n    New registrant registered to <tal:s tal:content=\"here/aq_inner/aq_parent/Title\" />\n</p>\n\n<p>\n    Please check current registrants status at:\n    <a href=\"\" tal:attributes=\"href string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\"\n       tal:content=\"string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\">\n    </a>\n</p>"
 #: ../adapters/initialize_signup_sheet_form.py:148
 msgid "manager_subscription_mail"
 msgstr ""
+"Neue Anmeldung von <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
+"Bestätigen sie die Anmeldung hier: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
 
 #. Default: "No registrants"
 #: ../browsers/view_registrants.pt:22
@@ -317,6 +319,12 @@ msgstr "Vorname"
 #: ../browsers/registrants_data_export.pt:50
 msgid "space"
 msgstr "Space"
+
+#: ../adapters/initialize_signup_sheet_form.py:111
+msgid "subscribtion_mail"
+msgstr ""
+"Sie haben sich für <tal:title tal:replace='here/aq_inner/aq_parent/Title'/> angemeldet\n"
+"<tal:show tal:condition='request/review_state|nothing'><p>Ihr Registrierungsstatus ist: <tal:review_state tal:replace='request/review_state' /></p></tal:show><p>Sie haben folgenden Daten übermittelt:</p>"
 
 #. Default: "Subscribing to"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
