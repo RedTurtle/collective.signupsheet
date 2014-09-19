@@ -17,7 +17,8 @@ Changelog
 - Some sanity to i18n structure: defaults better created by
   i18ndude call
   [keul]
-- Added 'delete'-Action to @@view_registrants
+- Added *delete* action to registrant view
+  [staeff] 
 
 0.1.1 (2014-07-29)
 ------------------
