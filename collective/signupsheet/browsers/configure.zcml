@@ -25,21 +25,21 @@
     name="view_registrants"
     class=".registrants_data.ViewRegistrants"
     template="view_registrants.pt"
-    permission="zope2.View"
+    permission="SignupSheet: View Registrants"
     />
 
   <browser:page
     for="..interfaces.ISignupSheet"
     name="registrants_data_import"
     class=".registrants_data.ImportRegistrants"
-    permission="zope2.View"
+    permission="SignupSheet: View Registrants"
     />
 
   <browser:page
     for="..interfaces.ISignupSheet"
     name="registrants_data_export"
     class=".registrants_data.RegistrantDataExport"
-    permission="zope2.View"
+    permission="SignupSheet: View Registrants"
     />
 
   <browser:page

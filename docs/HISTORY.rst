@@ -5,7 +5,8 @@ Changelog
 ------------------
 
 - Removed some bad tab condition expressions [keul]
-
+- Fixed security issues: some views were not protected
+  with right permissions [keul]
 
 0.1.2 (2014-09-19)
 ------------------
