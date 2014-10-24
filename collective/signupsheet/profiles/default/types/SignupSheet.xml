@@ -70,12 +70,6 @@
     visible="False">
   <permission value="Modify portal content"/>
  </action>
- <action title="References" action_id="references" category="object"
-    condition_expr="object/archetype_tool/has_graphviz"
-    url_expr="string:${object_url}/reference_graph" visible="False">
-  <permission value="Modify portal content"/>
-  <permission value="Review portal content"/>
- </action>
  <action title="QuickEdit" action_id="quickedit" category="object"
     condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
     icon_expr="" link_target="" url_expr="string:${object_url}/quickedit"
@@ -83,22 +77,21 @@
   <permission value="Modify portal content"/>
  </action>
   <action i18n:attributes="title" i18n:domain="plone" title="View Registrants" action_id="ss_subscriber" category="object"
-    condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
+    condition_expr=""
     icon_expr="" link_target="" url_expr="string:${object_url}/@@view_registrants"
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
   <action i18n:attributes="title" i18n:domain="plone" title="Import Registrants" action_id="ss_import" category="object"
-    condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
+    condition_expr=""
     icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_import"
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
   <action i18n:attributes="title" i18n:domain="plone" title="Export Registrants" action_id="ss_export" category="object"
-    condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user"
+    condition_expr=""
     icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_export"
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
-
 </object>

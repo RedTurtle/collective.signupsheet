@@ -4,7 +4,7 @@ Changelog
 0.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Removed some bad tab condition expressions [keul]
 
 
 0.1.2 (2014-09-19)
