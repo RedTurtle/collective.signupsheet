@@ -95,3 +95,12 @@ def add_registrant_portal_type(portal):
     factory.manage_setPortalFactoryTypes(listOfTypeIds=factoryTypes)
 
     logger.info('Add registrant to D2C adapter')
+
+
+# Upgrades
+
+def migrateTo1010(context):
+    setup_tool = getToolByName(context, 'portal_setup')
+    logger.info('Registering new signup sheet tab')
+    setup_tool.runAllImportStepsFromProfile('profile-collective.signupsheet:to1010')
+    logger.info('Migrated to version 0.2.0')

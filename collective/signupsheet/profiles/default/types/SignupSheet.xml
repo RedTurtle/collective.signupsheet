@@ -88,10 +88,16 @@
     visible="True">
   <permission value="SignupSheet: View Registrants"/>
  </action>
-  <action i18n:attributes="title" i18n:domain="plone" title="Export Registrants" action_id="ss_export" category="object"
-    condition_expr=""
-    icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_export"
-    visible="True">
-  <permission value="SignupSheet: View Registrants"/>
+ <action i18n:attributes="title" i18n:domain="plone" title="Export Registrants" action_id="ss_export" category="object"
+   condition_expr=""
+   icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_data_export"
+   visible="True">
+ <permission value="SignupSheet: View Registrants"/>
+ </action>
+ <action i18n:attributes="title" i18n:domain="plone" title="Notify Registrants" action_id="notify_registrants" category="object"
+   condition_expr=""
+   icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_notification"
+   visible="True">
+ <permission value="SignupSheet: View Registrants"/>
  </action>
 </object>

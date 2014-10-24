@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
+
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from zope.component import getUtility
-
+from cStringIO import StringIO
 from collective.signupsheet import signupsheetMessageFactory as _
 from collective.signupsheet.interfaces import IGetRegistrants
-
-from cStringIO import StringIO
+from zope.component import getUtility
 import csv
 import zope
 

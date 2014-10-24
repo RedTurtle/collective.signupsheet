@@ -25,21 +25,29 @@
     name="view_registrants"
     class=".registrants_data.ViewRegistrants"
     template="view_registrants.pt"
-    permission="SignupSheet: View Registrants"
+    permission="collective.signupsheet.viewregistrants"
     />
 
   <browser:page
     for="..interfaces.ISignupSheet"
     name="registrants_data_import"
     class=".registrants_data.ImportRegistrants"
-    permission="SignupSheet: View Registrants"
+    permission="collective.signupsheet.viewregistrants"
     />
 
   <browser:page
     for="..interfaces.ISignupSheet"
     name="registrants_data_export"
     class=".registrants_data.RegistrantDataExport"
-    permission="SignupSheet: View Registrants"
+    permission="collective.signupsheet.viewregistrants"
+    />
+
+  <browser:page
+    for="..interfaces.ISignupSheet"
+    name="registrants_notification"
+    class=".registrants_notification.RegistrantNotificationView"
+	template="registrants_notification.pt"
+    permission="collective.signupsheet.viewregistrants"
     />
 
   <browser:page

@@ -11,7 +11,7 @@
     <link rel="stylesheet"
           type="text/css"
           media="screen"
-          tal:attributes="href string:${portal/absolute_url}/++resource++collective.signupsheet.resources/signupsheet.css">
+          tal:attributes="href string:${portal/absolute_url}/++resource++collective.signupsheet.resources/signupsheet.css" />
   </metal:css>
     <body>
     <div metal:fill-slot="main">

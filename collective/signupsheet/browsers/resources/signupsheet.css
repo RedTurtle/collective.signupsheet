@@ -19,3 +19,26 @@ form.import_registrant_form{
 form.import_registrant_form label{
     margin-top: 0.5em;
 }
+
+.registrantNotificationSlot {
+	display: inline;
+}
+
+.registrantLeft {
+	width: 40%;
+	padding-left: 1em;
+}
+
+.registrantRight {
+	margin-left: 40%;
+	padding-right: 1em;
+}
+
+.registrantsCommands {
+	font-size: 110%;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+}
+.registrantsCommands label {
+	margin-right: 1em;
+}

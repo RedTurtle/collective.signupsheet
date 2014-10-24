@@ -15,7 +15,8 @@ class GetRegistrant(object):
         registrants_folder = self.get_registrants_folder(form)
         if registrants_folder:
             path = '/'.join(registrants_folder.getPhysicalPath())
-            brains = catalog(path={'query': path, 'depth': 1})
+            brains = catalog(path={'query': path, 'depth': 1},
+                             sort_on="sortable_title")
             return brains
         return []
 
@@ -29,8 +30,9 @@ class GetRegistrant(object):
         if registrants_folder:
             path = '/'.join(registrants_folder.getPhysicalPath())
             brains = catalog.unrestrictedSearchResults(
-                                            path={'query': path, 'depth': 1}
-                                           )
+                                                       path={'query': path, 'depth': 1},
+                                                       sort_on="sortable_title"
+                                                       )
             return brains
         return []
 

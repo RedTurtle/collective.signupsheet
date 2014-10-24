@@ -44,4 +44,21 @@
 	<depends name="types"/>
   </genericsetup:importStep>
 
+  <genericsetup:registerProfile
+      name="to1010"
+      title="Migrate SignupSheet to version 0.2"
+      directory="profiles/to1010"
+      description=""
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:upgradeStep
+        title="Upgrade to collective.signupsheet 0.2.0"
+        description="Migrates collective.analyticspanel to 1010"
+        source="1000"
+        destination="1010"
+        handler=".setuphandlers.migrateTo1010"
+        sortkey="1"
+        profile="collective.signupsheet:default"
+    />
+
 </configure>

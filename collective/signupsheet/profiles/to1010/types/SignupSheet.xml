@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<object name="SignupSheet"
+   meta_type="Factory-based Type Information with dynamic views"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+   i18n:domain="collective.signupsheet">
+ <action i18n:attributes="title" i18n:domain="plone" title="Notify Registrants" action_id="notify_registrants" category="object"
+   condition_expr=""
+   icon_expr="" link_target="" url_expr="string:${object_url}/@@registrants_notification"
+   visible="True">
+ <permission value="SignupSheet: View Registrants"/>
+ </action>
+</object>

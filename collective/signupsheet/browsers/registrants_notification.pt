@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.signupsheet">
+<head>
+
+  <metal:css fill-slot="style_slot"
+             tal:define="portal_url context/@@plone_portal_state/portal_url">
+    <link rel="stylesheet"
+          type="text/css"
+          media="all"
+          tal:attributes="href string:${portal_url}/++resource++collective.signupsheet.resources/signupsheet.css" />
+  </metal:css>
+
+  <metal:js fill-slot="javascript_head_slot"
+             tal:define="portal_url context/@@plone_portal_state/portal_url">
+    <script type="text/javascript"
+            tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/signupsheet.js"></script>
+  </metal:js>
+
+</head>
+
+<body>
+
+<metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading" i18n:translate="">
+        Notify subscribers
+    </h1>
+</metal:title>
+
+<metal:description fill-slot="content-description">
+    <p class="documentDescription" i18n:translate="subscribers_notification_description">
+        Send a message to a group of registrants of that event
+    </p>
+</metal:description>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+    <form action="" method="post"
+          tal:define="portal_url context/@@plone_portal_state/portal_url"
+          tal:attributes="action string:${context/absolute_url}/{view/__name__}">
+
+        <div class="field">
+            <label for="subject">Subject</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:domain="plone"
+                  i18n:attributes="title title_required;"
+                  i18n:translate="label_required">(Required)</span> <br/>
+            <input type="text" name="subject" value="" style="width: 100%"
+                   tal:attributes="value request/subject|nothing" />
+        </div>
+
+        <div class="field">
+            <label for="message">Message</label>
+            <span class="fieldRequired" title="Required"
+                  i18n:domain="plone"
+                  i18n:attributes="title title_required;"
+                  i18n:translate="label_required">(Required)</span>
+            <div class="formHelp" i18n:translate="mail_message_help">
+                The email message you want to send.
+                You can use some markers that will be substitued in the finale message like
+                $title for the signup sheet message and $url for the signup sheet URL. 
+            </div>
+            <textarea type="text" id="message" name="message" rows="10" style="width: 100%"
+                      tal:content="request/message|nothing"></textarea>
+        </div>
+
+        <div class="field">
+            <label for="registrants">Registrants selection</label>
+
+            <div class="registrantsCommands">
+                <input type="checkbox" id="select_all" />
+                <label for="select_all">Select all/none</label>
+                <input type="checkbox" id="select_confirmed" />
+                <label for="select_confirmed">
+                    <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/confirm_icon.png" />
+                    Select confirmed
+                </label>
+                <input type="checkbox" id="select_unconfirmed" />
+                <label for="select_unconfirmed">
+                    <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/question.png" />
+                    Select unconfirmed
+                </label>
+                <input type="checkbox" id="select_waitinglist" />
+                <label for="select_waitinglist">
+                    <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/hourglass.png" />
+                    Select waiting list
+                </label>
+            </div>
+
+            <div class="availableRegistrants">
+                <tal:registrant repeat="registrant view/registrants">
+                    <span class="registrantNotificationSlot"
+                          tal:define="odd repeat/registrant/odd;
+                                      review_state registrant/review_state;"
+                          tal:attributes="class python:'registrantNotificationSlot registrantRight' if odd else 'registrantNotificationSlot registrantLeft'">
+                        <input type="checkbox" id="registrants" name="registrants:list"
+                               tal:attributes="id string:registrants_${repeat/registrant/number};
+                                               data-state review_state" />
+                         <label for="registrants"
+                               tal:attributes="for string:registrants_${repeat/registrant/number}"
+                               tal:content="registrant/name">John Smith</label>
+	  					 <img alt="Confirmed" title="Confirmed" src=""
+						 	  tal:condition="python:review_state=='confirmed'"
+						      tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/confirm_icon.png"
+							  />
+	  					 <img alt="Unconfirmed" title="Unconfirmed" src=""
+						 	  tal:condition="python:review_state=='unconfirmed'"
+						      tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/question.png"
+							  />
+	  					 <img alt="On waiting list" title="On waiting list" src=""
+						 	  tal:condition="python:review_state=='waiting_list_unconfirmed'"
+						      tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/hourglass.png"
+							  />
+                    </span>
+                </tal:registrant>
+            </div>
+
+        </div>
+
+    </form>
+
+    </metal:content-core>
+</metal:content-core>
+
+
+</body>
+</html>
