@@ -18,7 +18,10 @@
   <metal:js fill-slot="javascript_head_slot"
              tal:define="portal_url context/@@plone_portal_state/portal_url">
     <script type="text/javascript"
+            tal:attributes="src string:${portal_url}/++resource++collective.js.knockout/knockout.min.js"></script>
+    <script type="text/javascript"
             tal:attributes="src string:${portal_url}/++resource++collective.signupsheet.resources/signupsheet.js"></script>
+
   </metal:js>
 
 </head>
@@ -42,19 +45,24 @@
 
     <form action="" method="post"
           tal:define="portal_url context/@@plone_portal_state/portal_url"
-          tal:attributes="action string:${context/absolute_url}/{view/__name__}">
+          tal:attributes="action string:${context/absolute_url}/${view/__name__}">
 
-        <div class="field">
+        <div class="field"
+		     tal:define="error view/errors/subject|nothing"
+		     tal:attributes="class python:'field error' if error else 'field'">
             <label for="subject">Subject</label>
             <span class="fieldRequired" title="Required"
                   i18n:domain="plone"
                   i18n:attributes="title title_required;"
-                  i18n:translate="label_required">(Required)</span> <br/>
-            <input type="text" name="subject" value="" style="width: 100%"
+                  i18n:translate="label_required">(Required)</span>
+			<div tal:content="error">Validation error output</div>
+            <input type="text" id="subject" name="subject" value="" style="width: 100%"
                    tal:attributes="value request/subject|nothing" />
         </div>
 
-        <div class="field">
+        <div class="field"
+		     tal:define="error view/errors/message|nothing"
+		     tal:attributes="class python:'field error' if error else 'field'">
             <label for="message">Message</label>
             <span class="fieldRequired" title="Required"
                   i18n:domain="plone"
@@ -63,34 +71,39 @@
             <div class="formHelp" i18n:translate="mail_message_help">
                 The email message you want to send.
                 You can use some markers that will be substitued in the finale message like
-                $title for the signup sheet message and $url for the signup sheet URL. 
+                $title for the signup sheet and $url for the signup sheet URL. 
             </div>
+			<div tal:content="error">Validation error output</div>
             <textarea type="text" id="message" name="message" rows="10" style="width: 100%"
                       tal:content="request/message|nothing"></textarea>
         </div>
 
-        <div class="field">
+        <div class="field"
+		     tal:define="error view/errors/registrants|nothing"
+		     tal:attributes="class python:'field error' if error else 'field'">
             <label for="registrants">Registrants selection</label>
 
             <div class="registrantsCommands">
-                <input type="checkbox" id="select_all" />
+                <input type="checkbox" id="select_all" data-bind="click: selectAllNone, checked: allNoneSelected" />
                 <label for="select_all">Select all/none</label>
-                <input type="checkbox" id="select_confirmed" />
+                <input type="checkbox" id="select_confirmed" data-bind="click: selectConfirmed, checked: confirmedSelected" />
                 <label for="select_confirmed">
                     <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/confirm_icon.png" />
                     Select confirmed
                 </label>
-                <input type="checkbox" id="select_unconfirmed" />
+                <input type="checkbox" id="select_unconfirmed" data-bind="click: selectUnconfirmed, checked: unconfirmedSelected" />
                 <label for="select_unconfirmed">
                     <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/question.png" />
                     Select unconfirmed
                 </label>
-                <input type="checkbox" id="select_waitinglist" />
+                <input type="checkbox" id="select_waitinglist" data-bind="click: selectWaitinglist, checked: waitinglistSelected" />
                 <label for="select_waitinglist">
                     <img alt="" src="" tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/hourglass.png" />
                     Select waiting list
                 </label>
             </div>
+
+			<div tal:content="error">Validation error output</div>
 
             <div class="availableRegistrants">
                 <tal:registrant repeat="registrant view/registrants">
@@ -98,9 +111,12 @@
                           tal:define="odd repeat/registrant/odd;
                                       review_state registrant/review_state;"
                           tal:attributes="class python:'registrantNotificationSlot registrantRight' if odd else 'registrantNotificationSlot registrantLeft'">
-                        <input type="checkbox" id="registrants" name="registrants:list"
+                        <input type="checkbox" id="registrants" name="registrants:list" value=""
+						       data-bind="checked: toBeNotified"
                                tal:attributes="id string:registrants_${repeat/registrant/number};
-                                               data-state review_state" />
+                                               data-state review_state;
+											   value registrant/id;
+											   " />
                          <label for="registrants"
                                tal:attributes="for string:registrants_${repeat/registrant/number}"
                                tal:content="registrant/name">John Smith</label>
@@ -117,8 +133,12 @@
 						      tal:attributes="src string:portal_url/++resource++collective.signupsheet.resources/hourglass.png"
 							  />
                     </span>
+					
                 </tal:registrant>
             </div>
+
+			<input type="hidden" name="form.submitted" value="1" />
+			<input class="context" type="submit" name="send" value="Send" i18n:attributes="value" />
 
         </div>
 

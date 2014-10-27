@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-09-19 12:27+0000\n"
+"POT-Creation-Date: 2014-10-27 14:20+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
 "Language-Team: de <staeff@arcor.de>\n"
@@ -50,13 +50,21 @@ msgstr "Teilnehmerdaten bearbeiten"
 msgid "Import"
 msgstr "Importieren"
 
-#: ../browsers/registrants_data.py:177
+#: ../browsers/registrants_data.py:175
 msgid "No file loaded"
 msgstr "Keine Datei geladen"
+
+#: ../browsers/registrants_notification.pt:32
+msgid "Notify subscribers"
+msgstr ""
 
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:105
 msgid "Registration deadline"
 msgstr "Anmeldeschluss"
+
+#: ../browsers/registrants_notification.pt:141
+msgid "Send"
+msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Signup Sheet"
@@ -91,17 +99,17 @@ msgid "event_view_when"
 msgstr "Wann"
 
 #. Default: "Display seats left"
-#: ../contents/signupsheet.py:57
+#: ../contents/signupsheet.py:56
 msgid "field_display_size_left"
 msgstr "Verbleibende Plätze anzeigen"
 
 #. Default: "Early bird phase until"
-#: ../contents/signupsheet.py:89
+#: ../contents/signupsheet.py:88
 msgid "field_early_bird_phase"
 msgstr "Frühbucherphase bis zum"
 
 #. Default: "Number of registrants"
-#: ../contents/signupsheet.py:35
+#: ../contents/signupsheet.py:34
 msgid "field_eventsize"
 msgstr "Teilnehmerzahl"
 
@@ -111,27 +119,27 @@ msgid "field_name"
 msgstr "Feldname"
 
 #. Default: "Registration deadline"
-#: ../contents/signupsheet.py:99
+#: ../contents/signupsheet.py:98
 msgid "field_registration_deadline"
 msgstr "Anmeldeschluss"
 
 #. Default: "Size of wait list"
-#: ../contents/signupsheet.py:49
+#: ../contents/signupsheet.py:48
 msgid "field_waitlist_size"
 msgstr "Umfang der Warteliste"
 
 #. Default: "Choose to show in the subscription page the number of seats left"
-#: ../contents/signupsheet.py:58
+#: ../contents/signupsheet.py:57
 msgid "fieldhelp_display_size_left"
 msgstr "Auswählen um auf der Anmeldeseite die verbleibenden Plätze anzuzeigen"
 
 #. Default: "Set to 0 for unlimited registration"
-#: ../contents/signupsheet.py:37
+#: ../contents/signupsheet.py:36
 msgid "fieldhelp_eventsize"
 msgstr "Auf 0 setzen für eine unbegrenzte Zahl an Anmeldungen"
 
 #. Default: "Registrations will be stopped after this date"
-#: ../contents/signupsheet.py:101
+#: ../contents/signupsheet.py:100
 msgid "fieldhelp_registration_deadline"
 msgstr "Anmeldungen werden nach diesem Termin gestoppt"
 
@@ -156,7 +164,7 @@ msgid "heading_review_state"
 msgstr "Review-Status"
 
 #. Default: "Text for front page of signup"
-#: ../contents/signupsheet.py:119
+#: ../contents/signupsheet.py:118
 msgid "help_body_text"
 msgstr "Text für die Startseite der Anmeldung."
 
@@ -191,7 +199,7 @@ msgid "import_third_rule"
 msgstr "Bei fehlenden Werten Position leer lassen (z.B.: ;;mail@provider.com)"
 
 #. Default: "Body Text"
-#: ../contents/signupsheet.py:118
+#: ../contents/signupsheet.py:117
 msgid "label_body_text"
 msgstr "Haupttext"
 
@@ -199,6 +207,11 @@ msgstr "Haupttext"
 #: ../browsers/registrants_data_export.pt:44
 msgid "label_delimiter"
 msgstr "Trennsymbol"
+
+#. Default: "The email message you want to send. You can use some markers that will be substitued in the finale message like $title for the signup sheet and $url for the signup sheet URL."
+#: ../browsers/registrants_notification.pt:71
+msgid "mail_message_help"
+msgstr ""
 
 #. Default: "Your registration to \"${title}\" has been received"
 #: ../adapters/initialize_signup_sheet_form.py:105
@@ -218,6 +231,11 @@ msgid "manager_subscription_mail"
 msgstr ""
 "Neue Anmeldung von <tal:s tal:content='here/aq_inner/aq_parent/Title'/><br/>\n"
 "Bestätigen sie die Anmeldung hier: <tal:s tal:content='string:${here/aq_inner/aq_parent/absolute_url}/view_registrants' />"
+
+#. Default: "Message is required. Please provide it"
+#: ../browsers/registrants_notification.py:45
+msgid "message_required"
+msgstr ""
 
 #. Default: "No registrants"
 #: ../browsers/view_registrants.pt:22
@@ -260,9 +278,14 @@ msgid "registrants"
 msgstr "Teilnehmer"
 
 #. Default: "Created ${registrants} new registrant"
-#: ../browsers/registrants_data.py:195
+#: ../browsers/registrants_data.py:193
 msgid "registrants_imported"
 msgstr "${registrants} neue Teilnehmer angelegt"
+
+#. Default: "Please, provide at least one registrants"
+#: ../browsers/registrants_notification.py:37
+msgid "registrants_required"
+msgstr ""
 
 #. Default: "${seats} seats left."
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:123
@@ -278,6 +301,11 @@ msgstr "CSV-Datei zum Import auswählen"
 #: ../browsers/registrants_data_export.pt:49
 msgid "semicolon"
 msgstr "Semikolon"
+
+#. Default: "Message sent to $count registrants"
+#: ../browsers/registrants_notification.py:68
+msgid "sent_notification_count"
+msgstr ""
 
 #. Default: "Sign up!"
 #: ../browsers/signupsheet_baseview.py:48
@@ -323,6 +351,16 @@ msgstr "Vorname"
 #: ../browsers/registrants_data_export.pt:50
 msgid "space"
 msgstr "Space"
+
+#. Default: "Subject is required. Please provide it"
+#: ../browsers/registrants_notification.py:41
+msgid "subject_required"
+msgstr ""
+
+#. Default: "Send a message to a group of registrants of that event"
+#: ../browsers/registrants_notification.pt:38
+msgid "subscribers_notification_description"
+msgstr ""
 
 #. Default: "Subscribing to"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146

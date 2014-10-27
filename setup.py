@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.3.dev0'
+version = '0.2.0.dev0'
 
 tests_require = ['plone.app.testing', ]
 
@@ -30,6 +30,7 @@ setup(name='collective.signupsheet',
       install_requires=[
           'setuptools',
           'Products.PloneFormGen',
+          'collective.js.knockout',
           'uwosh.pfg.d2c>=2.3.0b4'
       ],
       entry_points="""

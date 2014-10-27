@@ -80,10 +80,18 @@ The Signup Sheet contains also two PloneFormGen mailer adapter, one for notifica
 new subscription, another for notify the user itself after the subscription (for receive a confirmation of filled
 data).
 
-You can customize tuose adapter for fit your needs (new mail messages, notify additional users, ...).
+You can customize those adapters for fit your needs (new mail messages, notify additional users, ...).
 
 .. Note:: although both mailers are normal PloneFormGen items, the "*User notification mailer*" is
           **disabled** by default. It's used in a special way and must stay disabled for proper working.
+
+Automatic notifications apart you can also use the "*Notify Registrants*" view, to send a custom message to
+all registrants (or to a part of them).
+
+.. image:: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.2.0-01.png/image_preview
+   :target: http://blog.redturtle.it/pypi-images/collective.signupsheet/collective.signupsheet-0.2.0-01.png
+   :align: center
+   :alt: Notify Registrants
 
 Import/Export
 ~~~~~~~~~~~~~

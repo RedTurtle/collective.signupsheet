@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-19 12:27+0000\n"
+"POT-Creation-Date: 2014-10-27 14:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,10 @@ msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Import Registrants"
+msgstr ""
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Notify Registrants"
 msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml

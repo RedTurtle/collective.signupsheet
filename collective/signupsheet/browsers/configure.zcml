@@ -44,7 +44,7 @@
 
   <browser:page
     for="..interfaces.ISignupSheet"
-    name="registrants_notification"
+    name="registrants-notification"
     class=".registrants_notification.RegistrantNotificationView"
 	template="registrants_notification.pt"
     permission="collective.signupsheet.viewregistrants"

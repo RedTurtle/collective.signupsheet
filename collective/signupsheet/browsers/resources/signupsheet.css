@@ -20,18 +20,27 @@ form.import_registrant_form label{
     margin-top: 0.5em;
 }
 
+.availableRegistrants {
+	margin-bottom: 1em;
+}
+.availableRegistrants:after {
+	content: '';
+	display: block;
+    clear: both;
+}
+
 .registrantNotificationSlot {
-	display: inline;
+	display: block;
+	width: 50%;
+	margin: 0.2em 0;
 }
 
 .registrantLeft {
-	width: 40%;
-	padding-left: 1em;
+	float: left;
 }
 
 .registrantRight {
-	margin-left: 40%;
-	padding-right: 1em;
+	float: right;
 }
 
 .registrantsCommands {
