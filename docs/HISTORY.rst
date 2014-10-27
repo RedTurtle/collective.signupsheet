@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.0 (unreleased)
+0.2.0 (2014-10-27)
 ------------------
 
 - Removed some bad tab condition expressions [keul]

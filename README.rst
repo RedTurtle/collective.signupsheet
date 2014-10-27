@@ -123,7 +123,6 @@ __ http://plone.org/products/signupsheet
 The software stack used in the orginal product has become too old to be maintained anymore. We hope this new add-on
 will give same features and best flexibility.
 
-
 Authors
 =======
 
