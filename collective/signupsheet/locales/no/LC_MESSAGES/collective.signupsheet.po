@@ -1,0 +1,423 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-01-28 10:26+0000\n"
+"PO-Revision-Date: 2015-02-06 15:31+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+"Last-Translator: Eivind Sætre <eivind.saetre@gmail.com>\n"
+"Language-Team: \n"
+"Language: no\n"
+"X-Generator: Poedit 1.7.4\n"
+
+msgid "A solution for manage signup attendance to events"
+msgstr "En løsning for å behandle påmeldinger til arrangementer"
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
+msgid "Can't subscribe. No more free slots"
+msgstr "Påmelding ikke mulig. Ingen ledige plasser."
+
+#: ../browsers/view_registrants.pt:89
+msgid "Confirm"
+msgstr "Bekreft"
+
+#: ../browsers/view_registrants.pt:85
+msgid "Confirm subscription"
+msgstr "Bekreft påmelding"
+
+#: ../browsers/view_registrants.pt:75
+msgid "Delete subscription"
+msgstr "Slett påmelding"
+
+#: ../browsers/registrants_data_export.pt:55
+msgid "Download"
+msgstr "Last ned"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:101
+msgid "Early bird until"
+msgstr "Redusert påmeldingsavgift frem til"
+
+#: ../browsers/view_registrants.pt:65
+msgid "Edit subscriber data"
+msgstr "Rediger opplysninger om den påmeldte"
+
+#: ../browsers/import_registrants.pt:40
+msgid "Import"
+msgstr "Importer"
+
+#: ../browsers/registrants_data.py:175
+msgid "No file loaded"
+msgstr "Ingen fil valgt"
+
+#: ../browsers/registrants_notification.pt:32
+msgid "Notify subscribers"
+msgstr "Beskjed til påmeldte"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:105
+msgid "Registration deadline"
+msgstr "Tidsfrist for påmelding"
+
+#: ../browsers/registrants_notification.pt:141
+msgid "Send"
+msgstr "Send"
+
+#: ../profiles/default/types/SignupSheet.xml
+msgid "Signup Sheet"
+msgstr "Påmeldingsskjema"
+
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:115
+msgid "The registration is closed"
+msgstr "Registreringen er stengt"
+
+#. Default: "Don't notify registrants"
+#: ../browsers/import_registrants.pt:39
+msgid "avoid_mail_notification"
+msgstr "Ikke send beskjed til de registrerte"
+
+#. Default: "Colon"
+#: ../browsers/registrants_data_export.pt:47
+msgid "colon"
+msgstr "kolon"
+
+#. Default: "Comma"
+#: ../browsers/registrants_data_export.pt:46
+msgid "comma"
+msgstr "komma"
+
+#: ../browsers/view_registrants.pt:28
+msgid "confirmed"
+msgstr "bekreftet"
+
+#. Default: "When"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:95
+msgid "event_view_when"
+msgstr "Når"
+
+#. Default: "Display seats left"
+#: ../contents/signupsheet.py:56
+msgid "field_display_size_left"
+msgstr "Vis antall gjenværende ledige plasser"
+
+#. Default: "Early bird phase until"
+#: ../contents/signupsheet.py:88
+msgid "field_early_bird_phase"
+msgstr "Redusert påmeldingsavgift frem til"
+
+#. Default: "Number of registrants"
+#: ../contents/signupsheet.py:34
+msgid "field_eventsize"
+msgstr "Antall plasser"
+
+#. Default: "Field Name"
+#: ../browsers/registrants_data_export.pt:28
+msgid "field_name"
+msgstr "Feltnavn"
+
+#. Default: "Registration deadline"
+#: ../contents/signupsheet.py:98
+msgid "field_registration_deadline"
+msgstr "Påmeldingsfrist"
+
+#. Default: "Size of wait list"
+#: ../contents/signupsheet.py:48
+msgid "field_waitlist_size"
+msgstr "Antall på venteliste"
+
+#. Default: "Choose to show in the subscription page the number of seats left"
+#: ../contents/signupsheet.py:57
+msgid "fieldhelp_display_size_left"
+msgstr "Markér for å vise antall gjenværende plasser på registreringssiden"
+
+#. Default: "Set to 0 for unlimited registration"
+#: ../contents/signupsheet.py:36
+msgid "fieldhelp_eventsize"
+msgstr "Sett til 0 hvis antall registreringer skal være ubegrenset"
+
+#. Default: "Registrations will be stopped after this date"
+#: ../contents/signupsheet.py:100
+msgid "fieldhelp_registration_deadline"
+msgstr "Påmeldinger vil ikke bli registert etter denne datoen"
+
+#. Default: "Action"
+#: ../browsers/view_registrants.pt:46
+msgid "heading_action"
+msgstr "Operasjoner"
+
+#. Default: "Created"
+#: ../browsers/view_registrants.pt:44
+msgid "heading_created"
+msgstr "Opprettet"
+
+#. Default: "Select fields to export and download CSV file"
+#: ../browsers/registrants_data_export.pt:14
+msgid "heading_import_contacts_step_one"
+msgstr "Velg felter som skal eksporteres og last ned csv-fil"
+
+#. Default: "Review state"
+#: ../browsers/view_registrants.pt:45
+msgid "heading_review_state"
+msgstr "Tilstand"
+
+#. Default: "Text for front page of signup"
+#: ../contents/signupsheet.py:118
+msgid "help_body_text"
+msgstr "Brødtekst for arrangementet"
+
+#. Default: "Select a csv from which import registrants"
+#: ../browsers/import_registrants.pt:20
+msgid "help_import_registrants"
+msgstr "Velg en csv-fil som de påmeldte skal importeres fra"
+
+#. Default: "Use semicolon as separator"
+#: ../browsers/import_registrants.pt:23
+msgid "import_first_rule"
+msgstr "Bruk semikolon som skilletegn"
+
+#. Default: "Import Registrants"
+#: ../browsers/import_registrants.pt:19
+msgid "import_registrants"
+msgstr "Importer påmeldte"
+
+#. Default: "The uploaded csv file must observe the following rules"
+#: ../browsers/import_registrants.pt:21
+msgid "import_rules"
+msgstr "CSV-filen må oppfylle følgende kriterier"
+
+#. Default: "First line in csv have as header the name of all the fields in the form"
+#: ../browsers/import_registrants.pt:24
+msgid "import_second_rule"
+msgstr "Første linje må inneholde skjemaets feltnavn som kolonneoverskrifter"
+
+#. Default: "Empty for a missing value (e.g. ;;mail@provider.com)"
+#: ../browsers/import_registrants.pt:25
+msgid "import_third_rule"
+msgstr "Tomme felter der det ikke finnes verdier"
+
+#. Default: "Body Text"
+#: ../contents/signupsheet.py:117
+msgid "label_body_text"
+msgstr "Brødtekst"
+
+#. Default: "Delimiter"
+#: ../browsers/registrants_data_export.pt:44
+msgid "label_delimiter"
+msgstr "Skilletegn"
+
+#. Default: "The email message you want to send. You can use some markers that will be substitued in the finale message like $title for the signup sheet and $url for the signup sheet URL."
+#: ../browsers/registrants_notification.pt:71
+msgid "mail_message_help"
+msgstr "E-postmeldingen du vil sende. Du kan bruke markører/tags som vil bli erstattet av verdier i meldingen som går ut. For eksempel kan du bruke $title for å inkludere navnet på arrangementet eller $url for å inkludere webadressen til arrangementet."
+
+#. Default: "Your registration to \"${title}\" has been received"
+#: ../adapters/initialize_signup_sheet_form.py:105
+msgid "mailer_registration_subject_overrides"
+msgstr "Din påmelding til \"${title}\" er mottatt"
+
+#. Default: "A new registration to \"${title}\" has been received"
+#: ../adapters/initialize_signup_sheet_form.py:142
+msgid "mailer_registration_subject_overrides_manager"
+msgstr "En ny påmelding til \"${title}\" har kommet inn"
+
+#. Default: "<p>\n    New registrant registered to <tal:s tal:content=\"here/aq_inner/aq_parent/Title\" />\n</p>\n\n<p>\n    Please check current registrants status at:\n    <a href=\"\" tal:attributes=\"href string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\"\n       tal:content=\"string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\">\n    </a>\n</p>"
+#: ../adapters/initialize_signup_sheet_form.py:148
+msgid "manager_subscription_mail"
+msgstr ""
+"<p>\n"
+"    Ny påmelding til <tal:s tal:content=\"here/aq_inner/aq_parent/Title\" />\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"    Vennligst undersøk den påmeldtes status her:\n"
+"    <a href=\"\" tal:attributes=\"href string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\"\n"
+"       tal:content=\"string:${here/aq_inner/aq_parent/absolute_url}/view_registrants\">\n"
+"    </a>\n"
+"</p>"
+
+#. Default: "Message is required. Please provide it"
+#: ../browsers/registrants_notification.py:45
+msgid "message_required"
+msgstr "En beskjed er påkrevd."
+
+#. Default: "No registrants"
+#: ../browsers/view_registrants.pt:22
+msgid "no registrants"
+msgstr "Ingen påmeldte"
+
+#. Default: "Manager notification mailer"
+#: ../adapters/initialize_signup_sheet_form.py:131
+msgid "pfg_manager_notification_mailer"
+msgstr "Melding til formularets administrator"
+
+#. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
+#: ../adapters/initialize_signup_sheet_form.py:136
+msgid "pfg_manager_notification_mailer_description"
+msgstr "E-post til redaktører for registreringsformularet: Denne funksjonen sender en e-postmelding til formularets administrator/redaktør\""
+
+#. Default: "Registrants"
+#: ../adapters/initialize_signup_sheet_form.py:82
+msgid "pfg_registrants_title"
+msgstr "Påmeldte"
+
+#. Default: "Thank You"
+#: ../adapters/initialize_signup_sheet_form.py:168
+msgid "pfg_thankyou_title"
+msgstr "Takk"
+
+#. Default: "User notification mailer"
+#: ../adapters/initialize_signup_sheet_form.py:96
+msgid "pfg_user_notification_mailer"
+msgstr "Avisering til innsender"
+
+#. Default: "E-Mails Form Input for subscribers"
+#: ../adapters/initialize_signup_sheet_form.py:100
+msgid "pfg_user_notification_mailer_description"
+msgstr "E-post med innsendt informasjon til innsender"
+
+#: ../browsers/view_registrants.pt:27
+msgid "registrants"
+msgstr "registrerte"
+
+#. Default: "Created ${registrants} new registrant"
+#: ../browsers/registrants_data.py:193
+msgid "registrants_imported"
+msgstr "Opprettet ${registrants} nye påmeldte"
+
+#. Default: "Please, provide at least one registrants"
+#: ../browsers/registrants_notification.py:37
+msgid "registrants_required"
+msgstr "Vennligst oppgi minst én påmeldt"
+
+#. Default: "${seats} seats left."
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:123
+msgid "seats_left_message"
+msgstr "${seats} plasser igjen."
+
+#. Default: "Select a csv file to import"
+#: ../browsers/import_registrants.pt:34
+msgid "select_registrnats_csv"
+msgstr "Velg CSV-fil å importere"
+
+#. Default: "Semicolon"
+#: ../browsers/registrants_data_export.pt:49
+msgid "semicolon"
+msgstr "semikolon"
+
+#. Default: "Message sent to $count registrants"
+#: ../browsers/registrants_notification.py:68
+msgid "sent_notification_count"
+msgstr "Melding sendt til $count påmeldte"
+
+#. Default: "Sign up!"
+#: ../browsers/signupsheet_baseview.py:48
+msgid "sign_up"
+msgstr "Registrér deg!"
+
+#. Default: "Signup for waiting list"
+#: ../browsers/signupsheet_baseview.py:50
+msgid "sign_up_for_waitinglist"
+msgstr "Registrér deg på ventelisten"
+
+#. Default: "Handle attendance registrations to workshops, fundraisers and other type of events"
+#: ../profiles/default/types/SignupSheet.xml
+msgid "signup_sheet_type_description"
+msgstr "Administrer påmeldinger til seminarer, konferanser og andre typer arrangementer"
+
+#. Default: "E-Mail Address"
+#: ../adapters/initialize_signup_sheet_form.py:65
+msgid "signupsheet_emailfield_title"
+msgstr "E-postadresse"
+
+#. Default: "Reset"
+#: ../adapters/initialize_signup_sheet_form.py:31
+msgid "signupsheet_formfolder_reset"
+msgstr "Nullstill"
+
+#. Default: "Sign up"
+#: ../adapters/initialize_signup_sheet_form.py:27
+msgid "signupsheet_formfolder_signup"
+msgstr "Registrér deg"
+
+#. Default: "Your Name"
+#: ../adapters/initialize_signup_sheet_form.py:45
+msgid "signupsheet_namefield_title"
+msgstr "Ditt navn"
+
+#. Default: "Your surname"
+#: ../adapters/initialize_signup_sheet_form.py:55
+msgid "signupsheet_surnamefield_title"
+msgstr "Etternavn"
+
+#. Default: "Space"
+#: ../browsers/registrants_data_export.pt:50
+msgid "space"
+msgstr "Mellomrom (space)"
+
+#. Default: "Subject is required. Please provide it"
+#: ../browsers/registrants_notification.py:41
+msgid "subject_required"
+msgstr "Emne er obligatorisk."
+
+#. Default: "Send a message to a group of registrants of that event"
+#: ../browsers/registrants_notification.pt:38
+msgid "subscribers_notification_description"
+msgstr "Send en melding til en gruppe påmeldte"
+
+#. Default: "Register for"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
+msgid "subscription_form_title"
+msgstr "Registrer deg til"
+
+#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided these informations:</p>"
+#: ../adapters/initialize_signup_sheet_form.py:112
+msgid "subscription_mail"
+msgstr ""
+"<p>\n"
+"    Takk for at du registrerte deg til <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n"
+"</p>\n"
+"\n"
+"<p tal:condition=\"request/review_state|nothing\">Status for din påmelding er:\n"
+"    <tal:review_state tal:replace=\"request/review_state\" />\n"
+"</p>\n"
+"\n"
+"<p>Du oppga følgende informasjon:</p>"
+
+#. Default: "Tabulator"
+#: ../browsers/registrants_data_export.pt:48
+msgid "tabulator"
+msgstr "Tabulator"
+
+#. Default: "Registration is full"
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:138
+msgid "text_registration_full"
+msgstr "Arrangementet er fulltegnet"
+
+#. Default: "Thank you for registering, we will contact you shortly. <br/>\nYou provided the following information:"
+#: ../adapters/initialize_signup_sheet_form.py:171
+msgid "thanks_prologue"
+msgstr ""
+"Takk for din påmelding, vi kontakter deg snarlig. <br/>\n"
+"Du sendte inn følgende informasjon:"
+
+#: ../browsers/view_registrants.pt:30
+msgid "unconfirmed"
+msgstr "ubekreftede"
+
+#: ../browsers/view_registrants.pt:32
+msgid "unconfirmed (in wailing list)"
+msgstr "ubekreftede (på venteliste)"
+
+#. Default: "Export Registrants"
+#: ../browsers/registrants_data_export.pt:13
+msgid "view_export_registrant"
+msgstr "Eksporter påmeldte"
+
+#. Default: "View Registrants"
+#: ../browsers/view_registrants.pt:21
+msgid "view_registrants"
+msgstr "Vis påmeldte"
