@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-27 14:20+0000\n"
+"POT-Creation-Date: 2015-02-06 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,7 +245,7 @@ msgstr ""
 msgid "pfg_manager_notification_mailer"
 msgstr ""
 
-#. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
+#. Default: "E-Mails Form Input for signup sheet editors: this mailer sends notifications to signupsheet managers"
 #: ../adapters/initialize_signup_sheet_form.py:136
 msgid "pfg_manager_notification_mailer_description"
 msgstr ""
@@ -359,12 +359,12 @@ msgstr ""
 msgid "subscribers_notification_description"
 msgstr ""
 
-#. Default: "Subscribing to"
+#. Default: "Register for"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
 msgid "subscription_form_title"
 msgstr ""
 
-#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided these informations:</p>"
+#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided the following information:</p>"
 #: ../adapters/initialize_signup_sheet_form.py:112
 msgid "subscription_mail"
 msgstr ""

@@ -118,7 +118,7 @@ class InitializeSignupSheetForm(object):
     <tal:review_state tal:replace="request/review_state" />
 </p>
 
-<p>You provided these informations:</p>"""),
+<p>You provided the following information:</p>"""),
                                 context=self.form.REQUEST),)
             self.form._pfFixup(mailer)
 
@@ -134,7 +134,7 @@ class InitializeSignupSheetForm(object):
             mailer.setDescription(
                 translate(
                   _(u'pfg_manager_notification_mailer_description',
-                    u'E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers'),
+                    u'E-Mails Form Input for signup sheet editors: this mailer sends notifications to signupsheet managers'),
                   context=self.form.REQUEST))
             mailer.setTo_field('#NONE#')
             mailer.setReplyto_field('#NONE#')
