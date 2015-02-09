@@ -4,7 +4,8 @@ Changelog
 0.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added Norwegian translation [eivino]
+- Some Language changes. Most notably changing 'subscribing to' to 'register for'. [eivino]
 
 
 0.2.0 (2014-10-27)
