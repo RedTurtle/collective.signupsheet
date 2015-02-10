@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2014-10-27 14:20+0000\n"
+"POT-Creation-Date: 2015-02-06 14:31+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -255,8 +255,9 @@ msgstr "Nessuna registrazione"
 msgid "pfg_manager_notification_mailer"
 msgstr "Mailer per le notifiche ai manager del modulo"
 
-#. Default: "E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers"
+#. Default: "E-Mails Form Input for signup sheet editors: this mailer sends notifications to signupsheet managers"
 #: ../adapters/initialize_signup_sheet_form.py:136
+#, fuzzy
 msgid "pfg_manager_notification_mailer_description"
 msgstr "Questo mailer se opportunamente compilato manda notifiche di iscrizione ai manager del signup sheet"
 
@@ -369,13 +370,15 @@ msgstr "L'oggetto è obbligatorio. Prego fornirlo."
 msgid "subscribers_notification_description"
 msgstr "Invia un messaggio ad un gruppo degli iscritti a questo evento"
 
-#. Default: "Subscribing to"
+#. Default: "Register for"
 #: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
+#, fuzzy
 msgid "subscription_form_title"
 msgstr "Iscrizione a"
 
-#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided these informations:</p>"
+#. Default: "<p>\n    Thank you for registering to <tal:title tal:replace=\"here/aq_inner/aq_parent/Title\"/>\n</p>\n\n<p tal:condition=\"request/review_state|nothing\">Your registration state is:\n    <tal:review_state tal:replace=\"request/review_state\" />\n</p>\n\n<p>You provided the following information:</p>"
 #: ../adapters/initialize_signup_sheet_form.py:112
+#, fuzzy
 msgid "subscription_mail"
 msgstr ""
 "<p>\n"

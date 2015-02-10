@@ -9,39 +9,38 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: de\n"
-"Language-Name: Deutsch\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: plone\n"
-"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+"Domain: DOMAIN\n"
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Close Signup Sheet"
-msgstr "Anmeldeforumlar schließen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Close signup sheet and stop submissions"
-msgstr "Forumlar schließen und Anmeldungen stoppen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Closed for submissions"
-msgstr "Anmeldung geschlossen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Confirm"
-msgstr "Bestätigen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Confirmed"
-msgstr "Bestätigt"
+msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Export Registrants"
-msgstr "Teilnehmerdaten exportieren"
+msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Import Registrants"
-msgstr "Teilnehmerdaten importieren"
+msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "Notify Registrants"
@@ -49,41 +48,41 @@ msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Open Signup Sheet"
-msgstr "Anmeldeformular öffnen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Open for submissions"
-msgstr "Offen für Anmeldungen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_workflow/definition.xml
 msgid "Open signup sheet for submissions"
-msgstr "Formular für Anmeldungen öffnen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Post subscriber on save"
-msgstr "Post subscriber on save"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Reject"
-msgstr "Ablehnen"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Submit registrant"
-msgstr "Submit registrant"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Submit registrant (waiting list)"
-msgstr "Submit registrant (waiting list)"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Unconfirmed"
-msgstr "Nicht bestätigt"
+msgstr ""
 
 #: ../profiles/default/workflows/signupsheet_registrant_workflow/definition.xml
 msgid "Unconfirmed in waiting list"
-msgstr "Nicht bestätigt. In der Warteliste"
+msgstr ""
 
 #: ../profiles/default/types/SignupSheet.xml
 msgid "View Registrants"
-msgstr "Teilnehmer anzeigen"
+msgstr ""
 
