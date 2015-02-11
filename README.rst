@@ -101,7 +101,7 @@ Subscribers can be exported in a CSV format, or imported from a CSV with the pro
 Calendar friendly
 ~~~~~~~~~~~~~~~~~
 
-Signup sheet are shown in the Plone calendar portlet.
+Signup sheets are shown in the Plone calendar portlet like normals events.
 
 Credits
 =======
