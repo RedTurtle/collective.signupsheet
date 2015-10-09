@@ -64,6 +64,13 @@ class SignupSheetBaseView(BrowserView):
         now = DateTime()
         return now < deadline
 
+    def check_opening(self):
+        opening = self.context.getRegistrationOpeningDate()
+        if not opening:
+            return False
+        now = DateTime()
+        return now >= opening
+
     def can_subscribe(self):
         """
         Check if subscription is possibile, checking all the logic
@@ -71,6 +78,9 @@ class SignupSheetBaseView(BrowserView):
         context = self.context
         wtool = getToolByName(context, 'portal_workflow')
         wf_state = wtool.getInfoFor(context, 'review_state')
+
+        if not self.check_opening():
+            return False    
         if not self.check_deadline():
             return False
         return wf_state in ('earlybird', 'open') or \

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2015-02-06 14:31+0000\n"
+"POT-Creation-Date: 2015-10-09 15:01+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -123,6 +123,12 @@ msgstr "Campo"
 msgid "field_registration_deadline"
 msgstr "Scadenza dell'iscrizione"
 
+#. Default: "Registration opening"
+#: ../contents/signupsheet.py:111
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:120
+
+msgid "field_registration_opening"
+msgstr "Data di apertura delle iscrizioni"
 #. Default: "Size of wait list"
 #: ../contents/signupsheet.py:48
 msgid "field_waitlist_size"
@@ -142,6 +148,11 @@ msgstr "Impostare a 0 per un'iscrizione illimitata"
 #: ../contents/signupsheet.py:100
 msgid "fieldhelp_registration_deadline"
 msgstr "Le registrazioni saranno fermate dopo il raggiungimento di questa data"
+
+#. Default: "Registrations will be available starting from this date"
+#: ../contents/signupsheet.py:113
+msgid "fieldhelp_registration_opening"
+msgstr "Data di apertura delle iscrizioni"
 
 #. Default: "Action"
 #: ../browsers/view_registrants.pt:46
@@ -164,7 +175,7 @@ msgid "heading_review_state"
 msgstr "Stato"
 
 #. Default: "Text for front page of signup"
-#: ../contents/signupsheet.py:118
+#: ../contents/signupsheet.py:131
 msgid "help_body_text"
 msgstr "Testo per la pagina principale dell'iscrizione."
 
@@ -199,7 +210,7 @@ msgid "import_third_rule"
 msgstr "Per valori mancanti inserire solo il 'punto e virgola' (es: ;;mail@provider.com)"
 
 #. Default: "Body Text"
-#: ../contents/signupsheet.py:117
+#: ../contents/signupsheet.py:130
 msgid "label_body_text"
 msgstr "Corpo del testo"
 
@@ -295,7 +306,7 @@ msgid "registrants_required"
 msgstr "Prego, fornire almeno un iscritto"
 
 #. Default: "${seats} seats left."
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:123
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:129
 msgid "seats_left_message"
 msgstr "${seats} posti rimanenti."
 
@@ -370,7 +381,7 @@ msgid "subscribers_notification_description"
 msgstr "Invia un messaggio ad un gruppo degli iscritti a questo evento"
 
 #. Default: "Register for"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:146
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:152
 msgid "subscription_form_title"
 msgstr "Iscrizione a"
 
@@ -394,7 +405,7 @@ msgid "tabulator"
 msgstr "Tabulatore"
 
 #. Default: "Registration is full"
-#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:138
+#: ../skins/collective_signupsheet/ss_base_view_p3.cpt:144
 msgid "text_registration_full"
 msgstr "L'iscrizione è al completo"
 
@@ -422,4 +433,3 @@ msgstr "Esporta i dati"
 #: ../browsers/view_registrants.pt:21
 msgid "view_registrants"
 msgstr "Vedi gli iscritti"
-

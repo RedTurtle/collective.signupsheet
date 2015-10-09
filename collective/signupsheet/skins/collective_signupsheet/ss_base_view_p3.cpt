@@ -110,9 +110,15 @@
                   tal:condition="python: not view.getSignupStatus() =='full'">
                 <div>
 
-                  <div id="registration-closed" 
+                  <div id="registration-closed"
                        tal:condition="python: wf_state == 'closed'">
                       <strong i18n:translate="">The registration is closed</strong>
+                  </div>
+
+                  <div id="registration-not-open"
+                       tal:condition="not: view/check_opening">
+                      <span class="label" i18n:translate="field_registration_opening">Registration opening</span>:
+                      <span tal:content="python: plone_view.toLocalizedTime(context.getRegistrationOpeningDate(), long_format=True)" />
                   </div>
 
                   <div id="registration-open"
@@ -125,7 +131,7 @@
                       </p>
                          <form method="post" action="#"
                                tal:attributes="action context/absolute_url">
-                              <input type="submit" value="" 
+                              <input type="submit" value=""
                                      tal:attributes="value view/getSignupMessage"
                                      name="formsubscribe"/>
                          </form>
@@ -133,7 +139,7 @@
 
                 </div>
               </div>
-              <div id="ss-registration-full" 
+              <div id="ss-registration-full"
                    tal:condition="python:view.getSignupStatus() == 'full' ">
                       <strong i18n:translate="text_registration_full">Registration is full</strong>
               </div>
@@ -155,7 +161,7 @@
             </tal:if>
 
             <metal:use_body use-macro="body_macro" />
-            
+
             <tal:if tal:condition="here/getFormEpilogue | nothing">
               <metal:field use-macro="python:context.widget('formEpilogue', mode='view')">
                   Body text

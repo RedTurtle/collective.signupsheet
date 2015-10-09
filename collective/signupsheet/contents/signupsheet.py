@@ -103,6 +103,19 @@ SignupSheetSchema = FormFolderSchema.copy() + Schema((
             size=6,
             )
         ),
+    DateTimeField('registrationOpeningDate',
+        required=0,
+        default=None,
+        read_permission="View",
+        widget=CalendarWidget(
+            label=_('field_registration_opening',
+                    default=u'Registration opening date'),
+            description=_("fieldhelp_registration_opening",
+                          default=u"Registrations will be available starting from this date"),
+            visible={'edit': 'visible', 'view': 'invisible'},
+            size=6,
+            )
+        ),
     TextField('text',
         accessor='getBodyText',
         required=True,
@@ -129,7 +142,8 @@ SignupSheetSchema.moveField('startDate', after='display_size_left')
 SignupSheetSchema.moveField('endDate', after='startDate')
 SignupSheetSchema.moveField('earlyBirdDate', after='endDate')
 SignupSheetSchema.moveField('registrationDeadline', after='earlyBirdDate')
-SignupSheetSchema.moveField('text', after='registrationDeadline')
+SignupSheetSchema.moveField('registrationOpeningDate', after='registrationDeadline')
+SignupSheetSchema.moveField('text', after='registrationOpeningDate')
 
 
 class SignupSheet(FormFolder):

@@ -17,7 +17,7 @@
     name="susbase_utiltities_view"
     class=".signupsheet_baseview.SignupSheetBaseView"
     permission="zope2.View"
-    allowed_attributes="getSignupStatus getSeatsLeft getSignupMessage check_add_registrants_permission"
+    allowed_attributes="getSignupStatus getSeatsLeft getSignupMessage check_add_registrants_permission check_opening"
     />
 
   <browser:page
