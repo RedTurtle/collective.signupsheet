@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+    <column value="getStartDate"/>
+    <column value="getEndDate"/>
+    <column value="getEarlyBirdDate"/>
+    <column value="getRegistrationDeadline"/>
+    <column value="getRegistrationOpeningDate"/>
+    <column value="getEventsize"/>
+    <column value="getWaitlist_size"/>
+</object>
