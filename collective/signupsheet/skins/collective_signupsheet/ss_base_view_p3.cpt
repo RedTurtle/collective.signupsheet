@@ -116,7 +116,7 @@
                   </div>
 
                   <div id="registration-not-open"
-                       tal:condition="not: view/check_opening">
+                       tal:condition="python:not view.check_opening() and context.getRegistrationOpeningDate()">
                       <span class="label" i18n:translate="field_registration_opening">Registration opening</span>:
                       <span tal:content="python: plone_view.toLocalizedTime(context.getRegistrationOpeningDate(), long_format=True)" />
                   </div>
