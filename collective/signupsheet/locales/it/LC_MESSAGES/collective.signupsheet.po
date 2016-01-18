@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2015-02-06 14:31+0000\n"
+"POT-Creation-Date: 2016-01-18 12:58+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Luca Bellenghi <luca.bellenghi@redturtle.it>\n"
 "Language-Team: RedTurtle Technology <sviluppo@redturtle.it>\n"
@@ -17,6 +17,10 @@ msgstr ""
 
 msgid "A solution for manage signup attendance to events"
 msgstr "Una soluzione per la gestione di iscrizione ad eventi"
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:49
+msgid "A subscription with this infos is already present. Please check the data or contact the site administrator."
+msgstr "Un'iscrizione con i dati inseriti è già presente. Per favore controlla i dati o contatta l'amministratore del sito."
 
 #: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
 msgid "Can't subscribe. No more free slots"
@@ -422,4 +426,3 @@ msgstr "Esporta i dati"
 #: ../browsers/view_registrants.pt:21
 msgid "view_registrants"
 msgstr "Vedi gli iscritti"
-

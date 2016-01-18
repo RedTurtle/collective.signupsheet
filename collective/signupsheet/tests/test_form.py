@@ -92,7 +92,7 @@ class TestForm(FunctionalTestCase):
                              mailer.Title())
         self.assertEqual(False,
                             mailer.getIncludeEmpties())
-        self.assertEqual(u'E-Mails Form Input for signup sheet editors: this mailer send notifications to signupsheet managers',
+        self.assertEqual(u'E-Mails Form Input for signup sheet editors: this mailer sends notifications to signupsheet managers',
                             mailer.Description())
         self.assertEqual('#NONE#',
                             mailer.getReplyto_field(),)

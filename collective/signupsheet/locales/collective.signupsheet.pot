@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-06 14:31+0000\n"
+"POT-Creation-Date: 2016-01-18 12:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Domain: collective.signupsheet\n"
 
 msgid "A solution for manage signup attendance to events"
+msgstr ""
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:49
+msgid "A subscription with this infos is already present. Please check the data or contact the site administrator."
 msgstr ""
 
 #: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42

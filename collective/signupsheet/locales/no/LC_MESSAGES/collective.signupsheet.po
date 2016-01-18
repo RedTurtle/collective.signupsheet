@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-02-11 08:08+0000\n"
+"POT-Creation-Date: 2016-01-18 12:58+0000\n"
 "PO-Revision-Date: 2015-02-06 15:31+0100\n"
 "Last-Translator: Eivind Sætre <eivind.saetre@gmail.com>\n"
 "Language-Team: \n"
@@ -18,6 +18,10 @@ msgstr ""
 
 msgid "A solution for manage signup attendance to events"
 msgstr "En løsning for å behandle påmeldinger til arrangementer"
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:49
+msgid "A subscription with this infos is already present. Please check the data or contact the site administrator."
+msgstr ""
 
 #: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
 msgid "Can't subscribe. No more free slots"

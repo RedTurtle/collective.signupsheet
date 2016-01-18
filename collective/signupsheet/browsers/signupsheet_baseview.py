@@ -82,3 +82,18 @@ class SignupSheetBaseView(BrowserView):
         """
         sm = getSecurityManager()
         return sm.checkPermission(config.ADD_PERMISSIONS['SignupSheet'], self.context)
+
+    def check_duplicate_registrant(self, form_fields):
+        """
+        check if the submitted data are already stored in the db
+        """
+        registrants = getUtility(IGetRegistrants).get_registrants_brains_anon
+        registrants = registrants(self.context)
+        fields = [x for x in self.context.fgFieldsDisplayList()]
+        tot_fields = len(fields)
+        for registrant in registrants:
+            registrant_obj = registrant.getObject()
+            match = [x for x in fields if getattr(registrant_obj, x, None) == form_fields.get(x)]
+            if len(match) == tot_fields:
+                return True
+        return False

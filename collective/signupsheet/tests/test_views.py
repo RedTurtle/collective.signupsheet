@@ -20,7 +20,12 @@ class TestBaseView(FunctionalTestCase):
         self.form = getattr(self.portal, self.newid)
         self.form.setEventsize(2)
         self.form.setWaitlist_size(2)
-        self.form.registrants.invokeFactory('registrant', id='rgs1')
+        self.form.registrants.invokeFactory(
+            'registrant',
+            id='rgs1',
+            name="john",
+            surname="doe",
+            email="jdoe@foo.com")
 
     def test_base_view_status(self):
         view = getMultiAdapter((self.form, self.form.REQUEST),
@@ -53,6 +58,20 @@ class TestBaseView(FunctionalTestCase):
         self.assertTrue('Sign up!' in self.form())
         self.form.setRegistrationDeadline(DateTime()-1)
         self.assertFalse('Sign up!' in self.form())
+
+    def test_check_duplicate_registrant(self):
+        view = getMultiAdapter((self.form, self.form.REQUEST),
+                                name='susbase_utiltities_view')
+        duplicate_form = {
+            'name': 'john',
+            'surname': 'doe',
+            'email': "jdoe@foo.com"}
+        new_form = {
+            'name': 'john',
+            'surname': 'baz',
+            'email': "jbaz@foo.com"}
+        self.assertTrue(view.check_duplicate_registrant(duplicate_form))
+        self.assertFalse(view.check_duplicate_registrant(new_form))
 
 
 class TestDataExport(FunctionalTestCase):

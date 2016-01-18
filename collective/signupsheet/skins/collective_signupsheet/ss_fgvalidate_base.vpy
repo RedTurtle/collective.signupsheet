@@ -43,6 +43,13 @@ if no_seat_left:
     addStatusMessage(request, message, type='error')
     return state.set(status='failure', errors=errors)
 
+# check if the submitted data is already stored in the db. If yes, return an error
+duplicate_registrant = context.check_duplicate_registrant(form_fields=request.form)
+if duplicate_registrant:
+    message = _(u"A subscription with this infos is already present. Please check the data or contact the site administrator.")
+    addStatusMessage(request, message, type='error')
+    return state.set(status='failure', errors=errors)
+
 errors = context.fgvalidate(REQUEST=request, errors=errors, data=1, metadata=0)
 
 

@@ -1,5 +1,5 @@
 First, we must perform some setup. We use the testbrowser that is shipped
-with Five, as this provides proper Zope 2 integration. Most of the 
+with Five, as this provides proper Zope 2 integration. Most of the
 documentation, though, is in the underlying zope.testbrower package.
 
 >>> from Products.Five.testbrowser import Browser
@@ -31,7 +31,7 @@ Add the signupsheet, setting a title and values for event size and waiting list
 >>> browser.getLink('Signup Sheet').click()
 >>> browser.getControl(name="title").value = "ss-form"
 >>> browser.getControl(name="eventsize").value = "2"
->>> browser.getControl(name="waitlist_size").value = "2"  
+>>> browser.getControl(name="waitlist_size").value = "2"
 >>> browser.getControl(name="text").value = "This is a nice test"
 >>> browser.getControl("Save").click()
 >>> form = self.portal['ss-form']
@@ -43,12 +43,25 @@ registrants
 >>> "Sign up!" in browser.contents
 True
 >>> browser.getControl(name='formsubscribe').click()
->>> "Subscribing" in browser.contents
+>>> "Register for" in browser.contents
 True
 >>> browser.getControl(name='name').value = "John"
 >>> browser.getControl(name='surname').value = "Dillinger"
 >>> browser.getControl(name='email').value = "john.dillinger@mailprovider.com"
 >>> browser.getControl(name='form_submit').click()
+
+Now we can try to add the same infos, and check that we can't add the same data
+if already stored
+>>> browser.open(portal_url + '/ss-form')
+>>> browser.getControl(name='formsubscribe').click()
+>>> browser.getControl(name='name').value = "John"
+>>> browser.getControl(name='surname').value = "Dillinger"
+>>> browser.getControl(name='email').value = "john.dillinger@mailprovider.com"
+>>> browser.getControl(name='form_submit').click()
+>>> "A subscription with this infos is already present." in browser.contents
+True
+>>> "Register for" in browser.contents
+True
 
 Right now we can move to the real protagonist of this test: the subscriber view,
 but first of all, take the registrant

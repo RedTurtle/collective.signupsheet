@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"POT-Creation-Date: 2015-02-06 14:31+0000\n"
+"POT-Creation-Date: 2016-01-18 12:58+0000\n"
 "PO-Revision-Date: 2013-01-16 13:45 +ZONE\n"
 "Last-Translator: Stephan Klinger <staeff@arcor.de>\n"
 "Language-Team: de <staeff@arcor.de>\n"
@@ -17,6 +17,10 @@ msgstr ""
 
 msgid "A solution for manage signup attendance to events"
 msgstr "Ein Produkt zur Verwaltung von Veranstaltungsanmeldungen"
+
+#: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:49
+msgid "A subscription with this infos is already present. Please check the data or contact the site administrator."
+msgstr ""
 
 #: ../skins/collective_signupsheet/ss_fgvalidate_base.vpy:42
 msgid "Can't subscribe. No more free slots"

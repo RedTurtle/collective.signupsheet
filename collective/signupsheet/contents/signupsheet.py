@@ -160,4 +160,13 @@ class SignupSheet(FormFolder):
             return True
         return False
 
+    def check_duplicate_registrant(self, form_fields):
+        """
+        this method checks if submitted data are already stored in the folder
+        """
+        base_view = getMultiAdapter(
+            (self, self.REQUEST),
+            name='susbase_utiltities_view')
+        return base_view.check_duplicate_registrant(form_fields=form_fields)
+
 registerATCT(SignupSheet, PROJECTNAME)

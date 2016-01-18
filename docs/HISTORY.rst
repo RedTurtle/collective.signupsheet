@@ -1,12 +1,13 @@
 Changelog
 =========
 
-0.2.1 (unreleased)
+0.3.0 (unreleased)
 ------------------
 
 - Added Norwegian translation [eivino]
 - Some Language changes. Most notably changing 'subscribing to' to 'register for'. [eivino]
-
+- Add check to avoid duplicate registrant entries.
+  [cekk]
 
 0.2.0 (2014-10-27)
 ------------------
@@ -37,7 +38,7 @@ __ https://svn.plone.org/svn/collective/Products.SignupSheetNotification/trunk/
   i18ndude call
   [keul]
 - Added *delete* action to registrant view
-  [staeff] 
+  [staeff]
 
 0.1.1 (2014-07-29)
 ------------------
