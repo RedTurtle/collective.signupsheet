@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.3.1 (2016-01-25)
 ------------------
 
 - Fix check for duplicate registants for anonymous submissions
