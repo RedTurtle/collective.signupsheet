@@ -92,7 +92,10 @@ class SignupSheetBaseView(BrowserView):
         fields = [x for x in self.context.fgFieldsDisplayList()]
         tot_fields = len(fields)
         for registrant in registrants:
-            registrant_obj = registrant.getObject()
+            # I need to do an unrestrictedTraverse because otherwise anonymous
+            # users can't get saved registrants
+            registrant_obj = self.context.unrestrictedTraverse(
+                registrant.getPath())
             match = [x for x in fields if getattr(registrant_obj, x, None) == form_fields.get(x)]
             if len(match) == tot_fields:
                 return True

@@ -4,7 +4,8 @@ Changelog
 0.3.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix check for duplicate registants for anonymous submissions
+  [cekk]
 
 
 0.3.0 (2016-01-18)
