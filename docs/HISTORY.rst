@@ -4,7 +4,8 @@ Changelog
 0.3.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Improved check to avoid duplicated registrants.
+  [daniele]
 
 
 0.3.1 (2016-01-25)
