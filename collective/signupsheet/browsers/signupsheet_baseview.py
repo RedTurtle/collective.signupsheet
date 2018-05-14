@@ -96,7 +96,11 @@ class SignupSheetBaseView(BrowserView):
             # users can't get saved registrants
             registrant_obj = self.context.unrestrictedTraverse(
                 registrant.getPath())
-            match = [x for x in fields if getattr(registrant_obj, x, None) == form_fields.get(x)]
-            if len(match) == tot_fields:
-                return True
+	    if 'email' in fields:
+	        if  str(getattr(registrant_obj, 'email', None)).strip() == str(form_fields.get('email', None)).strip():
+                    return True
+	    else:
+                match = [x for x in fields if str(getattr(registrant_obj, x, None)).strip() == str(form_fields.get(x, None)).strip()]
+                if len(match) == tot_fields:
+                    return True
         return False
